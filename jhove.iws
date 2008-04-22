@@ -15,7 +15,469 @@
     <option name="historyRevisionsNumber" value="4" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" name="Default" comment="" />
+    <list default="true" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/TiffProfileDLFBW.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/QCDMarkerSegment.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/pdf/Filter.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/html/package-summary.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/PLTMarkerSegment.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/FragmentListBox.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg/Spiff.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/package-tree.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/pdf/Tokenizer.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/TiffProfileDNG.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/FileTypeBox.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/wave/ListInfoTextChunk.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/TiffProfileClassITHC.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/viewer/package-summary.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/html/Html4_01TFDocDesc.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/TiffTags.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/aiff/CopyrightChunk.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/iff/package-tree.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/pdf/PdfIndirectObj.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/xml/XmlDeclHandler.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/allclasses-noframe.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/pdf/Comment.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/html/HtmlStack.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/aiff/AiffStrings.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/pdf/NameTreeNode.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/TiffProfileClassITCTP2.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg/package-frame.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/wave/ListInfoChunk.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/aiff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/html/Html4_01FrameDocDesc.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/pdf/ObjectStream.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/viewer/RepTreeRoot.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/TiffProfileClassITCTP1.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/AESAudioMetadata.FormatRegion.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/ObjectIdentifier.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/handler/audit" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/BPCCBox.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/viewer/ViewWindow.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/OpacityBox.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/html/JHAttribute.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/package-summary.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/viewer/LeafHolder.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/TiffProfileRFC1314.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/handler/TextHandler.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/allclasses-frame.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/html/JHComment.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/iff/Chunk.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/MainOrTile.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/xml/package-frame.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/Callback.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/wave/SimpleTextChunk.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/xml/XmlModuleHandler.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/aiff/TextChunk.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/html/HtmlAttributeDesc.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/TiffProfileFXF.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/InfoMessage.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/aiff/NameChunk.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/pdf/ArrayStart.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/wave/package-tree.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/FragmentInputStream.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/ExternalSignature.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg/SpiffDir.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/viewer/package-tree.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/ByteArrayXMPSource.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/DocumentType.html" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/META-INF/MANIFEST.MF" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/TiffProfileDNGThumb.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/wave/DataChunk.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/UUIDBox.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/aiff/package-tree.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/overview-frame.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/wave/FormatChunk.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/TiffProfileClassP.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/pdf/TaggedProfile.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/InternalSignature.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/wave/AXMLChunk.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/HandlerBase.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/pdf/PageTreeNode.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/html/Html4TFDocDesc.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/pdf/X2Profile.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/ChecksumInputStream.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/PdfModule.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/handler" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/GlobalParametersIFD.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/package-frame.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/stylesheet.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/aiff/FormatVersionChunk.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/packages.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/pdf/StructureTree.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/JP2Box.html" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/META-INF/MANIFEST.MF" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/html/DTDMapper.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/GPSInfoIFD.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/DataEntryURLBox.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/DesiredReproBox.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/TiffProfileClassITLW.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/serialized-form.html" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/handler/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/handler/META-INF/MANIFEST.MF" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/viewer/NumericField.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/pdf/AsciiHexFilterStream.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/pdf/PdfStrings.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg/package-tree.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/TiffProfileClassITBLP1.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/XMLWrapperStream.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/pdf/PdfProfile.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/AnalogDigitalFlagType.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/pdf/Token.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/aiff/CommonChunk.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/TLMMarkerSegment.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/pdf/Hexadecimal.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/OutputHandler.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/CompOptionsBox.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/viewer/JhoveWindow.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/pdf/package-summary.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg/SRS.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/TiffProfileClassIT.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/package-frame.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/handler/audit/package-tree.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/Property.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/pdf/Ascii85FilterStream.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/pdf/CrossRefStream.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/viewer/NoConfAlert.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/aiff/SoundDataChunk.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/TiffProfileExifThumb.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/wave/package-summary.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/wave/ExifInfo.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/aiff/InstrumentChunk.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/aiff/SaxelChunk.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/CountedInputStream.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/TiffException.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/pdf/Destination.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/TiffProfileDLFGray.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/AsciiModule.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/wave/MpegChunk.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/CODMarkerSegment.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/handler/audit/AuditState.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/SignatureType.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/gif/package-tree.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/package-summary.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/Utf8BlockMarker.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/html/ParseHtml.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/RAFInputStream.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/wave/package-frame.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/SignatureUseType.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/UUIDListBox.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/pdf/AProfile.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/html/JHElement.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/TiffProfileClassITLWP2.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/TiffProfileClassITHCP2.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/TiffProfileClassITSDP2.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/handler/package-summary.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/PaletteBox.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/pdf/RunLengthFilterStream.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/PPTMarkerSegment.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/AESAudioMetadata.FaceRegion.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/viewer" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/aiff/MidiChunk.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/pdf/Stream.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/BoxHeader.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/Jpeg2000Module.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/package-tree.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/XMLBox.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/FragmentTableBox.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/pdf/Keyword.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/html/ParseHtmlTokenManager.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/RepInfo.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/Identifier.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/TiffProfileClassITCT.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/viewer/ConfigWindow.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/TiffProfileClassITHCP1.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/Marker.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/TiffProfilePagemaker6.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/wave/ExifMakerNoteChunk.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/wave/LabelChunk.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/package-tree.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/SOTMarkerSegment.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/xml/package-tree.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/TagFamily.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/handler/audit/AuditCount.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/ComposLayerHdrBox.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/html/HtmlCharStream.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/ImageHeaderBox.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/ContCodestreamBox.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/IdentifierType.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/pdf/DictionaryEnd.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/TiffProfileClassB.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/TiffProfileClassITBPP1.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/DirectoryProperty.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/TiffProfileClassF.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/viewer/ConfigWriter.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/ResolutionBox.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/pdf/PdfInvalidException.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/TiffProfileClassITFPP2.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/pdf/package-frame.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/html/TokenMgrError.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg/Tiling.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/Tile.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/pdf/DictionaryStart.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/wave/LabeledTextChunk.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/wave/LinkChunk.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/pdf/Numeric.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/pdf/PdfFlateInputStream.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/TiffProfileClassITFP.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/JpegModule.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/pdf/PdfXMPSource.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/DDResolutionBox.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/JP2HeaderBox.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/html/JHXmlDecl.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/Checksummer.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/DefaultMarkerSegment.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/handler/package-frame.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/GifModule.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/Module.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/handler/package-tree.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/html/Html4_0FrameDocDesc.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/CommentMarkerSegment.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/html/HtmlMetadata.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/DigSignatureBox.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/pdf/Name.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/TiffProfileClassITLWP1.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/html/JHDoctype.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/CRGMarkerSegment.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/wave" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/TiffProfileDLFColor.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/aiff/MarkerChunk.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/html/Html4_0TFDocDesc.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/pdf/Literal.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/TiffProfileExif.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/AESAudioMetadata.Face.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/viewer/AppInfoWindow.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/package-summary.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/BytestreamModule.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/ErrorMessage.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/pdf/package-tree.html" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jhove.ipr" afterPath="$PROJECT_DIR$/jhove.ipr" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/TiffProfileClassITMPP2.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/constant-values.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/pdf/StreamInputStream.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/xml/XhtmlProcessing.html" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Jhove.iml" afterPath="$PROJECT_DIR$/Jhove.iml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg/JpegExif.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/TiffProfileClassY.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/overview-tree.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/IFD.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/pdf/PdfArray.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/DefaultBox.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/iff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/IPRBox.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/wave/LinkChunkHandler.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/XmlModule.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/JP2Strings.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/XMPHandler.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/wave/BroadcastExtChunk.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/MacStuff.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/Signature.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/viewer/ModuleInfoWindow.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/html/JHPCData.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/TiffProfileDLF.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/package-frame.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/TiffProfileExifIFD.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/TiffFXBase.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/TiffProfileFXS.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/ColorSpecBox.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/TiffModule.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/pdf/AProfileLevelA.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/aiff/AudioRecChunk.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/iff/package-summary.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/InteroperabilityIFD.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/viewer/InfoWindow.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/App.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/Utf8Module.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/gif/GifStrings.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/PropertyPath.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/html/Html4DocDesc.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/pdf/PdfSimpleObject.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/wave/CueChunk.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/wave/ExifStringChunk.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/MarkerSegment.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/LabelBox.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/PLMMarkerSegment.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/TilePart.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/ROIBox.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/TiffProfileClassITSD.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/wave/AssocDataListChunk.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/AESAudioMetadata.TimeDesc.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/CodestreamHeaderBox.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg/JpegStrings.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/InstructionSetBox.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/NumberListBox.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/html/Html4_0TransDocDesc.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/pdf/StructureElement.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/deprecated-list.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/html/Html3_2DocDesc.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/TiffIFD.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/ChecksumType.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg/ArithConditioning.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/html/HtmlTempTagDesc.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/pdf/PageLabelNode.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/pdf/XProfileBase.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/package-list" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/GeoTiffStrings.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/gif/package-frame.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/TiffProfileClassITMP.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/gif/package-summary.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/ReaderRequirementsBox.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/pdf/X3Profile.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/WaveModule.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/Checksum.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/viewer/MainScreen.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg/QuantizationTable.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/pdf/StringValuedToken.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/GTSOBox.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/package-frame.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/JhoveException.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/wave/FactChunk.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/handler/audit/package-summary.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/wave/CartChunk.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/TiffProfileClassG.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/TiffProfileClassITFPP1.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/HtmlModule.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/xml/XmlLexicalHandler.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/RFC1766Lang.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/viewer/JhoveWindow.InvisibleFilenameFilter.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/Agent.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/viewer/ViewCellRenderer.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/wave/SampleChunk.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/EnumerationType.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/html/ParseHtmlConstants.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/PPMMarkerSegment.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/Dump.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/TiffProfileClassITMPP1.html" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/classes/META-INF/MANIFEST.MF" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/aiff/package-summary.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/TiffException.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/pdf/PdfMalformedException.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/Rational.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/CompositionBox.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/AiffModule.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/pdf/PageObject.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/PropertyType.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/ChannelDefBox.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/handler/audit/package-frame.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/pdf/StdStructTypes.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/wave/PeakEnvelopeChunk.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/AgentType.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/package-summary.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/TiffProfileClassITBL.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/html/JHCloseTag.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/TiffProfilePhotoshop.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/html/HtmlSpecialToken.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/Codestream.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/RGNMarkerSegment.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/StandardIFDProperty.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/pdf/PdfStream.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/aiff/AnnotationChunk.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/html/package-frame.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg/package-summary.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/TiffProfileFXC.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/pdf/PdfObject.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/TiffProfileClassITBPP2.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/TiffProfile.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/NisoImageMetadata.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/html/Token.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/Message.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/TiffProfileGeoTIFF.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/JhoveBase.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/pdf/PdfDictionary.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/handler/AuditHandler.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/ColorGroupBox.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/TiffProfileFXM.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/TiffProfileClassR.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/PropertyArity.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/Document.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/pdf/X1Profile.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/viewer/ViewHandler.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/wave/WaveStrings.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/aiff/CommentsChunk.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/html/JHOpenTag.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/wave/ExifUserCommentChunk.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/TiffProfileClassITBP.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/wave/ExifVersionChunk.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/AESAudioMetadata.html" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jhove.iws" afterPath="$PROJECT_DIR$/jhove.iws" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/aiff/package-frame.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/html/Html4_01StrictDocDesc.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/QCCMarkerSegment.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/aiff/AuthorChunk.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/iff/ChunkHeader.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/overview-summary.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/html/CharStream.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/index-all.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/POCMarkerSegment.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/pdf/StreamTokenizer.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/BinaryFilterBox.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/COCMarkerSegment.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/BoxHolder.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/html/HtmlTagDesc.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/pdf/FileTokenizer.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/TiffProfileEP.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/pdf/DocNode.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/Utf8Block.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/UUIDInfoBox.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/xml/package-summary.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/ConfigHandler.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/package-tree.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/html/Html4_01TransDocDesc.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/html/Html4StrictDocDesc.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/TiffProfileFXJ.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/CaptureResolutionBox.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/help-doc.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/wave/InstrumentChunk.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/pdf/ArrayEnd.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/xml/XmlDeclStream.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/viewer/package-frame.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/html/SimpleCharStream.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/CrossRefBox.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/wave/NoteChunk.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/pdf/State.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/ComponentMapBox.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/SIZMarkerSegment.html" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/viewer/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/viewer/META-INF/MANIFEST.MF" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/pdf/Parser.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/html/Html4_0StrictDocDesc.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/html/ParseException.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/html/package-tree.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/CodestreamRegBox.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/ContCodestream.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/pdf/PdfException.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/viewer/ProgressWindow.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/TopLevelBoxHolder.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/XMPSource.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/iff/package-frame.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/html/HtmlDocDesc.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/pdf/FileSpecification.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/html/JHErrorElement.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/aiff/ApplicationChunk.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/aiff/ExtDouble.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/viewer/PrefsWindow.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/pdf/LinearizedProfile.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/TiffProfileFXL.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/ModuleBase.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/handler/XmlHandler.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/ExifIFD.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/tiff/GeoTiffTags.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/jpeg2000/AssociationBox.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/pdf/X1aProfile.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/edu/harvard/hul/ois/jhove/module/iff/Superchunk.html" afterPath="" />
+    </list>
     <ignored path="jhove.iws" />
     <ignored path=".idea/workspace.xml" />
   </component>
@@ -282,6 +744,26 @@
           <option name="myItemId" value="PsiDirectory:/home/abr/projects/jhove/doc" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/home/abr/projects/jhove/doc/edu" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/home/abr/projects/jhove/doc/edu/harvard" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/home/abr/projects/jhove/doc/edu/harvard/hul" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/home/abr/projects/jhove/doc/edu/harvard/hul/ois" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/home/abr/projects/jhove/doc/edu/harvard/hul/ois/jhove" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
       </PATH>
       <PATH>
         <PATH_ELEMENT>
@@ -298,154 +780,6 @@
         </PATH_ELEMENT>
         <PATH_ELEMENT>
           <option name="myItemId" value="PsiDirectory:/home/abr/projects/jhove/conf" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="jhove" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="Jhove" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:/home/abr/projects/jhove" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:/home/abr/projects/jhove/classes" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="jhove" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="Jhove" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:/home/abr/projects/jhove" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:/home/abr/projects/jhove/classes" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:/home/abr/projects/jhove/classes/edu" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="jhove" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="Jhove" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:/home/abr/projects/jhove" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:/home/abr/projects/jhove/classes" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:/home/abr/projects/jhove/classes/edu" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:/home/abr/projects/jhove/classes/edu/harvard" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="jhove" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="Jhove" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:/home/abr/projects/jhove" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:/home/abr/projects/jhove/classes" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:/home/abr/projects/jhove/classes/edu" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:/home/abr/projects/jhove/classes/edu/harvard" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:/home/abr/projects/jhove/classes/edu/harvard/hul" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="jhove" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="Jhove" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:/home/abr/projects/jhove" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:/home/abr/projects/jhove/classes" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:/home/abr/projects/jhove/classes/edu" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:/home/abr/projects/jhove/classes/edu/harvard" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:/home/abr/projects/jhove/classes/edu/harvard/hul" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:/home/abr/projects/jhove/classes/edu/harvard/hul/ois" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="jhove" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="Jhove" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:/home/abr/projects/jhove" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:/home/abr/projects/jhove/bin" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -621,7 +955,7 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32893288" order="8" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="5" />
-      <window_info id="Ant Build" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19662556" order="1" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19662556" order="1" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287858" order="1" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="3" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="9" />
@@ -633,7 +967,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="0" />
       <window_info id="Maven projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="4" />
       <window_info id="Module Dependencies" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="6" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35171968" order="0" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35171968" order="0" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32921812" order="12" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24951644" order="2" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="6" />
@@ -707,7 +1041,15 @@
     <buildFile url="file://$PROJECT_DIR$/build.xml">
       <antCommandLine value="" />
       <runInBackground value="true" />
-      <targetFilters />
+      <targetFilters>
+        <filter targetName="clean" isVisible="true" />
+        <filter targetName="cleanclass" isVisible="false" />
+        <filter targetName="cleandist" isVisible="false" />
+        <filter targetName="debug" isVisible="true" />
+        <filter targetName="dist" isVisible="true" />
+        <filter targetName="javadoc" isVisible="false" />
+        <filter targetName="view" isVisible="true" />
+      </targetFilters>
       <treeView value="true" />
       <verbose value="true" />
       <viewClosedWhenNoErrors value="false" />

@@ -1,8 +1,8 @@
 Manifest-Version: 1.0
-Ant-Version: Apache Ant 1.6.5
+Ant-Version: Apache Ant 1.7.0
 Created-By: 1.4.2_17-b06 (Sun Microsystems Inc.)
 Built-By: abr
-Built-On: 2008-04-22T15:23:18
+Built-On: 2008-04-22T15:53:26
 Main-Class: JhoveView
 
 Name: JHOVE
