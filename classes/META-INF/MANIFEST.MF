@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.6.5
+Created-By: 1.4.2_17-b06 (Sun Microsystems Inc.)
+Built-By: abr
+Built-On: 2008-04-22T15:23:18
+Main-Class: Jhove
+
+Name: JHOVE
+Version: 1.0
+Package: Jhove app
+Rights: Copyright 2004-2006 by JSTOR and the President and Fellows of 
+ Harvard College
+
