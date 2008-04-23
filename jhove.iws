@@ -16,19 +16,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/TaggedProfile.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/X3Profile.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/PdfProfile.java" afterPath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/PdfProfile.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jhove.iws" afterPath="$PROJECT_DIR$/jhove.iws" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/X1aProfile.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/X2Profile.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Jhove.iml" afterPath="$PROJECT_DIR$/Jhove.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/PdfModule.java" afterPath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/PdfModule.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/AProfileLevelB.java" afterPath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/AProfileLevelB.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/tagged/TaggedProfile.java" afterPath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/tagged/TaggedProfile.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/AProfileLevelA.java" afterPath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/AProfileLevelA.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/XProfileBase.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/tagged/StructureTree.java" afterPath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/tagged/StructureTree.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/X1Profile.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/RepInfo.java" afterPath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/RepInfo.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jhove.iws" afterPath="$PROJECT_DIR$/jhove.iws" />
     </list>
     <ignored path="jhove.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -96,86 +89,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Tokenizer.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/Tokenizer.java">
+      <file leaf-file-name="PdfModule.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/PdfModule.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="144" column="0" selection-start="6180" selection-end="6180" vertical-scroll-proportion="0.21108742">
-              <folding />
+            <state line="720" column="77" selection-start="30773" selection-end="30773" vertical-scroll-proportion="0.65789473">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PdfModule.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/PdfModule.java">
+      <file leaf-file-name="RepInfo.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/RepInfo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="134" column="27" selection-start="6694" selection-end="6694" vertical-scroll-proportion="-0.114072494">
-              <folding>
-                <element signature="imports" expanded="true" />
-                <marker date="1208944904000" expanded="true" signature="62919:68987" placeholder="{...}" />
-                <marker date="1208944904000" expanded="true" signature="69077:70608" placeholder="{...}" />
-                <marker date="1208944904000" expanded="true" signature="70699:71410" placeholder="{...}" />
-                <marker date="1208944904000" expanded="true" signature="71471:72077" placeholder="{...}" />
-                <marker date="1208944904000" expanded="true" signature="72132:74582" placeholder="{...}" />
-                <marker date="1208944904000" expanded="true" signature="74661:75737" placeholder="{...}" />
-                <marker date="1208944904000" expanded="true" signature="75743:75956" placeholder="/**...*/" />
-                <marker date="1208944904000" expanded="true" signature="76041:77246" placeholder="{...}" />
-                <marker date="1208944904000" expanded="true" signature="77252:77608" placeholder="/**...*/" />
-                <marker date="1208944904000" expanded="true" signature="77686:79145" placeholder="{...}" />
-                <marker date="1208944904000" expanded="true" signature="79215:92048" placeholder="{...}" />
-                <marker date="1208944904000" expanded="true" signature="92306:92505" placeholder="{...}" />
-                <marker date="1208944904000" expanded="true" signature="92574:95247" placeholder="{...}" />
-                <marker date="1208944904000" expanded="true" signature="95253:95391" placeholder="/**...*/" />
-                <marker date="1208944904000" expanded="true" signature="95451:97851" placeholder="{...}" />
-                <marker date="1208944904000" expanded="true" signature="97858:98028" placeholder="/**...*/" />
-                <marker date="1208944904000" expanded="true" signature="98079:98431" placeholder="{...}" />
-                <marker date="1208944904000" expanded="true" signature="98482:98892" placeholder="{...}" />
-                <marker date="1208944904000" expanded="true" signature="99335:99551" placeholder="/**...*/" />
-                <marker date="1208944904000" expanded="true" signature="99662:100397" placeholder="{...}" />
-                <marker date="1208944904000" expanded="true" signature="100403:100808" placeholder="/**...*/" />
-                <marker date="1208944904000" expanded="true" signature="100921:103104" placeholder="{...}" />
-                <marker date="1208944904000" expanded="true" signature="103110:103169" placeholder="/**...*/" />
-                <marker date="1208944904000" expanded="true" signature="103213:103241" placeholder="{...}" />
-                <marker date="1208944904000" expanded="true" signature="103247:103305" placeholder="/**...*/" />
-                <marker date="1208944904000" expanded="true" signature="103353:103388" placeholder="{...}" />
-                <marker date="1208944904000" expanded="true" signature="103394:103452" placeholder="/**...*/" />
-                <marker date="1208944904000" expanded="true" signature="103500:103536" placeholder="{...}" />
-                <marker date="1208944904000" expanded="true" signature="103542:103611" placeholder="/**...*/" />
-                <marker date="1208944904000" expanded="true" signature="103660:103697" placeholder="{...}" />
-                <marker date="1208944904000" expanded="true" signature="103703:103762" placeholder="/**...*/" />
-                <marker date="1208944904000" expanded="true" signature="103810:103846" placeholder="{...}" />
-                <marker date="1208944904000" expanded="true" signature="103852:103976" placeholder="/**...*/" />
-                <marker date="1208944904000" expanded="true" signature="104022:104548" placeholder="{...}" />
-                <marker date="1208944904000" expanded="true" signature="104554:104722" placeholder="/**...*/" />
-                <marker date="1208944904000" expanded="true" signature="104758:105059" placeholder="{...}" />
-                <marker date="1208944904000" expanded="true" signature="105065:105204" placeholder="/**...*/" />
-                <marker date="1208944904000" expanded="true" signature="105253:105291" placeholder="{...}" />
-                <marker date="1208944904000" expanded="true" signature="105297:105444" placeholder="/**...*/" />
-                <marker date="1208944904000" expanded="true" signature="105505:108117" placeholder="{...}" />
-                <marker date="1208944904000" expanded="true" signature="108256:110855" placeholder="{...}" />
-                <marker date="1208944904000" expanded="true" signature="111109:117172" placeholder="{...}" />
-                <marker date="1208944904000" expanded="true" signature="117623:120960" placeholder="{...}" />
-                <marker date="1208944904000" expanded="true" signature="121088:124022" placeholder="{...}" />
-                <marker date="1208944904000" expanded="true" signature="124204:130594" placeholder="{...}" />
-                <marker date="1208944904000" expanded="true" signature="130890:132704" placeholder="{...}" />
-                <marker date="1208944904000" expanded="true" signature="132874:133873" placeholder="{...}" />
-                <marker date="1208944904000" expanded="true" signature="134000:141051" placeholder="{...}" />
-                <marker date="1208944904000" expanded="true" signature="141247:143030" placeholder="{...}" />
-                <marker date="1208944904000" expanded="true" signature="143189:144998" placeholder="{...}" />
-                <marker date="1208944904000" expanded="true" signature="145369:146476" placeholder="{...}" />
-                <marker date="1208944904000" expanded="true" signature="146745:149876" placeholder="{...}" />
-                <marker date="1208944904000" expanded="true" signature="149952:153802" placeholder="{...}" />
-                <marker date="1208944904000" expanded="true" signature="153989:154313" placeholder="{...}" />
-                <marker date="1208944904000" expanded="true" signature="154807:156870" placeholder="{...}" />
-                <marker date="1208944904000" expanded="true" signature="157232:162813" placeholder="{...}" />
-                <marker date="1208944904000" expanded="true" signature="163080:164169" placeholder="{...}" />
-                <marker date="1208944904000" expanded="true" signature="165068:165476" placeholder="{...}" />
-                <marker date="1208944904000" expanded="true" signature="165606:165737" placeholder="{...}" />
-                <marker date="1208944904000" expanded="true" signature="165743:165848" placeholder="/**...*/" />
-                <marker date="1208944904000" expanded="true" signature="166065:166707" placeholder="{...}" />
-                <marker date="1208944904000" expanded="true" signature="166713:166816" placeholder="/**...*/" />
-                <marker date="1208944904000" expanded="true" signature="167057:167869" placeholder="{...}" />
-                <marker date="1208944904000" expanded="true" signature="168219:169234" placeholder="{...}" />
-              </folding>
+            <state line="15" column="87" selection-start="661" selection-end="661" vertical-scroll-proportion="-12.100841">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -192,7 +121,7 @@
       <file leaf-file-name="Hexadecimal.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/Hexadecimal.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="14" selection-start="616" selection-end="616" vertical-scroll-proportion="0.18887722">
+            <state line="15" column="14" selection-start="616" selection-end="616" vertical-scroll-proportion="0.29508197">
               <folding />
             </state>
           </provider>
@@ -201,7 +130,7 @@
       <file leaf-file-name="LinearizedProfile.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/LinearizedProfile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="19" selection-start="597" selection-end="597" vertical-scroll-proportion="0.11017838">
+            <state line="16" column="19" selection-start="597" selection-end="597" vertical-scroll-proportion="0.17213115">
               <folding />
             </state>
           </provider>
@@ -210,9 +139,9 @@
       <file leaf-file-name="PdfProfile.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/PdfProfile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="59" column="42" selection-start="1989" selection-end="1989" vertical-scroll-proportion="0.41897655">
+            <state line="59" column="42" selection-start="1997" selection-end="1997" vertical-scroll-proportion="0.6605042">
               <folding>
-                <element signature="imports" expanded="true" />
+                <marker date="1208944925000" expanded="true" signature="340:856" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -221,8 +150,10 @@
       <file leaf-file-name="TaggedProfile.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/tagged/TaggedProfile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="74" column="37" selection-start="2834" selection-end="2834" vertical-scroll-proportion="0.53944564">
-              <folding />
+            <state line="73" column="0" selection-start="2779" selection-end="2779" vertical-scroll-proportion="0.8504202">
+              <folding>
+                <marker date="1208944925000" expanded="false" signature="70:298" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -230,22 +161,22 @@
       <file leaf-file-name="StructureTree.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/tagged/StructureTree.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="284" column="9" selection-start="8939" selection-end="8939" vertical-scroll-proportion="3.8464818">
+            <state line="286" column="0" selection-start="8960" selection-end="8960" vertical-scroll-proportion="6.0638657">
               <folding>
-                <element signature="imports" expanded="true" />
-                <marker date="1208944904000" expanded="true" signature="1513:2028" placeholder="/**...*/" />
-                <marker date="1208944904000" expanded="true" signature="2160:3651" placeholder="{...}" />
-                <marker date="1208944904000" expanded="true" signature="3676:3733" placeholder="{...}" />
-                <marker date="1208944904000" expanded="true" signature="3739:3838" placeholder="/**...*/" />
-                <marker date="1208944904000" expanded="true" signature="3875:3907" placeholder="{...}" />
-                <marker date="1208944904000" expanded="true" signature="3913:4140" placeholder="/**...*/" />
-                <marker date="1208944904000" expanded="true" signature="4169:4307" placeholder="{...}" />
-                <marker date="1208944904000" expanded="true" signature="4313:4408" placeholder="/**...*/" />
-                <marker date="1208944904000" expanded="true" signature="4443:4473" placeholder="{...}" />
-                <marker date="1208944904000" expanded="true" signature="4480:4534" placeholder="/**...*/" />
-                <marker date="1208944904000" expanded="true" signature="4573:4604" placeholder="{...}" />
-                <marker date="1208944904000" expanded="true" signature="4611:5106" placeholder="/**...*/" />
-                <marker date="1208944904000" expanded="true" signature="5163:5817" placeholder="{...}" />
+                <marker date="1208944925000" expanded="true" signature="347:999" placeholder="..." />
+                <marker date="1208944925000" expanded="true" signature="1534:2049" placeholder="/**...*/" />
+                <marker date="1208944925000" expanded="true" signature="2181:3672" placeholder="{...}" />
+                <marker date="1208944925000" expanded="true" signature="3697:3754" placeholder="{...}" />
+                <marker date="1208944925000" expanded="true" signature="3760:3859" placeholder="/**...*/" />
+                <marker date="1208944925000" expanded="true" signature="3896:3928" placeholder="{...}" />
+                <marker date="1208944925000" expanded="true" signature="3934:4161" placeholder="/**...*/" />
+                <marker date="1208944925000" expanded="true" signature="4190:4328" placeholder="{...}" />
+                <marker date="1208944925000" expanded="true" signature="4334:4429" placeholder="/**...*/" />
+                <marker date="1208944925000" expanded="true" signature="4464:4494" placeholder="{...}" />
+                <marker date="1208944925000" expanded="true" signature="4501:4555" placeholder="/**...*/" />
+                <marker date="1208944925000" expanded="true" signature="4594:4625" placeholder="{...}" />
+                <marker date="1208944925000" expanded="true" signature="4632:5127" placeholder="/**...*/" />
+                <marker date="1208944925000" expanded="true" signature="5184:5838" placeholder="{...}" />
                 <element signature="method#validateRoot#0;class#StructureTree#0" expanded="false" />
                 <element signature="method#getRoleMap#0;class#StructureTree#0" expanded="false" />
               </folding>
@@ -253,10 +184,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AProfileLevelB.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="AProfileLevelB.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/AProfileLevelB.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1068" column="40" selection-start="40514" selection-end="40514" vertical-scroll-proportion="0.5842217">
+            <state line="701" column="30" selection-start="27414" selection-end="27420" vertical-scroll-proportion="15.763158">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -267,7 +198,7 @@
       <file leaf-file-name="AProfileLevelA.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/AProfileLevelA.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="0" selection-start="1540" selection-end="1540" vertical-scroll-proportion="-0.18336888">
+            <state line="174" column="83" selection-start="6200" selection-end="6200" vertical-scroll-proportion="4.3109245">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -822,6 +753,60 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/home/abr/projects/jhove/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/xprofile" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="jhove" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Jhove" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/home/abr/projects/jhove" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/home/abr/projects/jhove/classes" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/home/abr/projects/jhove/classes/edu" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/home/abr/projects/jhove/classes/edu/harvard" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/home/abr/projects/jhove/classes/edu/harvard/hul" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/home/abr/projects/jhove/classes/edu/harvard/hul/ois" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/home/abr/projects/jhove/classes/edu/harvard/hul/ois/jhove" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/home/abr/projects/jhove/classes/edu/harvard/hul/ois/jhove/module" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/home/abr/projects/jhove/classes/edu/harvard/hul/ois/jhove/module/pdf" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:/home/abr/projects/jhove/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
           <option name="myItemId" value="PsiDirectory:/home/abr/projects/jhove/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/tagged" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
@@ -1027,10 +1012,10 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19662556" order="1" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" order="1" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="3" />
-      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="9" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32941177" order="9" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3278328" order="10" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32941177" order="11" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32941177" order="11" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32893288" order="7" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24939074" order="1" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="0" />
@@ -1057,7 +1042,7 @@
     <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
     <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Level A and B pdf/a profiles" />
+    <option name="LAST_COMMIT_MESSAGE" value="Level A and B pdf/a profiles, now with the changes so that they report errors" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
@@ -1071,6 +1056,7 @@
     <MESSAGE value="fixed subversion in idea!" />
     <MESSAGE value="Preliminary package distribution" />
     <MESSAGE value="Level A and B pdf/a profiles" />
+    <MESSAGE value="Level A and B pdf/a profiles, now with the changes so that they report errors" />
   </component>
   <component name="VssConfiguration">
     <option name="CLIENT_PATH" value="" />
@@ -1127,13 +1113,6 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/Token.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="22" selection-start="619" selection-end="619" vertical-scroll-proportion="0.24590164">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/ObjectStream.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="27" column="13" selection-start="909" selection-end="909" vertical-scroll-proportion="0.5155483">
@@ -1173,13 +1152,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/Tokenizer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="144" column="0" selection-start="6180" selection-end="6180" vertical-scroll-proportion="0.21108742">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/build.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -1189,134 +1161,63 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/Hexadecimal.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="14" selection-start="616" selection-end="616" vertical-scroll-proportion="0.18887722">
+        <state line="15" column="14" selection-start="616" selection-end="616" vertical-scroll-proportion="0.29508197">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/LinearizedProfile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="19" selection-start="597" selection-end="597" vertical-scroll-proportion="0.11017838">
+        <state line="16" column="19" selection-start="597" selection-end="597" vertical-scroll-proportion="0.17213115">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/PdfProfile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="42" selection-start="1989" selection-end="1989" vertical-scroll-proportion="0.41897655">
+        <state line="59" column="42" selection-start="1997" selection-end="1997" vertical-scroll-proportion="0.6605042">
           <folding>
-            <element signature="imports" expanded="true" />
+            <marker date="1208944925000" expanded="true" signature="340:856" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/tagged/TaggedProfile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="74" column="37" selection-start="2834" selection-end="2834" vertical-scroll-proportion="0.53944564">
-          <folding />
+        <state line="73" column="0" selection-start="2779" selection-end="2779" vertical-scroll-proportion="0.8504202">
+          <folding>
+            <marker date="1208944925000" expanded="false" signature="70:298" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/tagged/StructureTree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="284" column="9" selection-start="8939" selection-end="8939" vertical-scroll-proportion="3.8464818">
+        <state line="286" column="0" selection-start="8960" selection-end="8960" vertical-scroll-proportion="6.0638657">
           <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1208944904000" expanded="true" signature="1513:2028" placeholder="/**...*/" />
-            <marker date="1208944904000" expanded="true" signature="2160:3651" placeholder="{...}" />
-            <marker date="1208944904000" expanded="true" signature="3676:3733" placeholder="{...}" />
-            <marker date="1208944904000" expanded="true" signature="3739:3838" placeholder="/**...*/" />
-            <marker date="1208944904000" expanded="true" signature="3875:3907" placeholder="{...}" />
-            <marker date="1208944904000" expanded="true" signature="3913:4140" placeholder="/**...*/" />
-            <marker date="1208944904000" expanded="true" signature="4169:4307" placeholder="{...}" />
-            <marker date="1208944904000" expanded="true" signature="4313:4408" placeholder="/**...*/" />
-            <marker date="1208944904000" expanded="true" signature="4443:4473" placeholder="{...}" />
-            <marker date="1208944904000" expanded="true" signature="4480:4534" placeholder="/**...*/" />
-            <marker date="1208944904000" expanded="true" signature="4573:4604" placeholder="{...}" />
-            <marker date="1208944904000" expanded="true" signature="4611:5106" placeholder="/**...*/" />
-            <marker date="1208944904000" expanded="true" signature="5163:5817" placeholder="{...}" />
+            <marker date="1208944925000" expanded="true" signature="347:999" placeholder="..." />
+            <marker date="1208944925000" expanded="true" signature="1534:2049" placeholder="/**...*/" />
+            <marker date="1208944925000" expanded="true" signature="2181:3672" placeholder="{...}" />
+            <marker date="1208944925000" expanded="true" signature="3697:3754" placeholder="{...}" />
+            <marker date="1208944925000" expanded="true" signature="3760:3859" placeholder="/**...*/" />
+            <marker date="1208944925000" expanded="true" signature="3896:3928" placeholder="{...}" />
+            <marker date="1208944925000" expanded="true" signature="3934:4161" placeholder="/**...*/" />
+            <marker date="1208944925000" expanded="true" signature="4190:4328" placeholder="{...}" />
+            <marker date="1208944925000" expanded="true" signature="4334:4429" placeholder="/**...*/" />
+            <marker date="1208944925000" expanded="true" signature="4464:4494" placeholder="{...}" />
+            <marker date="1208944925000" expanded="true" signature="4501:4555" placeholder="/**...*/" />
+            <marker date="1208944925000" expanded="true" signature="4594:4625" placeholder="{...}" />
+            <marker date="1208944925000" expanded="true" signature="4632:5127" placeholder="/**...*/" />
+            <marker date="1208944925000" expanded="true" signature="5184:5838" placeholder="{...}" />
             <element signature="method#validateRoot#0;class#StructureTree#0" expanded="false" />
             <element signature="method#getRoleMap#0;class#StructureTree#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/PdfModule.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="134" column="27" selection-start="6694" selection-end="6694" vertical-scroll-proportion="-0.114072494">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1208944904000" expanded="true" signature="62919:68987" placeholder="{...}" />
-            <marker date="1208944904000" expanded="true" signature="69077:70608" placeholder="{...}" />
-            <marker date="1208944904000" expanded="true" signature="70699:71410" placeholder="{...}" />
-            <marker date="1208944904000" expanded="true" signature="71471:72077" placeholder="{...}" />
-            <marker date="1208944904000" expanded="true" signature="72132:74582" placeholder="{...}" />
-            <marker date="1208944904000" expanded="true" signature="74661:75737" placeholder="{...}" />
-            <marker date="1208944904000" expanded="true" signature="75743:75956" placeholder="/**...*/" />
-            <marker date="1208944904000" expanded="true" signature="76041:77246" placeholder="{...}" />
-            <marker date="1208944904000" expanded="true" signature="77252:77608" placeholder="/**...*/" />
-            <marker date="1208944904000" expanded="true" signature="77686:79145" placeholder="{...}" />
-            <marker date="1208944904000" expanded="true" signature="79215:92048" placeholder="{...}" />
-            <marker date="1208944904000" expanded="true" signature="92306:92505" placeholder="{...}" />
-            <marker date="1208944904000" expanded="true" signature="92574:95247" placeholder="{...}" />
-            <marker date="1208944904000" expanded="true" signature="95253:95391" placeholder="/**...*/" />
-            <marker date="1208944904000" expanded="true" signature="95451:97851" placeholder="{...}" />
-            <marker date="1208944904000" expanded="true" signature="97858:98028" placeholder="/**...*/" />
-            <marker date="1208944904000" expanded="true" signature="98079:98431" placeholder="{...}" />
-            <marker date="1208944904000" expanded="true" signature="98482:98892" placeholder="{...}" />
-            <marker date="1208944904000" expanded="true" signature="99335:99551" placeholder="/**...*/" />
-            <marker date="1208944904000" expanded="true" signature="99662:100397" placeholder="{...}" />
-            <marker date="1208944904000" expanded="true" signature="100403:100808" placeholder="/**...*/" />
-            <marker date="1208944904000" expanded="true" signature="100921:103104" placeholder="{...}" />
-            <marker date="1208944904000" expanded="true" signature="103110:103169" placeholder="/**...*/" />
-            <marker date="1208944904000" expanded="true" signature="103213:103241" placeholder="{...}" />
-            <marker date="1208944904000" expanded="true" signature="103247:103305" placeholder="/**...*/" />
-            <marker date="1208944904000" expanded="true" signature="103353:103388" placeholder="{...}" />
-            <marker date="1208944904000" expanded="true" signature="103394:103452" placeholder="/**...*/" />
-            <marker date="1208944904000" expanded="true" signature="103500:103536" placeholder="{...}" />
-            <marker date="1208944904000" expanded="true" signature="103542:103611" placeholder="/**...*/" />
-            <marker date="1208944904000" expanded="true" signature="103660:103697" placeholder="{...}" />
-            <marker date="1208944904000" expanded="true" signature="103703:103762" placeholder="/**...*/" />
-            <marker date="1208944904000" expanded="true" signature="103810:103846" placeholder="{...}" />
-            <marker date="1208944904000" expanded="true" signature="103852:103976" placeholder="/**...*/" />
-            <marker date="1208944904000" expanded="true" signature="104022:104548" placeholder="{...}" />
-            <marker date="1208944904000" expanded="true" signature="104554:104722" placeholder="/**...*/" />
-            <marker date="1208944904000" expanded="true" signature="104758:105059" placeholder="{...}" />
-            <marker date="1208944904000" expanded="true" signature="105065:105204" placeholder="/**...*/" />
-            <marker date="1208944904000" expanded="true" signature="105253:105291" placeholder="{...}" />
-            <marker date="1208944904000" expanded="true" signature="105297:105444" placeholder="/**...*/" />
-            <marker date="1208944904000" expanded="true" signature="105505:108117" placeholder="{...}" />
-            <marker date="1208944904000" expanded="true" signature="108256:110855" placeholder="{...}" />
-            <marker date="1208944904000" expanded="true" signature="111109:117172" placeholder="{...}" />
-            <marker date="1208944904000" expanded="true" signature="117623:120960" placeholder="{...}" />
-            <marker date="1208944904000" expanded="true" signature="121088:124022" placeholder="{...}" />
-            <marker date="1208944904000" expanded="true" signature="124204:130594" placeholder="{...}" />
-            <marker date="1208944904000" expanded="true" signature="130890:132704" placeholder="{...}" />
-            <marker date="1208944904000" expanded="true" signature="132874:133873" placeholder="{...}" />
-            <marker date="1208944904000" expanded="true" signature="134000:141051" placeholder="{...}" />
-            <marker date="1208944904000" expanded="true" signature="141247:143030" placeholder="{...}" />
-            <marker date="1208944904000" expanded="true" signature="143189:144998" placeholder="{...}" />
-            <marker date="1208944904000" expanded="true" signature="145369:146476" placeholder="{...}" />
-            <marker date="1208944904000" expanded="true" signature="146745:149876" placeholder="{...}" />
-            <marker date="1208944904000" expanded="true" signature="149952:153802" placeholder="{...}" />
-            <marker date="1208944904000" expanded="true" signature="153989:154313" placeholder="{...}" />
-            <marker date="1208944904000" expanded="true" signature="154807:156870" placeholder="{...}" />
-            <marker date="1208944904000" expanded="true" signature="157232:162813" placeholder="{...}" />
-            <marker date="1208944904000" expanded="true" signature="163080:164169" placeholder="{...}" />
-            <marker date="1208944904000" expanded="true" signature="165068:165476" placeholder="{...}" />
-            <marker date="1208944904000" expanded="true" signature="165606:165737" placeholder="{...}" />
-            <marker date="1208944904000" expanded="true" signature="165743:165848" placeholder="/**...*/" />
-            <marker date="1208944904000" expanded="true" signature="166065:166707" placeholder="{...}" />
-            <marker date="1208944904000" expanded="true" signature="166713:166816" placeholder="/**...*/" />
-            <marker date="1208944904000" expanded="true" signature="167057:167869" placeholder="{...}" />
-            <marker date="1208944904000" expanded="true" signature="168219:169234" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/AProfileLevelA.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="0" selection-start="1540" selection-end="1540" vertical-scroll-proportion="-0.18336888">
+        <state line="174" column="83" selection-start="6200" selection-end="6200" vertical-scroll-proportion="4.3109245">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1325,7 +1226,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/AProfileLevelB.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1068" column="40" selection-start="40514" selection-end="40514" vertical-scroll-proportion="0.5842217">
+        <state line="701" column="30" selection-start="27414" selection-end="27420" vertical-scroll-proportion="15.763158">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/Tokenizer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="144" column="0" selection-start="6180" selection-end="6180" vertical-scroll-proportion="0.31478536">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/RepInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="87" selection-start="661" selection-end="661" vertical-scroll-proportion="-12.100841">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/PdfModule.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="720" column="77" selection-start="30773" selection-end="30773" vertical-scroll-proportion="0.65789473">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

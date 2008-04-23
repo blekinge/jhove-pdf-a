@@ -80,12 +80,16 @@ public final class AProfileLevelB extends PdfProfile
 
     private String[] excludedActions = {
         "Launch", "Sound", "Movie", "ResetForm",
-        "ImportData", "JavaScript"
+        "ImportData", "JavaScript" ,"SetState" , "NOP"
+    };
+
+    private String[] allowedNamedActions = {
+            "NextPage", "PrevPage", "FirstPage", "LastPage"
     };
 
     /* The following filters are not allowed */
     private String[] excludedFilters = {
-        "ASCIIHexDecode", "ASCII85Decode", "LZWDecode"
+        "LZWDecode" //TODO: The spec only mentions LZW
     };
 
 
@@ -160,7 +164,7 @@ public final class AProfileLevelB extends PdfProfile
         boolean _return = true;
         PdfDictionary trailerDict = _module.getTrailerDict ();
         if (trailerDict == null) {
-            reportReasonForNonCompliance(RB.getString("PDF.has.no.trailer.dictionary"));
+            reportReasonForNonCompliance("10001.PDF.has.no.trailer.dictionary");
             return false; //If this happens, do not continue
                 // really shouldn't happen
         }
@@ -168,12 +172,12 @@ public final class AProfileLevelB extends PdfProfile
         try {
             if (trailerDict.get ("Encrypt") != null/* ||
                   trailerDict.get ("Info") != null*/) { //TODO: WHY???
-                reportReasonForNonCompliance(RB.getString("PDF.trailer.dict.has.a.Encrypt.entry"));
+                reportReasonForNonCompliance("10002.PDF.trailer.dict.has.a.Encrypt.entry");
                 _return = false;
 
             }
             if (trailerDict.get ("ID") == null) {
-                reportReasonForNonCompliance(RB.getString("PDF.trailer.dict.has.no.ID.entry"));
+                reportReasonForNonCompliance("10003.PDF.trailer.dict.has.no.ID.entry");
                 _return = false;
 
             }
@@ -191,7 +195,7 @@ public final class AProfileLevelB extends PdfProfile
         boolean _return = true;
         PdfDictionary cat = _module.getCatalogDict ();
         if (cat == null) {
-            reportReasonForNonCompliance(RB.getString("PDF.has.no.catalog.Dictionary"));
+            reportReasonForNonCompliance("10004.PDF.has.no.catalog.Dictionary");
             return false; //If this happens, do not continue
         }
         try {
@@ -206,11 +210,11 @@ public final class AProfileLevelB extends PdfProfile
                 if (langstring != null){
                     RFC1766Lang l = new RFC1766Lang (langstring);
                     if (!l.isSyntaxCorrect ()) {
-                        reportReasonForNonCompliance(RB.getString("PDF.catalog.dictionary.has.a.lang.entry.in.a.invalid.syntax"));
+                        reportReasonForNonCompliance("10005.PDF.catalog.dictionary.has.a.lang.entry.in.a.invalid.syntax");
                         _return = false;
                     }
                 }else{
-                    reportReasonForNonCompliance(RB.getString("PDF.catalog.dictionary.has.a.lang.entry.with.no.lang.string"));
+                    reportReasonForNonCompliance("10006.PDF.catalog.dictionary.has.a.lang.entry.with.no.lang.string");
                     _return = false;
                 }
             }
@@ -234,12 +238,12 @@ public final class AProfileLevelB extends PdfProfile
 
             // It may not contain an AA entry or an OCProperties entry
             if (cat.get ("AA") != null){
-                reportReasonForNonCompliance(RB.getString("PDF.catalog.dictionary.has.a.AA.entry"));
+                reportReasonForNonCompliance("10007.PDF.catalog.dictionary.has.a.AA.entry");
                 _return = false;
             }
 
             if (cat.get ("OCProperties") != null) {
-                reportReasonForNonCompliance(RB.getString("PDF.catalog.dictionary.has.a.OCProperties.entry"));
+                reportReasonForNonCompliance("10008.PDF.catalog.dictionary.has.a.OCProperties.entry");
                 _return = false;
             }
         }
@@ -695,7 +699,7 @@ public final class AProfileLevelB extends PdfProfile
                 // color space, check for an appropriate OutputIntent dict.
                 if (hasUncalCS && !oldHasUncalCS) {
                     if (!checkUncalIntent ()) {//TODO: Follow this method down.
-                        reportReasonForNonCompliance("PDF.has.a.uncalibrated."
+                        reportReasonForNonCompliance("10009.PDF.has.a.uncalibrated."
                                                      + "colour.space.without.an."
                                                      + "appropriate.OutputInt"
                                                      + "ent.dict");
@@ -703,7 +707,7 @@ public final class AProfileLevelB extends PdfProfile
                     }
                 }
                 if (hasDevRGB && hasDevCMYK) {
-                    reportReasonForNonCompliance("PDF.has.both.DeviceRGB.and.DeviceCMYK.colourspaces");
+                    reportReasonForNonCompliance("1000A.PDF.has.both.DeviceRGB.and.DeviceCMYK.colourspaces");
                     return false;   // can't have both in same file
                 }
             }
@@ -838,16 +842,23 @@ public final class AProfileLevelB extends PdfProfile
         try {
             PdfSimpleObject actType = (PdfSimpleObject) action.get ("S");
             String actStr = actType.getStringValue ();
-            // Note: I should also be checking for the set-state
-            // and no-op actions, which are prohibited; but since
-            // the documentation I can find doesn't say what the
-            // actual names for these actions are, it's tough to
-            // exclude them, and I'd rather not guess the names.
+
             for (i = 0; i < excludedActions.length; i++) {
                 if (excludedActions[i].equals (actStr)) {
                     return false;
                 }
             }
+
+            if ("Named".equals(actStr)){//Only 4 named actions allowed
+                PdfSimpleObject actName = (PdfSimpleObject) action.get("N");
+                String actNameStr = actName.getStringValue();
+                for (i = 0; i < allowedNamedActions.length; i++) {
+                    if (!allowedNamedActions[i].equals (actStr)) {
+                        return false;
+                    }
+                }
+            }
+
             // An action can have a "Next" entry which is either
             // another action or an array of actions.  Need to follow
             // the whole tree to make sure all actions are legit.

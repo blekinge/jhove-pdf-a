@@ -468,12 +468,13 @@ public class PdfModule
         _showOutlines = true;
         _showPages = true;
         maxFonts = DEFAULT_MAX_FONTS;
+
     }
 
     /**
      * Per-action initialization.  May be called multiple times.
      *
-     * @param param The module parameter; under command-line Jhove, the -p parameter.
+     * @param param The module parameter; under command-line Jhove, the -p parameter.<br>
      *        If the parameter contains the indicated characters, then the
      *        specified information is omitted; otherwise, it is included.
      *        (This is the reverse of the behavior prior to beta 3.)
@@ -717,7 +718,7 @@ public class PdfModule
             while (pter.hasNext ()) {
                 PdfProfile prof = (PdfProfile) pter.next ();
                 if (prof.satisfiesProfile (_raf, _parser)) {
-                    info.setProfile (prof.getText ());
+                    info.setProfile (prof.getText ());//TODO: Add the reasons here
                 }
             }
         }

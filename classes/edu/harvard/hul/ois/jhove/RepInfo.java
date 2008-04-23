@@ -5,7 +5,13 @@
 
 package edu.harvard.hul.ois.jhove;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Date;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 /**
  *  This class encapsulates representation information, as defined 
@@ -13,6 +19,7 @@ import java.util.*;
  *
  *  @see <a href="http://wwwclassic.ccsds.org/documents/pdf/CCSDS-650.0-B-1.pdf">ISO/IEC
  *       14721 (PDF)</a>
+ *  @see <a href="http://public.ccsds.org/publications/archive/650x0b1.pdf"> The previous link, working</a>
  */
 public class RepInfo implements Cloneable
 {

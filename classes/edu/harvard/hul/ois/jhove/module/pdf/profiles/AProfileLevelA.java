@@ -6,6 +6,7 @@
 package edu.harvard.hul.ois.jhove.module.pdf.profiles;
 
 import edu.harvard.hul.ois.jhove.module.PdfModule;
+import edu.harvard.hul.ois.jhove.module.pdf.PdfArray;
 import edu.harvard.hul.ois.jhove.module.pdf.PdfDictionary;
 import edu.harvard.hul.ois.jhove.module.pdf.PdfObject;
 import edu.harvard.hul.ois.jhove.module.pdf.PdfSimpleObject;
@@ -14,6 +15,7 @@ import edu.harvard.hul.ois.jhove.module.pdf.profiles.tagged.TaggedProfile;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Vector;
 
 /**
  *  PDF profile checker for PDF/A-1 documents, Level A.
@@ -147,20 +149,31 @@ public class AProfileLevelA extends PdfProfile {
             if ("Type0".equals (fTypeStr)) {
                 // Type 0 fonts are OK if the descendant CIDFont uses one of
                 // four specified character collections.
-                PdfObject order = font.get ("Ordering");
-                if (order instanceof PdfSimpleObject) {
-                    try {
+                //PdfObject order = font.get ("Ordering");
+
+                PdfArray descendants = (PdfArray) font.get("DescendantFonts");
+                Vector descVector = descendants.getContent();
+                boolean orderingOK=true;
+                for (int i=0;i<descVector.size();i++){
+                    PdfDictionary cidfont = (PdfDictionary) descVector.get(i);  //each of these is a CIDFont 
+                    PdfDictionary info = (PdfDictionary) cidfont.get("CIDSystemInfo"); //Which must have a CIDSystemInfo 
+                    PdfObject order =  info.get("Ordering"); //Which must have an Ordering 
+
+                    if (order instanceof PdfSimpleObject) {  //Which must be a String
+
                         String ordText =
                                 ((PdfSimpleObject) order).getStringValue ();
-                        if ("Adobe-GB1".equals (ordText) ||
-                            "Adobe-CNS1".equals (ordText) ||
-                            "Adobe-Japan1".equals (ordText) ||
-                            "Adobe-Korea1".equals (ordText)) {
-                            return true;
-                        } //TODO: Else??
+                        if (!("Adobe-GB1".equals (ordText) ||
+                              "Adobe-CNS1".equals (ordText) ||
+                              "Adobe-Japan1".equals (ordText) ||
+                              "Adobe-Korea1".equals (ordText))) {
+                            orderingOK = false;
+
+                        }
                     }
-                    catch (Exception e) { //TODO: Why nothing happens here???}
-                    }
+                }
+                if (orderingOK){ //If all the descendants were ok, this font is ok.
+                    return true;
                 }
                 PdfObject enc = font.get ("Encoding");
                 if (enc instanceof PdfSimpleObject) {
