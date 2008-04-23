@@ -3,7 +3,7 @@
  * Copyright 2003 by JSTOR and the President and Fellows of Harvard College
  **********************************************************************/
 
-package edu.harvard.hul.ois.jhove.module.pdf.structuretree;
+package edu.harvard.hul.ois.jhove.module.pdf.profiles.tagged;
 
 import edu.harvard.hul.ois.jhove.module.PdfModule;
 import edu.harvard.hul.ois.jhove.module.pdf.Name;

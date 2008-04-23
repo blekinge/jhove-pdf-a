@@ -76,11 +76,11 @@ import edu.harvard.hul.ois.jhove.module.pdf.profiles.AProfileLevelA;
 import edu.harvard.hul.ois.jhove.module.pdf.profiles.AProfileLevelB;
 import edu.harvard.hul.ois.jhove.module.pdf.profiles.LinearizedProfile;
 import edu.harvard.hul.ois.jhove.module.pdf.profiles.PdfProfile;
-import edu.harvard.hul.ois.jhove.module.pdf.profiles.TaggedProfile;
-import edu.harvard.hul.ois.jhove.module.pdf.profiles.X1Profile;
-import edu.harvard.hul.ois.jhove.module.pdf.profiles.X1aProfile;
-import edu.harvard.hul.ois.jhove.module.pdf.profiles.X2Profile;
-import edu.harvard.hul.ois.jhove.module.pdf.profiles.X3Profile;
+import edu.harvard.hul.ois.jhove.module.pdf.profiles.tagged.TaggedProfile;
+import edu.harvard.hul.ois.jhove.module.pdf.profiles.xprofile.X1Profile;
+import edu.harvard.hul.ois.jhove.module.pdf.profiles.xprofile.X1aProfile;
+import edu.harvard.hul.ois.jhove.module.pdf.profiles.xprofile.X2Profile;
+import edu.harvard.hul.ois.jhove.module.pdf.profiles.xprofile.X3Profile;
 import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
 

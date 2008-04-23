@@ -9,6 +9,7 @@ import edu.harvard.hul.ois.jhove.module.PdfModule;
 import edu.harvard.hul.ois.jhove.module.pdf.PdfDictionary;
 import edu.harvard.hul.ois.jhove.module.pdf.PdfObject;
 import edu.harvard.hul.ois.jhove.module.pdf.PdfSimpleObject;
+import edu.harvard.hul.ois.jhove.module.pdf.profiles.tagged.TaggedProfile;
 
 import java.util.Iterator;
 import java.util.List;
