@@ -72,8 +72,8 @@ import edu.harvard.hul.ois.jhove.module.pdf.PdfXMPSource;
 import edu.harvard.hul.ois.jhove.module.pdf.StringValuedToken;
 import edu.harvard.hul.ois.jhove.module.pdf.Token;
 import edu.harvard.hul.ois.jhove.module.pdf.Tokenizer;
-import edu.harvard.hul.ois.jhove.module.pdf.profiles.AProfile;
 import edu.harvard.hul.ois.jhove.module.pdf.profiles.AProfileLevelA;
+import edu.harvard.hul.ois.jhove.module.pdf.profiles.AProfileLevelB;
 import edu.harvard.hul.ois.jhove.module.pdf.profiles.LinearizedProfile;
 import edu.harvard.hul.ois.jhove.module.pdf.profiles.PdfProfile;
 import edu.harvard.hul.ois.jhove.module.pdf.profiles.TaggedProfile;
@@ -419,17 +419,20 @@ public class PdfModule
         _profile.add (new LinearizedProfile(this));
         TaggedProfile tpr = new TaggedProfile(this);
         _profile.add (tpr);
-        AProfile apr = new AProfile(this);
+        AProfileLevelB apr = new AProfileLevelB(this);
         _profile.add (apr);
-        // Link AProfile to TaggedProfile to save checking
-        // the former twice.
-        apr.setTaggedProfile (tpr);
+
+
+
         
         AProfileLevelA apra = new AProfileLevelA(this);
-        _profile.add (apra);
-        // AProfileLevelA depends on AProfile
+        // Link AProfileLevelA to TaggedProfile to save checking
+        // the former twice.
+        apra.setTaggedProfile (tpr);
+        // AProfileLevelA depends on AProfileLevelB
         apra.setAProfile(apr);
-        
+        _profile.add (apra);
+
         X1Profile x1 = new X1Profile(this);
         _profile.add (x1);
         X1aProfile x1a = new X1aProfile(this);

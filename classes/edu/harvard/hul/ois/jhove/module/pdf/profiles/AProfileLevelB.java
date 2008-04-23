@@ -4,14 +4,29 @@
  **********************************************************************/
 
 
-package edu.harvard.hul.ois.jhove.module.pdf;
+package edu.harvard.hul.ois.jhove.module.pdf.profiles;
 
-import edu.harvard.hul.ois.jhove.*;
-import edu.harvard.hul.ois.jhove.module.*;
-import java.io.*;
-import java.util.*;
-import org.xml.sax.*;
-import javax.xml.parsers.*;
+import edu.harvard.hul.ois.jhove.RFC1766Lang;
+import edu.harvard.hul.ois.jhove.XMPHandler;
+import edu.harvard.hul.ois.jhove.module.PdfModule;
+import edu.harvard.hul.ois.jhove.module.pdf.DocNode;
+import edu.harvard.hul.ois.jhove.module.pdf.PageObject;
+import edu.harvard.hul.ois.jhove.module.pdf.PageTreeNode;
+import edu.harvard.hul.ois.jhove.module.pdf.PdfArray;
+import edu.harvard.hul.ois.jhove.module.pdf.PdfDictionary;
+import edu.harvard.hul.ois.jhove.module.pdf.PdfObject;
+import edu.harvard.hul.ois.jhove.module.pdf.PdfSimpleObject;
+import edu.harvard.hul.ois.jhove.module.pdf.PdfStream;
+import edu.harvard.hul.ois.jhove.module.pdf.PdfXMPSource;
+import org.xml.sax.SAXException;
+import org.xml.sax.XMLReader;
+
+import javax.xml.parsers.SAXParserFactory;
+import java.io.UnsupportedEncodingException;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Vector;
 
 /**
  *  PDF profile checker for PDF/A-1 documents.
@@ -28,15 +43,13 @@ import javax.xml.parsers.*;
  *  we use AProfileLevelA, linked to an instance of this, which
  *  simply checks if this profile established Level A compliance.
  */
-public final class AProfile extends PdfProfile
+public final class AProfileLevelB extends PdfProfile
 {
     /******************************************************************
      * PRIVATE CLASS FIELDS.
      ******************************************************************/
 
-    /* TaggedProfile to which this profile is linked. */
-    private TaggedProfile _taggedProfile;
-    private boolean _levelA;
+
     private boolean hasDevRGB;
     private boolean hasDevCMYK;
     private boolean hasUncalCS;  // flag for DeviceGray, DeviceCMYK or DeviceRGB
@@ -77,46 +90,28 @@ public final class AProfile extends PdfProfile
      *   @param  module   The module under which we are checking the profile.
      *
      */
-    public AProfile (PdfModule module) 
+    public AProfileLevelB(PdfModule module)
     {
         super (module);
         _profileText = "ISO PDF/A-1, Level B (Draft Proposal)";
     }
 
-    /**
-     *  Calling setTaggedProfile links this AProfile to a TaggedProfile.
-     *  
-     */
-    public void setTaggedProfile (TaggedProfile tpr) 
-    {
-        _taggedProfile = tpr;
-    }
 
     /** 
      * Returns <code>true</code> if the document satisfies the profile
-     * at Level B or better.  Also sets the level A flag to the
-     * appropriate value, so that <code>satisfiesLevelA</code> can subsequently
-     * be called.
-     *
+     * at Level B or better.
      */
     public boolean satisfiesThisProfile ()
     {
         // Assume level A compliance.
-        _levelA = true;
+
         // The module has already done some syntactic checks.
         // If those failed, the file isn't compliant.
         if (!_module.mayBePDFACompliant ()) {
-            _levelA = false;
+
             return false;
         }
 
-        // Conforming to the TaggedProfile requirements is necessary
-        // for Level A
-        if (_taggedProfile != null &&
-                !_taggedProfile.isAlreadyOK ()) {
-            _levelA = false;
-            // But it may still be Level B
-        }
 
         hasDevCMYK = false;
         hasDevRGB = false;
@@ -129,27 +124,18 @@ public final class AProfile extends PdfProfile
                   !catalogOK () ||
                   !resourcesOK () ||
                   !fontsOK ()) {
-                _levelA = false;
                 return false;
             }
         }
         catch (Exception e) {
-            _levelA = false;
+
             return false;
         }
 
         return true;  // Passed all tests
     }
     
-    /** Returns true if the document was found to be Level A
-     *  conformant.  This returns a meaningful result only after
-     *  <code>satisfiesThisProfile</code> has been called, and
-     *  is intended for use by the Level A profiler. */
-    protected boolean satisfiesLevelA ()
-    {
-        return _levelA;
-    }
-    
+
     /* The Encrypt and Info entries aren't allowed in the trailer
        dictionary. The ID entry is required. */
     private boolean trailerDictOK ()
@@ -192,7 +178,7 @@ public final class AProfile extends PdfProfile
             }
           
             // It must have an unfiltered Metadata stream
-            PdfStream metadata = (PdfStream) 
+            PdfStream metadata = (PdfStream)
                 _module.resolveIndirectObject (cat.get ("Metadata"));
             if (!metadataOK (metadata)) {
                 return false;
@@ -225,86 +211,9 @@ public final class AProfile extends PdfProfile
         if (!type0FontsOK ()) {
             return false;
         }
-        // For each type of font (just because that's the easiest way
-        // to get the fonts from the PdfModule), check that each font
-        // has a ToUnicode entry which is a CMap stream.
-        List lst = _module.getFontMaps ();
-        Iterator iter = lst.listIterator ();
-        try {
-            while (iter.hasNext ()) {
-                Map fmap = (Map) iter.next ();
-                Iterator iter1 = fmap.values ().iterator ();
-                while (iter1.hasNext ()) {
-                    PdfDictionary font = (PdfDictionary) iter1.next ();
-                    if (!fontOK (font)) {
-                        return false;
-                    }
-                }
-            }
-        }
-        catch (Exception e) {
-            return false;
-        }
         return true;
     }
 
-
-    /* Check a font for validity */
-    private boolean fontOK (PdfDictionary font) 
-    {
-        try {
-            // The ToUnicode entry is required only for Level A,
-            // and there are an assortment of exceptions. 
-            PdfSimpleObject fType = (PdfSimpleObject) font.get("Subtype");
-            String fTypeStr = fType.getStringValue ();
-            if ("Type1".equals (fTypeStr)) {
-                // The allowable Type 1 fonts are open ended, so
-                // allow all Type 1 fonts..
-                return true;
-            }
-            if ("Type0".equals (fTypeStr)) {
-                // Type 0 fonts are OK if the descendant CIDFont uses
-                // four specified character collections.
-                PdfObject order = font.get ("Ordering");
-                if (order instanceof PdfSimpleObject) {
-                    try {
-                        String ordText = 
-                            ((PdfSimpleObject) order).getStringValue ();
-                        if ("Adobe-GB1".equals (ordText) ||
-                              "Adobe-CNS1".equals (ordText) ||
-                              "Adobe-Japan1".equals (ordText) ||
-                              "Adobe-Korea1".equals (ordText)) {
-                            return true;
-                        }
-                    }
-                    catch (Exception e) {}
-                }
-            }
-            PdfObject enc = font.get ("Encoding");
-            if (enc instanceof PdfSimpleObject) {
-                String encName = ((PdfSimpleObject) enc).getStringValue ();
-                if ("WinAnsiEncoding".equals (encName) ||
-                        "MacRomanDecoding".equals (encName) ||
-                        "MacExpertDecoding".equals (encName)) {
-                    return true;
-                }
-            }
-	    /*
-	     * Fixed contributed by FCLA, 2007-05-30, to permit
-	     * indirect as well as direct stream object.
-	     *
-	     * PdfStream toUni = (PdfStream) font.get ("ToUnicode");
-	     */
-            PdfObject toUni = (PdfObject) font.get ("ToUnicode");
-            if (toUni == null) {
-                _levelA = false;
-            }
-        }
-        catch (Exception e) {
-            return false;
-        }
-        return true;
-    }
 
 
     /* Check the type 0 font map for compatibility with
@@ -337,7 +246,7 @@ public final class AProfile extends PdfProfile
                     ob = (PdfSimpleObject) info.get ("Ordering");
                     ordering = ob.getStringValue ();
                 }
-                PdfArray descendants = 
+                PdfArray descendants =
                     (PdfArray) font.get ("DescendantFonts");
                 // PDF 1.4 and previous allow only a single
                 // descendant font, and this must be a CIDFont.
