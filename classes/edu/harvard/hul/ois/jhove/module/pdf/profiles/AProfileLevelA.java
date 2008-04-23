@@ -20,8 +20,8 @@ import java.util.Map;
  *  See ISO draft ISO/TC171/SC2, "Document Imaging Applications
  *  Application Issues".
  *
- *  This profile checker is completely dependent on AProfile.
- *  It simply queries an instance of AProfile for Level A compliance.
+ *  This profile checker is dependent on AProfileLevelB and TaggedProfile. In
+ *  addition, it performs checks of the fonts, as required by the Level A specs
  *
  * @author Gary McGath
  *
@@ -97,8 +97,10 @@ public class AProfileLevelA extends PdfProfile {
     }
 
 
+    //Firstlevel check
     private boolean fontsOK ()
     {
+
         // For each type of font (just because that's the easiest way
         // to get the fonts from the PdfModule), check that each font
         // has a ToUnicode entry which is a CMap stream.
@@ -110,7 +112,7 @@ public class AProfileLevelA extends PdfProfile {
                 Iterator iter1 = fmap.values ().iterator ();
                 while (iter1.hasNext ()) {
                     PdfDictionary font = (PdfDictionary) iter1.next ();
-                    if (!fontOK (font)) {
+                    if (!fontOK (font)) {//TODO: Reports down in the method???
                         return false;
                     }
                 }
@@ -123,21 +125,27 @@ public class AProfileLevelA extends PdfProfile {
     }
 
 
-    /* Check a font for validity */
+    /* Check a font for validity. SecondLevel Check from fontsOK */
     private boolean fontOK (PdfDictionary font)
     {
+
+        /*
+         * If the font is type0, and (not an adobe ordering or one of the t
+         * hree encodings)
+         * then it must have a unicode representation for level A
+         */
         try {
             // The ToUnicode entry is required only for Level A,
             // and there are an assortment of exceptions.
             PdfSimpleObject fType = (PdfSimpleObject) font.get("Subtype");
-            String fTypeStr = fType.getStringValue ();
+            String fTypeStr = fType.getStringValue (); //TODO: What if this is null??? Then this method returns true.
             if ("Type1".equals (fTypeStr)) {
                 // The allowable Type 1 fonts are open ended, so
                 // allow all Type 1 fonts..
                 return true;
             }
             if ("Type0".equals (fTypeStr)) {
-                // Type 0 fonts are OK if the descendant CIDFont uses
+                // Type 0 fonts are OK if the descendant CIDFont uses one of
                 // four specified character collections.
                 PdfObject order = font.get ("Ordering");
                 if (order instanceof PdfSimpleObject) {
@@ -149,37 +157,38 @@ public class AProfileLevelA extends PdfProfile {
                             "Adobe-Japan1".equals (ordText) ||
                             "Adobe-Korea1".equals (ordText)) {
                             return true;
-                        }
+                        } //TODO: Else??
                     }
-                    catch (Exception e) {}
+                    catch (Exception e) { //TODO: Why nothing happens here???}
+                    }
+                }
+                PdfObject enc = font.get ("Encoding");
+                if (enc instanceof PdfSimpleObject) {
+                    String encName = ((PdfSimpleObject) enc).getStringValue ();
+                    if ("WinAnsiEncoding".equals (encName) ||
+                        "MacRomanDecoding".equals (encName) ||
+                        "MacExpertDecoding".equals (encName)) {
+                        return true;
+                    }//TODO: Else. IS IT ALLRIGHT, IF IT DOES NOT EQUAL??
+                    //TODO: WHY NO CATCH??
+                }
+                /*
+             * Fixed contributed by FCLA, 2007-05-30, to permit
+             * indirect as well as direct stream object.
+             *
+             * PdfStream toUni = (PdfStream) font.get ("ToUnicode");
+             */
+                PdfObject toUni = (PdfObject) font.get ("ToUnicode");//TODO: Where are the exceptions
+                if (toUni == null) {
+                    //TODO: Move this one to AProfileLevelA, as it is the only place where LevelA and B currently differ
+                    _levelA = false;
                 }
             }
-            PdfObject enc = font.get ("Encoding");
-            if (enc instanceof PdfSimpleObject) {
-                String encName = ((PdfSimpleObject) enc).getStringValue ();
-                if ("WinAnsiEncoding".equals (encName) ||
-                    "MacRomanDecoding".equals (encName) ||
-                    "MacExpertDecoding".equals (encName)) {
-                    return true;
-                }
-            }
-            /*
-            * Fixed contributed by FCLA, 2007-05-30, to permit
-            * indirect as well as direct stream object.
-            *
-            * PdfStream toUni = (PdfStream) font.get ("ToUnicode");
-            */
-            PdfObject toUni = (PdfObject) font.get ("ToUnicode");
-            if (toUni == null) {
-                _levelA = false;
-            }
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             return false;
         }
         return true;
     }
-
 
 
 

@@ -28,7 +28,7 @@ import java.util.Vector;
  *
  *  @see StructureElement
  */
-public class StructureTree 
+public class StructureTree
 {
     private PdfModule _module;
     private RandomAccessFile _raf;
@@ -38,6 +38,8 @@ public class StructureTree
     private List children;
     private boolean _present;
     private boolean _valid;
+
+    private List _errorsInTheStructureMap;
 
     /**
      *  Constructor.  If there is a document structure tree,
@@ -50,49 +52,91 @@ public class StructureTree
      *  @param raf        The document file object
      *  @param parser     The Parser being used
      */
-    public StructureTree (PdfModule module,
-		RandomAccessFile raf,
-		Parser parser) throws PdfException
+    public StructureTree (PdfModule module, RandomAccessFile raf,
+                          Parser parser) throws PdfException
     {
         _module = module;
         _raf = raf;
         _parser = parser;
-        try {
-            PdfDictionary docCatDict = module.getCatalogDict ();
-    	    // There must be an entry in the catalog dictionary
-    	    // named StructTreeRoot.  If there isn't, set _present
-    	    // to false.
-           _rootDict = null;
-            try {
-            _rootDict = (PdfDictionary) _module.resolveIndirectObject
-                ((PdfObject) docCatDict.get ("StructTreeRoot"));
-            }
-            catch (IOException e) {}
-            if (_rootDict == null) {
-                _present = false;
-                _valid = false;
-                return;
-    	    }
-            _present = true;
-            validateRoot ();
-            getRoleMap ();
-            children = getChildren ();
-            _valid = true; 
-    	}
-        catch (Exception e) {
-            _valid = false;
+        _errorsInTheStructureMap = new ArrayList();
+
+        PdfDictionary docCatDict = module.getCatalogDict ();
+        if (docCatDict == null){
+            fail();
+            return;
         }
+
+        // There must be an entry in the catalog dictionary
+        // named StructTreeRoot.  If there isn't, set _present
+        // to false.
+        _rootDict = null;
+        try {
+            _rootDict = (PdfDictionary) _module.resolveIndirectObject
+                    (docCatDict.get ("StructTreeRoot"));
+        }
+        catch (IOException e) {
+            fail();
+            return;
+            //HOW CAN THIS EVER HAPPEN???
+        }
+        catch (ClassCastException e){
+            fail();
+            return;
+        }
+
+        if (_rootDict == null) {
+            fail();
+            return;
+        }
+
+        _present = true;
+        try { //done for each, as we want the errors for all, not just the first.
+            validateRoot ();
+        } catch (PdfException e){
+            _errorsInTheStructureMap.add(e.getMessage());
+        }
+        try {
+            getRoleMap ();
+        } catch (PdfException e){
+            _errorsInTheStructureMap.add(e.getMessage());
+        }
+
+        try {
+            children = getChildren (); //TODO: Might need further checks
+        } catch (PdfException e){
+            _errorsInTheStructureMap.add(e.getMessage());
+        }
+
+        _valid = true;
+
     }
-    
+
+    private void fail(){
+        _present = false;
+        _valid = false;
+    }
+
     /**
      *  Returns <code>true</code> if and only if the document
-     *  structure exists. 
+     *  structure exists.
      */
     public boolean isPresent ()
     {
         return _present;
     }
 
+    /**
+     * If the structure map is present, but valid, return a list of reasons for this
+     * @return the list of wrongs in the structure map, as strings. Null,
+     * if the structure map is not (present and invalid)
+     */
+    public List whatsWrong(){
+        if (_present && !_valid){
+            return _errorsInTheStructureMap;
+        } else {
+            return null;
+        }
+    }
 
     /**
      *   Returns <code>true</code> if and only if no errors were
@@ -122,7 +166,7 @@ public class StructureTree
      *  role map contains invalid data or the limit of 50
      *  lookups is reached.
      */
-    public String dereferenceStructType (String st) 
+    public String dereferenceStructType (String st)
     {
         if (_roleMap == null) {
             return st;
@@ -152,9 +196,9 @@ public class StructureTree
         final String badRoot = "Invalid document structure root";
         try {
             PdfSimpleObject typ =
-        	(PdfSimpleObject)_rootDict.get ("Type");
+                    (PdfSimpleObject)_rootDict.get ("Type");
             if (!"StructTreeRoot".equals (typ.getStringValue ())) {
-                throw new PdfInvalidException(badRoot);
+                throw new PdfInvalidException (badRoot);
             }
         }
         catch (PdfException e) {
@@ -175,52 +219,52 @@ public class StructureTree
        Returns null if there are none. */
     private List getChildren () throws PdfException
     {
-	final String invdata = "Invalid data in document structure root";
-	List kidsList = null;
-	PdfObject kids = null;
-	try {
-	    kids = _module.resolveIndirectObject
-		(_rootDict.get ("K"));
-	}
-	catch (IOException e) {}
-	if (kids == null) {
-	    return null;
-	}
+        final String invdata = "Invalid data in document structure root";
+        List kidsList = null;
+        PdfObject kids = null;
+        try {
+            kids = _module.resolveIndirectObject
+                    (_rootDict.get ("K"));
+        }
+        catch (IOException e) {}
+        if (kids == null) {
+            return null;
+        }
 
-	if (kids instanceof PdfDictionary) {
-	    // Only one child
-	    kidsList = new ArrayList (1);
-	    StructureElement se = new StructureElement 
-		((PdfDictionary) kids, this);
-	    se.buildSubtree ();
-	    se.checkAttributes ();
-	    kidsList.add (se);
-	    return kidsList;
-	}
-	else if (kids instanceof PdfArray) {
-	    // Multiple children
-	    Vector kidsVec = ((PdfArray) kids).getContent ();
-	    kidsList = new ArrayList (kidsVec.size ());
-	    for (int i = 0; i < kidsVec.size (); i++) {
-		PdfObject kid;
-		try {
-		    kid = _module.resolveIndirectObject
-			((PdfObject) kidsVec.elementAt (i));
-		}
-		catch (IOException e) {
-		    throw new PdfMalformedException(invdata);
-		}
-		StructureElement se = new StructureElement 
-			((PdfDictionary) kid, this);
-		se.buildSubtree ();
-		se.checkAttributes ();
-		kidsList.add (se);
-	    }
-	    return kidsList;
-	}
-	else {
-	    throw new PdfInvalidException (invdata);
-	}
+        if (kids instanceof PdfDictionary) {
+            // Only one child
+            kidsList = new ArrayList (1);
+            StructureElement se = new StructureElement
+                    ((PdfDictionary) kids, this);
+            se.buildSubtree ();
+            se.checkAttributes ();
+            kidsList.add (se);
+            return kidsList;
+        }
+        else if (kids instanceof PdfArray) {
+            // Multiple children
+            Vector kidsVec = ((PdfArray) kids).getContent ();
+            kidsList = new ArrayList (kidsVec.size ());
+            for (int i = 0; i < kidsVec.size (); i++) {
+                PdfObject kid;
+                try {
+                    kid = _module.resolveIndirectObject
+                            ((PdfObject) kidsVec.elementAt (i));
+                }
+                catch (IOException e) {
+                    throw new PdfMalformedException(invdata);
+                }
+                StructureElement se = new StructureElement
+                        ((PdfDictionary) kid, this);
+                se.buildSubtree ();
+                se.checkAttributes ();
+                kidsList.add (se);
+            }
+            return kidsList;
+        }
+        else {
+            throw new PdfInvalidException(invdata);
+        }
     }
 
 
@@ -229,14 +273,14 @@ public class StructureTree
         a dictionary. It's legitimate for roleMap to be null. */
     private void getRoleMap () throws PdfException
     {
-	final String invdata = "Invalid RoleMap";
-	try {
-	    _roleMap = (PdfDictionary) _module.resolveIndirectObject
-		(_rootDict.get ("RoleMap"));
-	}
-	catch (Exception e) {
-	    throw new PdfInvalidException (invdata);
-	}
+        final String invdata = "Invalid RoleMap";
+        try {
+            _roleMap = (PdfDictionary) _module.resolveIndirectObject
+                    (_rootDict.get ("RoleMap"));
+        }
+        catch (Exception e) {
+            throw new PdfInvalidException (invdata);
+        }
     }
 
 }

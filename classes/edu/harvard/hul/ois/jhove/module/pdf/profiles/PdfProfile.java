@@ -14,7 +14,9 @@ import edu.harvard.hul.ois.jhove.module.pdf.PdfSimpleObject;
 import edu.harvard.hul.ois.jhove.module.pdf.PdfStream;
 
 import java.io.RandomAccessFile;
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Vector;
 
 /**
@@ -25,24 +27,26 @@ public abstract class PdfProfile
     /******************************************************************
      * PRIVATE CLASS FIELDS.
      ******************************************************************/
-    
+
     /** The module invoking this profile. */
     protected PdfModule _module;
-    
+
     /** A brief human-readable description of the profile. */
     protected String _profileText;
-    
+
     /** The Parser being used on the file. */
     protected Parser _parser;
-    
+
     /** The file being analyzed. */
     protected RandomAccessFile _raf;
-    
+
     /** Set to <code>true</code> if this file has previously
      *  been validated by an invocation of this PdfProfile. */
     private boolean _alreadyOK;
 
-    /** 
+    private List _reasonsForNonCompliance;
+
+    /**
      *   Creates a PdfProfile.
      *   Subclass constructors should call the super constructor,
      *   then assign a value to _profileText.
@@ -53,10 +57,46 @@ public abstract class PdfProfile
     public PdfProfile (PdfModule module)
     {
         _module = module;
+        _reasonsForNonCompliance = new ArrayList();
+    }
+
+
+
+
+    /**
+     * Use this method to report if the given file does not match this profile
+     * @param reason The reason for non-compliance.
+     */
+    public void reportReasonForNonCompliance(String reason){
+        _reasonsForNonCompliance.add(reason);
     }
 
     /**
-     *  Returns the value of the alreadyOK flag.  
+     * Bulk method for adding reasons for non compliance. Mostly used for adding
+     * all the reasons for another profiles non-compliance to this profiles reasons
+     * @param reasons a list of Strings, detailing reasons for non-compliance
+     */
+    public void reportReasonsForNonCompliance(List reasons){
+        _reasonsForNonCompliance.addAll(reasons);
+    }
+
+    /**
+     * Get a list of the detected reasons for this file to not conform to this
+     * profile. Note, you cannot yet rely on the list to be complete, or a special
+     * format of the errors
+     * @return a list of strings, detailing the reasons this pdf is not of this
+     * profile
+     */
+    public List getReasonsForNonCompliance(){
+        return _reasonsForNonCompliance;
+    }
+
+
+
+
+
+    /**
+     *  Returns the value of the alreadyOK flag.
      *  This flag when one profile depends on another, to save redundant
      *  checking.
      *  The alreadyOK flag is set whenever satisfiesProfile
@@ -68,14 +108,14 @@ public abstract class PdfProfile
      }
 
 
-    /** 
+    /**
      * Returns <code>true</code> if the document satisfies the profile.
      * This calls <code>satisfiesThisProfile()</code>, which does the actual work.
      *
      *   @param raf    The RandomAccessFile being parsed
      *   @param parser The Parser being used on the file
      */
-    public final boolean satisfiesProfile 
+    public final boolean satisfiesProfile
                 (RandomAccessFile raf, Parser parser)
     {
         _raf = raf;
@@ -101,16 +141,16 @@ public abstract class PdfProfile
     /**
      *  Returns the text which describes this profile.
      */
-    public String getText () 
+    public String getText ()
     {
         return _profileText;
     }
 
     /** Returns <code>true</code> if a Filter object contains a filter name which
-     *  matches any of the Strings in the second argument.  
-     *  Will return <code>false</code< if a PdfException is thrown due 
+     *  matches any of the Strings in the second argument.
+     *  Will return <code>false</code< if a PdfException is thrown due
      *  to an unexpected data type.
-     * 
+     *
      *  (Note 24-Feb-04:  This was returning false if any filter matched,
      *   but that's contrary to both the sense conveyed by the name and
      *   the way it's being called.  Was there a reason it was that way?)
@@ -142,7 +182,7 @@ public abstract class PdfProfile
                 // If it's not a name, it must be an array
                 Vector filterVec = ((PdfArray) filter).getContent ();
                 for (int i = 0; i < filterVec.size (); i++) {
-                    PdfSimpleObject filt = 
+                    PdfSimpleObject filt =
                         (PdfSimpleObject) filterVec.elementAt (i);
                     filterName = filt.getStringValue ();
                     for (int j = 0; j < names.length; j++) {
@@ -154,7 +194,7 @@ public abstract class PdfProfile
             }
         }
         catch (Exception e) {
-            return false;   
+            return false;
         }
         return false;   // none of the filters were found
 
@@ -196,7 +236,7 @@ public abstract class PdfProfile
      *  Checks a single XObject for xObjectsOK.  Always returns <code>true</code>.
      *  Override to implement tests.
      */
-    protected boolean xObjectOK (PdfDictionary xo) 
+    protected boolean xObjectOK (PdfDictionary xo)
     {
         return true;
     }

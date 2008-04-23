@@ -23,9 +23,11 @@ import org.xml.sax.XMLReader;
 
 import javax.xml.parsers.SAXParserFactory;
 import java.io.UnsupportedEncodingException;
+import java.text.MessageFormat;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.ResourceBundle;
 import java.util.Vector;
 
 /**
@@ -37,7 +39,7 @@ import java.util.Vector;
  *  terminology, this profile is specific to PDF/A-1; there may be
  *  additional standards in the PDF/A family later on.  "PDF/A"
  *  means "PDF/A-1" in the documentation of this code.
- * 
+ *
  *  There are two levels of conformance, called Level A and Level B.
  *  We report these as two different profiles.  To accomplish this,
  *  we use AProfileLevelA, linked to an instance of this, which
@@ -49,7 +51,11 @@ public final class AProfileLevelB extends PdfProfile
      * PRIVATE CLASS FIELDS.
      ******************************************************************/
 
+    private static final ResourceBundle RB
+                = ResourceBundle.getBundle("messages");
 
+
+    //private boolean _levelA;
     private boolean hasDevRGB;
     private boolean hasDevCMYK;
     private boolean hasUncalCS;  // flag for DeviceGray, DeviceCMYK or DeviceRGB
@@ -62,7 +68,7 @@ public final class AProfileLevelB extends PdfProfile
         "Ink", "Popup", "Widget", "Screen",
         "PrinterMark", "TrapNet"
     };
-    
+
     /* The following are the annotation types which are considered
        non-text annotations. */
     private String[] nonTextAnnotTypes = {
@@ -71,19 +77,20 @@ public final class AProfileLevelB extends PdfProfile
         "Ink", "Popup", "Widget", "Screen",
         "PrinterMark", "TrapNet"
     };
+
     private String[] excludedActions = {
         "Launch", "Sound", "Movie", "ResetForm",
         "ImportData", "JavaScript"
     };
-    
+
     /* The following filters are not allowed */
     private String[] excludedFilters = {
-        "ASCIIHexDecode", "ASCII85Decode", "LZWDecode" 
+        "ASCIIHexDecode", "ASCII85Decode", "LZWDecode"
     };
 
 
 
-    /** 
+    /**
      *   Constructor.
      *   Creates an AProfile object for subsequent testing.
      *
@@ -97,19 +104,27 @@ public final class AProfileLevelB extends PdfProfile
     }
 
 
-    /** 
+
+    /**
      * Returns <code>true</code> if the document satisfies the profile
-     * at Level B or better.
+     * at Level B or better.  Also sets the level A flag to the
+     * appropriate value, so that <code>satisfiesLevelA</code> can subsequently
+     * be called.
+     *
      */
     public boolean satisfiesThisProfile ()
     {
+        boolean _return = true; //so that all tests are run, even if some fails
+
         // Assume level A compliance.
+        //_levelA = true;
 
         // The module has already done some syntactic checks.
         // If those failed, the file isn't compliant.
         if (!_module.mayBePDFACompliant ()) {
-
-            return false;
+            //_levelA = false;
+            reportReasonsForNonCompliance(_module.getReasonsForPDFANonCompliance());
+            _return = false;
         }
 
 
@@ -118,97 +133,128 @@ public final class AProfileLevelB extends PdfProfile
         hasUncalCS = false;
 
         try {
-            // Encryption dictionary is not allowed.
-            if (_module.getEncryptionDict () != null ||
-                  !trailerDictOK () ||
-                  !catalogOK () ||
-                  !resourcesOK () ||
-                  !fontsOK ()) {
-                return false;
+            //Perform the various checks. Use | rather than || to ensure that all are run
+            if (_module.getEncryptionDict () != null  // Encryption dictionary is not allowed.
+                | !trailerDictOK ()
+                | !catalogOK ()
+                | !resourcesOK ()
+                | !fontsOK () ) {
+                //_levelA = false;
+                _return = false;
             }
         }
         catch (Exception e) {
+            reportReasonForNonCompliance(e.getMessage());
+            //_levelA = false;
+            _return = false;
 
-            return false;
         }
 
-        return true;  // Passed all tests
+        return _return;  // Passed all tests
     }
-    
 
     /* The Encrypt and Info entries aren't allowed in the trailer
        dictionary. The ID entry is required. */
     private boolean trailerDictOK ()
-    {
+    {  //TODO: DONE
+        boolean _return = true;
         PdfDictionary trailerDict = _module.getTrailerDict ();
         if (trailerDict == null) {
-            return false;    // really shouldn't happen
+            reportReasonForNonCompliance(RB.getString("PDF.has.no.trailer.dictionary"));
+            return false; //If this happens, do not continue
+                // really shouldn't happen
         }
+
         try {
             if (trailerDict.get ("Encrypt") != null/* ||
-                  trailerDict.get ("Info") != null*/) {
-                return false;
+                  trailerDict.get ("Info") != null*/) { //TODO: WHY???
+                reportReasonForNonCompliance(RB.getString("PDF.trailer.dict.has.a.Encrypt.entry"));
+                _return = false;
+
             }
             if (trailerDict.get ("ID") == null) {
-                return false;
+                reportReasonForNonCompliance(RB.getString("PDF.trailer.dict.has.no.ID.entry"));
+                _return = false;
+
             }
         }
         catch (Exception e) {
-            return false;
+            //Not any obvious ways to get here
+            _return = false;
         }
-        return true;
+        return _return;
     }
 
+    //Firstlevel Check
     private boolean catalogOK ()
-    {
+    {    //TODO: DONE
+        boolean _return = true;
         PdfDictionary cat = _module.getCatalogDict ();
         if (cat == null) {
-            return false;
+            reportReasonForNonCompliance(RB.getString("PDF.has.no.catalog.Dictionary"));
+            return false; //If this happens, do not continue
         }
         try {
-            // The document catalog dictionary "should" be present.
+
+            // The document catalog dictionary language "should" be present.
             // If it does, the value "shall" contain
             // a valid RFC1766 language string.
+
             PdfSimpleObject lang = (PdfSimpleObject) cat.get ("Lang");
-            if (lang != null) {
-                RFC1766Lang l = new RFC1766Lang (lang.getStringValue ());
-                if (!l.isSyntaxCorrect ()) {
-                    return false;
+            if (lang != null) { //So, no error if the object is not there. Is this intentional?
+                String langstring = lang.getStringValue();
+                if (langstring != null){
+                    RFC1766Lang l = new RFC1766Lang (langstring);
+                    if (!l.isSyntaxCorrect ()) {
+                        reportReasonForNonCompliance(RB.getString("PDF.catalog.dictionary.has.a.lang.entry.in.a.invalid.syntax"));
+                        _return = false;
+                    }
+                }else{
+                    reportReasonForNonCompliance(RB.getString("PDF.catalog.dictionary.has.a.lang.entry.with.no.lang.string"));
+                    _return = false;
                 }
             }
-          
+
+
             // It must have an unfiltered Metadata stream
             PdfStream metadata = (PdfStream)
                 _module.resolveIndirectObject (cat.get ("Metadata"));
-            if (!metadataOK (metadata)) {
-                return false;
+            if (!metadataOK (metadata)) {//TODO: Should the reporting not be done down there???
+                _return = false;
             }
 
             // If it has an interactive form, it must meet certain criteria
-            PdfDictionary form = (PdfDictionary) 
+            PdfDictionary form = (PdfDictionary)
                 _module.resolveIndirectObject (cat.get ("AcroForm"));
             if (form != null) {
-                if (!formOK (form)) {
-                    return false;
+                if (!formOK (form)) {//TODO: Should the reporting not be done down there???
+                    _return = false;
                 }
             }
 
             // It may not contain an AA entry or an OCProperties entry
-            if (cat.get ("AA") != null ||
-                cat.get ("OCProperties") != null) {
-                return false;
+            if (cat.get ("AA") != null){
+                reportReasonForNonCompliance(RB.getString("PDF.catalog.dictionary.has.a.AA.entry"));
+                _return = false;
+            }
+
+            if (cat.get ("OCProperties") != null) {
+                reportReasonForNonCompliance(RB.getString("PDF.catalog.dictionary.has.a.OCProperties.entry"));
+                _return = false;
             }
         }
         catch (Exception e) {
-            return false;
+            //TODO: Beautify this line
+            reportReasonForNonCompliance(MessageFormat.format(RB.getString("PDF.catalog.dictionary.validation.failed.with.error.0"),new Object[]{e.getMessage()}));
+            _return = false;
         }
-        return true;
+        return _return;
     }
 
-
+    //Firstlevel check
     private boolean fontsOK ()
     {
-        if (!type0FontsOK ()) {
+        if (!type0FontsOK ()) {//TODO: reports down in the method
             return false;
         }
         return true;
@@ -216,12 +262,14 @@ public final class AProfileLevelB extends PdfProfile
 
 
 
+    //TODO: NOT DONE, TOO COMPLEX
     /* Check the type 0 font map for compatibility with
        CIDFont and CMap dictionaries */
     private boolean type0FontsOK ()
     {
+        boolean _return = true;
         Map type0Map = _module.getFontMap (PdfModule.F_TYPE0);
-        if (type0Map == null) {
+        if (type0Map == null) { //There are no Type0 fonts, so nothing to check
             return true;
         }
         try {
@@ -231,60 +279,69 @@ public final class AProfileLevelB extends PdfProfile
                 String registry = null;
                 String ordering = null;
                 PdfDictionary font = (PdfDictionary) iter.next ();
+                //TODO: Font might be null now, but unlikely
+
                 // The Encoding entry can be a predefined name
                 // or a dictionary.  If it's a dictionary, it
                 // must be compatible with the CIDSystemInfo
                 // dictionaries.
                 PdfObject enc = font.get ("Encoding");
+                //TODO: Apparently the predefined encoding just need to not be
+                // a dictionary. What if it is null??
                 if (enc instanceof PdfDictionary) {
-                    // it's a CMap dictionary. 
-                    PdfDictionary info = 
+
+                    // it's a CMap dictionary.
+                    PdfDictionary info =
                         (PdfDictionary) _module.resolveIndirectObject
                             (((PdfDictionary) enc).get ("CIDSystemInfo"));
                     ob = (PdfSimpleObject) info.get ("Registry");
                     registry = ob.getStringValue ();
                     ob = (PdfSimpleObject) info.get ("Ordering");
                     ordering = ob.getStringValue ();
-                }
+                    //TODO: This code just throws if something is not expected??
+                }//TODO: Else??
+
+
                 PdfArray descendants =
                     (PdfArray) font.get ("DescendantFonts");
                 // PDF 1.4 and previous allow only a single
                 // descendant font, and this must be a CIDFont.
                 // While Adobe warns that this may change in a
-                // previous version, we require here that the
+                // later version, we require here that the
                 // first descendant be a CIDFont, and ignore any others.
                 Vector subfonts = descendants.getContent ();
 
-		/*
-		 * Fix contributed by FCLA, 2007-05-30, to permit the
-		 * subfonts array to store PdfObject as well as
-		 * PdfDictionary.
-		 *
-		 * PdfDictionary subfont = 
-		 *                 (PdfDictionary) subfonts.elementAt (0);
-		 * subfont = (PdfDictionary)
-		 *                  _module.resolveIndirectObject (subfont);
-		 */
+                /*
+             * Fix contributed by FCLA, 2007-05-30, to permit the
+             * subfonts array to store PdfObject as well as
+             * PdfDictionary.
+             *
+             * PdfDictionary subfont =
+             *                 (PdfDictionary) subfonts.elementAt (0);
+             * subfont = (PdfDictionary)
+             *                  _module.resolveIndirectObject (subfont);
+             */
                 PdfObject objFont = (PdfObject) subfonts.elementAt (0);
                 PdfDictionary subfont = (PdfDictionary)
                         _module.resolveIndirectObject (objFont);
-                PdfSimpleObject subtype = 
-                        (PdfSimpleObject) subfont.get ("Subtype");
-		/*
-		 * Fix conributed by FCLA, 2007-05-30, to permit the
-		 * comparison of a general PdfSimpleObject to a string.
-		 *
-		 * if (!"CIDFontType0".equals (subtype) && 
-		 *     !"CIDFontType2".equals (subtype)) {
-		*/
-                if (!subtype.getStringValue ().equals ("CIDFontType0") && 
-		    !subtype.getStringValue ().equals ("CIDFontType2")) {
-                    return false;
+                PdfSimpleObject subtype =
+                       (PdfSimpleObject) subfont.get ("Subtype");
+            /*
+             * Fix conributed by FCLA, 2007-05-30, to permit the
+             * comparison of a general PdfSimpleObject to a string.
+             *
+             * if (!"CIDFontType0".equals (subtype) &&
+             *     !"CIDFontType2".equals (subtype)) {
+             */
+                if (!subtype.getStringValue ().equals ("CIDFontType0") &&
+                    !subtype.getStringValue ().equals ("CIDFontType2")) {
+                    _return = false;
                 }
+
                 // If there's no CMap dictionary and this is the
                 // first subfont, save the registration and
                 // ordering strings.  Otherwise make sure they match.
-                PdfDictionary info = 
+                PdfDictionary info =
                     (PdfDictionary) _module.resolveIndirectObject
                         (subfont.get ("CIDSystemInfo"));
                 ob = (PdfSimpleObject) info.get ("Registry");
@@ -340,7 +397,7 @@ public final class AProfileLevelB extends PdfProfile
     private boolean ttFontEncodingOK (PdfDictionary font)
     {
         try {
-            PdfDictionary desc = (PdfDictionary) 
+            PdfDictionary desc = (PdfDictionary)
                 _module.resolveIndirectObject (font.get ("FontDescriptor"));
             // Not all fonts -- in particular, the standard 14 --
             // are required to have FontDescriptors.  How do we
@@ -353,7 +410,7 @@ public final class AProfileLevelB extends PdfProfile
             int flags = flagObj.getIntValue ();
             if ((flags & 4) == 0) {
                 // It's a nonsymbolic font, check the Encoding
-                PdfSimpleObject encoding = 
+                PdfSimpleObject encoding =
                         (PdfSimpleObject) font.get ("Encoding");
                 String encStr = encoding.getStringValue ();
                 if (!"MacRomanEncoding".equals (encStr) &&
@@ -445,16 +502,17 @@ public final class AProfileLevelB extends PdfProfile
 
     /* Walk through the page tree and check all Resources dictionaries
        that we find.  Along the way, we check several things:
-       
+
        Color spaces. The document may not have both CMYK and
        RGB color spaces.
-       
+
        Extended graphic states.
-       
+
        XObjects.
      */
-    private boolean resourcesOK () 
+    private boolean resourcesOK ()
     {
+        boolean _return = true;
         PageTreeNode docTreeRoot = _module.getDocumentTree ();
         try {
             docTreeRoot.startWalk ();
@@ -467,13 +525,13 @@ public final class AProfileLevelB extends PdfProfile
                 // Check for node-level resources
                 PdfDictionary rsrc = docNode.getResources ();
                 if (rsrc != null) {
-                
+
                     // Check color spaces.
                     PdfDictionary cs = (PdfDictionary)
                         _module.resolveIndirectObject
                             (rsrc.get ("ColorSpace"));
                     if (!colorSpaceOK (cs)) {
-                        return false;
+                        _return = false;
                     }
 
                     // Check extended graphics state.
@@ -481,28 +539,28 @@ public final class AProfileLevelB extends PdfProfile
                         _module.resolveIndirectObject
                             (rsrc.get ("ExtGState"));
                     if (!extGStateOK (gs)) {
-                        return false;
+                        _return = false;
                     }
-                    
+
                     // Check XObjects.
                     PdfDictionary xo = (PdfDictionary)
                         _module.resolveIndirectObject
                             (rsrc.get ("XObject"));
                     if (!xObjectsOK (xo)) {
-                        return false;
+                        _return = false;
                     }
                 }
-                
+
                 // Check content streams for  resources
                 if (docNode instanceof PageObject) {
-                    List streams = 
+                    List streams =
                         ((PageObject) docNode).getContentStreams ();
                     if (streams != null) {
                         Iterator iter = streams.listIterator ();
                         while (iter.hasNext ()) {
                             PdfStream stream = (PdfStream) iter.next ();
                             PdfDictionary dict = stream.getDict ();
-                            PdfDictionary rs = 
+                            PdfDictionary rs =
                                 (PdfDictionary) dict.get ("Resources");
                             if (rs != null) {
                                 PdfDictionary cs = (PdfDictionary)
@@ -534,7 +592,7 @@ public final class AProfileLevelB extends PdfProfile
                             }
                         }
                     }
-                    
+
                     // Also check page objects for annotations.
                     // Must be one of the prescribed types, but not
                     // Movie, Sound, or FileAttachment.
@@ -558,7 +616,7 @@ public final class AProfileLevelB extends PdfProfile
                             if (stOK) {
                                 return false;
                             }
-                            
+
                             // If it's a Widget, it can't have an AA entry
                             if ("Widget".equals (subtypeVal)) {
                                 if (annDict.get ("AA") != null) {
@@ -578,15 +636,15 @@ public final class AProfileLevelB extends PdfProfile
                                     }
                                 }
                             }
-                            
-                            // if the CA key is present, it must have a 
+
+                            // if the CA key is present, it must have a
                             // value of 1.0.
-                            PdfSimpleObject ca = (PdfSimpleObject) 
+                            PdfSimpleObject ca = (PdfSimpleObject)
                                     annDict.get ("CA");
                             if (ca != null) {
                                 double caVal = ca.getDoubleValue ();
                                 if (caVal != 1.0) {
-                                    return false;   
+                                    return false;
                                 }
                             }
                         }
@@ -602,7 +660,10 @@ public final class AProfileLevelB extends PdfProfile
 
 
 
-    /* Check if a color space dictionary is conformant */
+    /** Check if a color space dictionary is conformant
+     * @param cs
+     * @return true for conformant
+     */
     private boolean colorSpaceOK (PdfDictionary cs)
     {
         // If it's null, that's fine.
@@ -610,7 +671,7 @@ public final class AProfileLevelB extends PdfProfile
             return true;
         }
         // Walk through the color space dictionary,
-        // checking device ("uncalibrated") color spaces 
+        // checking device ("uncalibrated") color spaces
         Iterator iter = cs.iterator ();
         while (iter.hasNext ()) {
             PdfObject res = (PdfObject) iter.next ();
@@ -633,11 +694,16 @@ public final class AProfileLevelB extends PdfProfile
                 // If this is the first time we've hit an uncalibrated
                 // color space, check for an appropriate OutputIntent dict.
                 if (hasUncalCS && !oldHasUncalCS) {
-                    if (!checkUncalIntent ()) {
+                    if (!checkUncalIntent ()) {//TODO: Follow this method down.
+                        reportReasonForNonCompliance("PDF.has.a.uncalibrated."
+                                                     + "colour.space.without.an."
+                                                     + "appropriate.OutputInt"
+                                                     + "ent.dict");
                         return false;
                     }
                 }
                 if (hasDevRGB && hasDevCMYK) {
+                    reportReasonForNonCompliance("PDF.has.both.DeviceRGB.and.DeviceCMYK.colourspaces");
                     return false;   // can't have both in same file
                 }
             }
@@ -653,7 +719,7 @@ public final class AProfileLevelB extends PdfProfile
             // First off, there must be an OutputIntents array
             // in the document catalog dictionary.
             PdfDictionary catDict = _module.getCatalogDict ();
-            PdfArray intentsArray = (PdfArray) _module.resolveIndirectObject 
+            PdfArray intentsArray = (PdfArray) _module.resolveIndirectObject
                     (catDict.get ("OutputIntents"));
             if (intentsArray == null) {
                 return false;
@@ -663,11 +729,11 @@ public final class AProfileLevelB extends PdfProfile
             boolean pdfaProfileSeen = false;
             for (int i = 0; i < intVec.size (); i++) {
                 // Multiple intents arrays are allowed, but all must use
-                // the same DestOutputProfile object or none, and there 
+                // the same DestOutputProfile object or none, and there
                 // must be at least one that as one and has GTS_PDFA1 as
                 // the value of its S key.
                 PdfDictionary intent = (PdfDictionary) intVec.elementAt (0);
-                PdfSimpleObject outCond = 
+                PdfSimpleObject outCond =
                     (PdfSimpleObject) intent.get ("OutputCondition");
                 if (outCond != null) {
                     PdfStream outProfile = (PdfStream) _module.resolveIndirectObject
@@ -701,15 +767,15 @@ public final class AProfileLevelB extends PdfProfile
         }
         return true;
     }
-    
-    
-    
-    
+
+
+
+
     /* Check if the outlines (if any) are OK.  This is a check
        on Actions, and the module has already checked if there
        are Actions in the outlines, so if there aren't any,
        we save the time to do this test. */
-    private boolean outlinesOK () 
+    private boolean outlinesOK ()
     {
         if (!_module.getActionsExist ()) {
             return true;
@@ -724,7 +790,7 @@ public final class AProfileLevelB extends PdfProfile
                 if (!checkOutlineItem (item)) {
                     return false;
                 }
-                item = (PdfDictionary) _module.resolveIndirectObject 
+                item = (PdfDictionary) _module.resolveIndirectObject
                         (((PdfDictionary) item).get ("Next"));
             }
         }
@@ -736,9 +802,9 @@ public final class AProfileLevelB extends PdfProfile
 
 
     /* Check an outline item, going down recursively */
-    private boolean checkOutlineItem (PdfDictionary item) 
+    private boolean checkOutlineItem (PdfDictionary item)
     {
-        // Check if there are actions for this item 
+        // Check if there are actions for this item
         try {
             PdfDictionary action = (PdfDictionary) item.get ("A");
             if (action != null) {
@@ -764,7 +830,7 @@ public final class AProfileLevelB extends PdfProfile
 
 
     /* Validate an Action dictionary.  Actions exclude certain types. */
-    private boolean actionOK (PdfDictionary action) 
+    private boolean actionOK (PdfDictionary action)
     {
         int i;
         // For some reason, an action's type is an "S" entry, not
@@ -774,7 +840,7 @@ public final class AProfileLevelB extends PdfProfile
             String actStr = actType.getStringValue ();
             // Note: I should also be checking for the set-state
             // and no-op actions, which are prohibited; but since
-            // the documentation I can find doesn't say what the 
+            // the documentation I can find doesn't say what the
             // actual names for these actions are, it's tough to
             // exclude them, and I'd rather not guess the names.
             for (i = 0; i < excludedActions.length; i++) {
@@ -794,7 +860,7 @@ public final class AProfileLevelB extends PdfProfile
             else if (next instanceof PdfArray) {
                 Vector nextVec = ((PdfArray) next).getContent ();
                 for (i = 0; i < nextVec.size (); i++) {
-                    PdfDictionary nact = (PdfDictionary) 
+                    PdfDictionary nact = (PdfDictionary)
                         nextVec.elementAt (i);
                     if (!actionOK (nact)) {
                         return false;
@@ -815,7 +881,7 @@ public final class AProfileLevelB extends PdfProfile
 
     /* The ExtGState resource may not have a TR key, or a
        TR2 with a value other than "Default". */
-    private boolean extGStateOK (PdfDictionary gs) 
+    private boolean extGStateOK (PdfDictionary gs)
     {
         if (gs == null) {
             // no object means no problem
@@ -824,7 +890,7 @@ public final class AProfileLevelB extends PdfProfile
         try {
             PdfObject tr = gs.get ("TR");
             PdfObject tr2 = gs.get ("TR2");
-            
+
             if (tr != null) {
                 return false;
             }
@@ -843,7 +909,7 @@ public final class AProfileLevelB extends PdfProfile
                     return false;
                 }
             }
-            
+
             // SMask is allowed only with a value of "None".
             PdfSimpleObject smask = (PdfSimpleObject) gs.get ("SMask");
             if (smask != null) {
@@ -852,7 +918,7 @@ public final class AProfileLevelB extends PdfProfile
                     return false;
                 }
             }
-            
+
             // BM, if present, must be "Normal" or "Compatible"
             PdfSimpleObject blendMode =
                 (PdfSimpleObject) gs.get ("BM");
@@ -863,7 +929,7 @@ public final class AProfileLevelB extends PdfProfile
                 return false;
                 }
             }
-            
+
             // CA and ca must be 1.0, if present
             PdfSimpleObject ca = (PdfSimpleObject) gs.get ("CA");
             double caVal;
@@ -891,7 +957,7 @@ public final class AProfileLevelB extends PdfProfile
     /**
      *  Checks a single XObject for xObjectsOK.  Always returns <code>true</code>.
      */
-    protected boolean xObjectOK (PdfDictionary xo) 
+    protected boolean xObjectOK (PdfDictionary xo)
     {
         if (xo == null) {
             // no XObject means no problem
@@ -909,18 +975,18 @@ public final class AProfileLevelB extends PdfProfile
                 }
                 if ("Image".equals (subtypeVal)) {
                     if (!imageObjectOK (xo)) {
-                        return false;   
+                        return false;
                     }
                 }
                 if ("Form".equals (subtypeVal)) {
                     if (!formObjectOK (xo)) {
-                        return false;   
+                        return false;
                     }
                 }
             }
         }
         catch (Exception e) {
-            return false;        
+            return false;
         }
         return true;
     }
@@ -946,7 +1012,7 @@ public final class AProfileLevelB extends PdfProfile
                 xo.get ("Alternates") != null) {
                 return false;
             }
-            
+
             // Interpolate is allowed only if its value is false.
             PdfSimpleObject interp = (PdfSimpleObject) xo.get ("Interpolate");
             if (interp != null) {
@@ -954,7 +1020,7 @@ public final class AProfileLevelB extends PdfProfile
                     return false;
                 }
             }
-            
+
             // Intent must be one of the four standard rendering intents,
             // if present.
             PdfSimpleObject intent = (PdfSimpleObject) xo.get ("Intent");
@@ -964,22 +1030,22 @@ public final class AProfileLevelB extends PdfProfile
                     return false;
                 }
             }
-            
+
         }
         catch (Exception e) {
-            return false;        
+            return false;
         }
         return true;
     }
-    
-    private boolean validIntentString (String str) 
+
+    private boolean validIntentString (String str)
     {
         return ("RelativeColorimetric".equals (str) ||
                "AbsoluteColorimetric".equals (str) ||
                "Perceptual".equals (str) ||
                "Saturation".equals (str));
     }
-    
+
     // See if the metadata stream from the catalog dictionary is OK
     private boolean metadataOK (PdfStream metadata)
     {
@@ -993,14 +1059,14 @@ public final class AProfileLevelB extends PdfProfile
                 // We just metadata we didn't like. Filters aren't allowed.
                 return false;
             }
-            
+
             // Create an InputSource to feed the parser.
-            SAXParserFactory factory = 
+            SAXParserFactory factory =
                             SAXParserFactory.newInstance();
             factory.setNamespaceAware (true);
             XMLReader parser = factory.newSAXParser ().getXMLReader ();
             //InputStream stream = new StreamInputStream (metadata, _module.getFile ());
-            PdfXMPSource src = new PdfXMPSource (metadata, _module.getFile ());
+            PdfXMPSource src = new PdfXMPSource(metadata, _module.getFile ());
             XMPHandler handler = new XMPHandler ();
             parser.setContentHandler (handler);
             parser.setErrorHandler (handler);
@@ -1031,4 +1097,5 @@ public final class AProfileLevelB extends PdfProfile
         }
         return true;
     }
+
 }
