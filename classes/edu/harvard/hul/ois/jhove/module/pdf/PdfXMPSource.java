@@ -6,8 +6,12 @@
 package edu.harvard.hul.ois.jhove.module.pdf;
 
 //import java.io.InputStream;
-import java.io.*;
+
 import edu.harvard.hul.ois.jhove.XMLWrapperStream;
+
+import java.io.InputStreamReader;
+import java.io.RandomAccessFile;
+import java.io.UnsupportedEncodingException;
 
 //import edu.harvard.hul.ois.jhove.XMPSource;
 
@@ -61,7 +65,7 @@ public final class PdfXMPSource
             String encoding)
             throws UnsupportedEncodingException {
         super (new InputStreamReader 
-            (new StreamInputStream (stream, raf), encoding));
+            (new StreamInputStream(stream, raf), encoding));
         //super(rdr);
         _stream = stream;
         _raf = raf;

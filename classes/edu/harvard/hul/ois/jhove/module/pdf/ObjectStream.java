@@ -5,8 +5,10 @@
 
 package edu.harvard.hul.ois.jhove.module.pdf;
 
-import java.io.*;
-import java.util.*;
+import java.io.IOException;
+import java.io.RandomAccessFile;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * This class implements the Object Stream, a new way of storing
@@ -44,7 +46,7 @@ public class ObjectStream {
         _ostrm = ostrm;
         _raf = raf;
         _dict = ostrm.getDict ();
-        _parser = new Parser (new StreamTokenizer (raf, _ostrm.getStream()));
+        _parser = new Parser(new StreamTokenizer (raf, _ostrm.getStream()));
     }
     
     /** Checks the validity of the stream dictionary, and extracts

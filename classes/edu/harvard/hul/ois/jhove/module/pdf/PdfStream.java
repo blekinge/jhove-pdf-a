@@ -5,7 +5,9 @@
 
 package edu.harvard.hul.ois.jhove.module.pdf;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Vector;
 
 /**
  *  A representation of a PDF stream object.
@@ -179,7 +181,7 @@ public class PdfStream extends PdfObject
             }
         }
         catch (Exception e) {
-            throw new PdfMalformedException ("Malformed filter");
+            throw new PdfMalformedException("Malformed filter");
         }
     }
 

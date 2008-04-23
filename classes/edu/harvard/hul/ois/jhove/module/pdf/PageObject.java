@@ -5,9 +5,12 @@
 
 package edu.harvard.hul.ois.jhove.module.pdf;
 
-import edu.harvard.hul.ois.jhove.module.*;
-import java.io.*;
-import java.util.*;
+import edu.harvard.hul.ois.jhove.module.PdfModule;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Vector;
 
 /**
  *  Class encapsulating a PDF page object node.

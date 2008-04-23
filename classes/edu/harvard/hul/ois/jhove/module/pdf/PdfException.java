@@ -5,7 +5,7 @@
 
 package edu.harvard.hul.ois.jhove.module.pdf;
 
-import edu.harvard.hul.ois.jhove.*;
+import edu.harvard.hul.ois.jhove.RepInfo;
 
 /**
  *  Abstract exception subclass used internally by the PDF module.

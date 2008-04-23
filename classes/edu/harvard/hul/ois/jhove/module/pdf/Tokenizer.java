@@ -5,8 +5,11 @@
 
 package edu.harvard.hul.ois.jhove.module.pdf;
 
-import java.io.*;
-import java.util.*;
+import java.io.EOFException;
+import java.io.IOException;
+import java.io.RandomAccessFile;
+import java.util.Set;
+import java.util.TreeSet;
 
 /**
  *  Tokenizer for PDF files.  
@@ -139,8 +142,6 @@ public abstract class Tokenizer
 
     /** 
      *  Constructor.
-     *  @param file  The RandomAccessFile object which provides
-     *               us with access to the PDF document.
      */
     public Tokenizer ()
     {

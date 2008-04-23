@@ -5,7 +5,7 @@
 
 package edu.harvard.hul.ois.jhove.module.pdf;
 
-import edu.harvard.hul.ois.jhove.*;
+import edu.harvard.hul.ois.jhove.RepInfo;
 
 /**
  *  Exception subclass used internally by the PDF module.
@@ -35,7 +35,7 @@ public class PdfMalformedException extends PdfException {
     /**
      *  Creates a PdfMalformedException with specified offset and token.
      */
-    public PdfMalformedException (String m, long offset, Token token) 
+    public PdfMalformedException (String m, long offset, Token token)
     {
         super(m, offset, token);
     }

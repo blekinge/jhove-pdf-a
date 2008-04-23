@@ -6,7 +6,8 @@
 package edu.harvard.hul.ois.jhove.module.pdf;
 
 import edu.harvard.hul.ois.jhove.module.PdfModule;
-import java.util.*;
+
+import java.util.Vector;
 
 /** 
  *  Class encapsulating PDF destination objects, which refer

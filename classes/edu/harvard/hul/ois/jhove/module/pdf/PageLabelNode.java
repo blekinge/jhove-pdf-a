@@ -6,7 +6,11 @@
 package edu.harvard.hul.ois.jhove.module.pdf;
 
 import edu.harvard.hul.ois.jhove.module.PdfModule;
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Vector;
 
 /**
  *  Class for nodes of a PDF number tree.
@@ -184,7 +188,7 @@ public class PageLabelNode
             
             // The key and the value are in two successive positions in the
             // array, which is of the form [key value key value ... ]
-            PdfSimpleObject keyObj = (PdfSimpleObject) 
+            PdfSimpleObject keyObj = (PdfSimpleObject)
                     _currentNumsVec.elementAt (_currentNumsIndex);
             // Save the previous key-value pair
             _prevKey = _currentKey;

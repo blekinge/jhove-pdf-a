@@ -6,7 +6,9 @@
 
 package edu.harvard.hul.ois.jhove.module.pdf;
 
-import java.io.*;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.RandomAccessFile;
 
 
 /** A StreamInputStream is an InputStream which provides the bytes
@@ -23,7 +25,7 @@ public class StreamInputStream extends InputStream {
     private long _curPos;
     private long _length;
     
-    public StreamInputStream (PdfStream pdfStream, RandomAccessFile file) 
+    public StreamInputStream (PdfStream pdfStream, RandomAccessFile file)
     {
         _file = file;
         Stream strm = pdfStream.getStream ();

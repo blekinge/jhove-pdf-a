@@ -6,8 +6,10 @@
 
 package edu.harvard.hul.ois.jhove.module.pdf;
 
-import java.io.*;
-import java.util.zip.*;
+import java.io.FilterInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.zip.InflaterInputStream;
 
 /**
  * An enhancement of InflaterInputStream to support Predictor and Columns.

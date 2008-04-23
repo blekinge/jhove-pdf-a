@@ -5,7 +5,7 @@
 
 package edu.harvard.hul.ois.jhove.module.pdf;
 
-import java.util.*;
+import java.util.Vector;
 
 /**
  *  A representation of a PDF object which can be represented

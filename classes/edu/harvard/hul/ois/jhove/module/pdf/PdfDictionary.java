@@ -5,7 +5,9 @@
 
 package edu.harvard.hul.ois.jhove.module.pdf;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 /**
  *  A representation of a PDF dictionary object.
@@ -51,7 +53,7 @@ public class PdfDictionary extends PdfObject
     /** Get the PDFObject whose key has the specified string
      *  value.  Returns null if there is no such key.
      *
-     *  @param  The string value of the key to look up.
+     *  @param  key The string value of the key to look up.
      */
     public PdfObject get (String key)
     {

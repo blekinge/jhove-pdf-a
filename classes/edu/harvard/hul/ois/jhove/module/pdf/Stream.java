@@ -6,7 +6,12 @@
 package edu.harvard.hul.ois.jhove.module.pdf;
 
 //import edu.harvard.hul.ois.jhove.*;
-import java.io.*;
+
+import java.io.ByteArrayInputStream;
+import java.io.FilterInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.RandomAccessFile;
 //import java.util.*;
 //import java.util.zip.InflaterInputStream;
 

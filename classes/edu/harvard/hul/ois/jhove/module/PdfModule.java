@@ -20,15 +20,85 @@
 
 package edu.harvard.hul.ois.jhove.module;
 
-import edu.harvard.hul.ois.jhove.*;
-import edu.harvard.hul.ois.jhove.module.pdf.*;
-import java.io.*;
-import java.util.*;
-//Importing org.xml.sax.* would make Parser ambiguous
-import org.xml.sax.XMLReader;
+import edu.harvard.hul.ois.jhove.Agent;
+import edu.harvard.hul.ois.jhove.AgentType;
+import edu.harvard.hul.ois.jhove.Checksummer;
+import edu.harvard.hul.ois.jhove.Document;
+import edu.harvard.hul.ois.jhove.DocumentType;
+import edu.harvard.hul.ois.jhove.ErrorMessage;
+import edu.harvard.hul.ois.jhove.ExternalSignature;
+import edu.harvard.hul.ois.jhove.Identifier;
+import edu.harvard.hul.ois.jhove.IdentifierType;
+import edu.harvard.hul.ois.jhove.InfoMessage;
+import edu.harvard.hul.ois.jhove.InternalSignature;
+import edu.harvard.hul.ois.jhove.Module;
+import edu.harvard.hul.ois.jhove.ModuleBase;
+import edu.harvard.hul.ois.jhove.NisoImageMetadata;
+import edu.harvard.hul.ois.jhove.Property;
+import edu.harvard.hul.ois.jhove.PropertyArity;
+import edu.harvard.hul.ois.jhove.PropertyType;
+import edu.harvard.hul.ois.jhove.RepInfo;
+import edu.harvard.hul.ois.jhove.SignatureType;
+import edu.harvard.hul.ois.jhove.SignatureUseType;
+import edu.harvard.hul.ois.jhove.XMPHandler;
+import edu.harvard.hul.ois.jhove.module.pdf.Comment;
+import edu.harvard.hul.ois.jhove.module.pdf.CrossRefStream;
+import edu.harvard.hul.ois.jhove.module.pdf.Destination;
+import edu.harvard.hul.ois.jhove.module.pdf.DictionaryStart;
+import edu.harvard.hul.ois.jhove.module.pdf.DocNode;
+import edu.harvard.hul.ois.jhove.module.pdf.FileTokenizer;
+import edu.harvard.hul.ois.jhove.module.pdf.Filter;
+import edu.harvard.hul.ois.jhove.module.pdf.Keyword;
+import edu.harvard.hul.ois.jhove.module.pdf.Literal;
+import edu.harvard.hul.ois.jhove.module.pdf.Name;
+import edu.harvard.hul.ois.jhove.module.pdf.NameTreeNode;
+import edu.harvard.hul.ois.jhove.module.pdf.Numeric;
+import edu.harvard.hul.ois.jhove.module.pdf.ObjectStream;
+import edu.harvard.hul.ois.jhove.module.pdf.PageLabelNode;
+import edu.harvard.hul.ois.jhove.module.pdf.PageObject;
+import edu.harvard.hul.ois.jhove.module.pdf.PageTreeNode;
+import edu.harvard.hul.ois.jhove.module.pdf.Parser;
+import edu.harvard.hul.ois.jhove.module.pdf.PdfArray;
+import edu.harvard.hul.ois.jhove.module.pdf.PdfDictionary;
+import edu.harvard.hul.ois.jhove.module.pdf.PdfException;
+import edu.harvard.hul.ois.jhove.module.pdf.PdfIndirectObj;
+import edu.harvard.hul.ois.jhove.module.pdf.PdfInvalidException;
+import edu.harvard.hul.ois.jhove.module.pdf.PdfMalformedException;
+import edu.harvard.hul.ois.jhove.module.pdf.PdfObject;
+import edu.harvard.hul.ois.jhove.module.pdf.PdfSimpleObject;
+import edu.harvard.hul.ois.jhove.module.pdf.PdfStream;
+import edu.harvard.hul.ois.jhove.module.pdf.PdfStrings;
+import edu.harvard.hul.ois.jhove.module.pdf.PdfXMPSource;
+import edu.harvard.hul.ois.jhove.module.pdf.StringValuedToken;
+import edu.harvard.hul.ois.jhove.module.pdf.Token;
+import edu.harvard.hul.ois.jhove.module.pdf.Tokenizer;
+import edu.harvard.hul.ois.jhove.module.pdf.profiles.AProfile;
+import edu.harvard.hul.ois.jhove.module.pdf.profiles.AProfileLevelA;
+import edu.harvard.hul.ois.jhove.module.pdf.profiles.LinearizedProfile;
+import edu.harvard.hul.ois.jhove.module.pdf.profiles.PdfProfile;
+import edu.harvard.hul.ois.jhove.module.pdf.profiles.TaggedProfile;
+import edu.harvard.hul.ois.jhove.module.pdf.profiles.X1Profile;
+import edu.harvard.hul.ois.jhove.module.pdf.profiles.X1aProfile;
+import edu.harvard.hul.ois.jhove.module.pdf.profiles.X2Profile;
+import edu.harvard.hul.ois.jhove.module.pdf.profiles.X3Profile;
 import org.xml.sax.SAXException;
-//import org.xml.sax.InputSource;
+import org.xml.sax.XMLReader;
+
 import javax.xml.parsers.SAXParserFactory;
+import java.io.IOException;
+import java.io.RandomAccessFile;
+import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.ListIterator;
+import java.util.Map;
+import java.util.Set;
+import java.util.Vector;
 
 /** 
  *  Module for identification and validation of PDF files.
@@ -346,28 +416,28 @@ public class PdfModule
 
 
         _profile = new ArrayList (6);
-        _profile.add (new LinearizedProfile (this));
-        TaggedProfile tpr = new TaggedProfile (this);
+        _profile.add (new LinearizedProfile(this));
+        TaggedProfile tpr = new TaggedProfile(this);
         _profile.add (tpr);
-        AProfile apr = new AProfile (this);
+        AProfile apr = new AProfile(this);
         _profile.add (apr);
         // Link AProfile to TaggedProfile to save checking
         // the former twice.
         apr.setTaggedProfile (tpr);
         
-        AProfileLevelA apra = new AProfileLevelA (this);
+        AProfileLevelA apra = new AProfileLevelA(this);
         _profile.add (apra);
         // AProfileLevelA depends on AProfile
         apra.setAProfile(apr);
         
-        X1Profile x1 = new X1Profile (this); 
+        X1Profile x1 = new X1Profile(this);
         _profile.add (x1);
-        X1aProfile x1a = new X1aProfile (this); 
+        X1aProfile x1a = new X1aProfile(this);
         _profile.add (x1a);
         // Linking the X1 profile to the X1a profile saves checking the former twice.
         x1a.setX1Profile (x1);
-        _profile.add (new X2Profile (this));
-        _profile.add (new X3Profile (this));
+        _profile.add (new X2Profile(this));
+        _profile.add (new X3Profile(this));
         _showAnnotations = false;
         _showFonts = false;
         _showOutlines = false;
@@ -397,7 +467,7 @@ public class PdfModule
     /**
      * Per-action initialization.  May be called multiple times.
      *
-     * @param The module parameter; under command-line Jhove, the -p parameter.
+     * @param param The module parameter; under command-line Jhove, the -p parameter.
      *        If the parameter contains the indicated characters, then the
      *        specified information is omitted; otherwise, it is included.
      *        (This is the reverse of the behavior prior to beta 3.)
@@ -472,7 +542,7 @@ public class PdfModule
         _raf = raf;
 
         Tokenizer tok = new FileTokenizer (_raf);
-        _parser = new Parser (tok);
+        _parser = new Parser(tok);
         _parser.setObjectMap (_objects);
 
         List metadataList = new ArrayList (11);
@@ -941,7 +1011,7 @@ public class PdfModule
                                 boolean prevOnly) 
                                 throws IOException
     {
-        Token  token = null;
+        Token token = null;
         String value = null;
         String invalidMsg = "Invalid cross-reference table";
         /* Parse the trailer dictionary.  */

@@ -6,7 +6,8 @@
 package edu.harvard.hul.ois.jhove.module.pdf;
 
 import edu.harvard.hul.ois.jhove.module.PdfModule;
-import java.io.*;
+
+import java.io.IOException;
 
 /**
  *  Abstract class for nodes of a PDF document tree.

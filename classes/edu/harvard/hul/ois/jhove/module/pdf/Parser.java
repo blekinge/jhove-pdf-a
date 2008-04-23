@@ -5,8 +5,10 @@
 
 package edu.harvard.hul.ois.jhove.module.pdf;
 
-import java.io.*;
-import java.util.*;
+import java.io.IOException;
+import java.util.Map;
+import java.util.Set;
+import java.util.Vector;
 
 /**
  *  The Parser class implements some limited syntactic analysis 
@@ -97,7 +99,7 @@ public class Parser
         else if (tok instanceof DictionaryEnd) {
             --_dictDepth;
             if (_dictDepth < 0) {
-                throw new PdfMalformedException ("Improperly nested dictionary delimiters");
+                throw new PdfMalformedException("Improperly nested dictionary delimiters");
             }
         }
         if (tok instanceof ArrayStart) {
@@ -123,7 +125,7 @@ public class Parser
     {
         Token tok = getNext ();
         if (!clas.isInstance (tok)) {
-            throw new PdfInvalidException (errMsg);
+            throw new PdfInvalidException(errMsg);
         }
         return tok;
     }
@@ -203,7 +205,7 @@ public class Parser
      */
     public PdfObject readObjectDef () throws IOException, PdfException
     {
-        Numeric objNumTok = (Numeric) getNext 
+        Numeric objNumTok = (Numeric) getNext
             (Numeric.class, "Invalid object definition");
         return readObjectDef (objNumTok);
     }
@@ -278,7 +280,7 @@ public class Parser
             return readDictionary ();
         }
         else if (tok.isSimpleToken ()) {
-            return new PdfSimpleObject (tok);
+            return new PdfSimpleObject(tok);
         }
         else {
             throw new PdfMalformedException 
@@ -353,7 +355,7 @@ public class Parser
                     }
                     for (int i = 0; i < vecSize; i += 2) {
                         try {
-                            Name key = (Name) ((PdfSimpleObject) 
+                            Name key = (Name) ((PdfSimpleObject)
                                     vec.elementAt (i)).getToken ();
                             PdfObject value = (PdfObject) vec.elementAt (i + 1);
                             dict.add (key.getValue (), value);
@@ -420,7 +422,7 @@ public class Parser
                             nobj = (PdfSimpleObject) v.elementAt (i - 1);
                             ntok = (Numeric) nobj.getToken ();
                             int genNum = ntok.getIntegerValue ();
-                            v.set (i - 2, new PdfIndirectObj 
+                            v.set (i - 2, new PdfIndirectObj
                                 (objNum, genNum, _objectMap));
                             v.removeElementAt (i);
                             v.removeElementAt (i - 1);

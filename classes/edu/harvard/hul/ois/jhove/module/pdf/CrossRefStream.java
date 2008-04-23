@@ -5,8 +5,9 @@
 
 package edu.harvard.hul.ois.jhove.module.pdf;
 
-import java.io.*;
-import java.util.*;
+import java.io.IOException;
+import java.io.RandomAccessFile;
+import java.util.Vector;
 
 /**
  * This class implements the Cross-Reference Stream, an alternative
@@ -46,7 +47,7 @@ public class CrossRefStream {
     /**
      * Constructor.
      * 
-     * @param   PdfStream object which contains a presumed
+     * @param   xstrm PdfStream object which contains a presumed
      *          cross-reference stream.
      */
     public CrossRefStream(PdfStream xstrm) {
@@ -136,7 +137,7 @@ public class CrossRefStream {
      *  If the filter List includes one which we don't support, throws a
      *  PdfException. */
     public void initRead (RandomAccessFile raf) 
-            throws IOException, PdfException 
+            throws IOException, PdfException
     {
         Stream strm = _xstrm.getStream ();
         strm.setFilters (_xstrm.getFilters ());

@@ -5,7 +5,9 @@
 
 package edu.harvard.hul.ois.jhove.module.pdf;
 
-import java.io.*;
+import java.io.EOFException;
+import java.io.IOException;
+import java.io.RandomAccessFile;
 
 /**
  *

@@ -5,7 +5,8 @@
 
 package edu.harvard.hul.ois.jhove.module.pdf;
 
-import java.io.*;
+import java.io.IOException;
+import java.io.RandomAccessFile;
 
 /**
  * Tokenizer subclass which gets data from an object stream.

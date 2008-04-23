@@ -5,7 +5,7 @@
 
 package edu.harvard.hul.ois.jhove.module.pdf;
 
-import java.util.*;
+import java.util.Map;
 
 /**
  *  A representation of a PDF indirect object reference.
