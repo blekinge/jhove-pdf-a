@@ -15,25 +15,7 @@
     <option name="historyRevisionsNumber" value="4" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/ErrorCodes.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/META-INF/MANIFEST.MF" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/errorcodes.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/viewer/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/viewer/META-INF/MANIFEST.MF" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jhove.ipr" afterPath="$PROJECT_DIR$/jhove.ipr" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/JhoveBase.java" afterPath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/JhoveBase.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/PdfProfile.java" afterPath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/PdfProfile.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/META-INF/MANIFEST.MF" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jhove.iws" afterPath="$PROJECT_DIR$/jhove.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/handler/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/handler/META-INF/MANIFEST.MF" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/PdfModule.java" afterPath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/PdfModule.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.xml" afterPath="$PROJECT_DIR$/build.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/tagged/TaggedProfile.java" afterPath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/tagged/TaggedProfile.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/AProfileLevelB.java" afterPath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/AProfileLevelB.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/AProfileLevelA.java" afterPath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/AProfileLevelA.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Jhove.java" afterPath="$PROJECT_DIR$/classes/Jhove.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/classes/META-INF/MANIFEST.MF" />
-    </list>
+    <list default="true" name="Default" comment="" />
     <ignored path="jhove.iws" />
     <ignored path=".idea/workspace.xml" />
   </component>
@@ -57,7 +39,7 @@
   </component>
   <component name="DebuggerManager">
     <line_breakpoints>
-      <breakpoint url="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/JhoveBase.java" line="462" class="edu.harvard.hul.ois.jhove.JhoveBase" package="edu.harvard.hul.ois.jhove">
+      <breakpoint url="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/JhoveBase.java" line="465" class="edu.harvard.hul.ois.jhove.JhoveBase" package="edu.harvard.hul.ois.jhove">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -70,7 +52,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/JhoveBase.java" line="637" class="edu.harvard.hul.ois.jhove.JhoveBase" package="edu.harvard.hul.ois.jhove">
+      <breakpoint url="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/JhoveBase.java" line="647" class="edu.harvard.hul.ois.jhove.JhoveBase" package="edu.harvard.hul.ois.jhove">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -83,7 +65,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/AProfileLevelB.java" line="117" class="edu.harvard.hul.ois.jhove.module.pdf.profiles.AProfileLevelB" package="edu.harvard.hul.ois.jhove.module.pdf.profiles">
+      <breakpoint url="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/AProfileLevelB.java" line="115" class="edu.harvard.hul.ois.jhove.module.pdf.profiles.AProfileLevelB" package="edu.harvard.hul.ois.jhove.module.pdf.profiles">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -172,9 +154,9 @@
           <file leaf-file-name="Jhove.java" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/classes/Jhove.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="299" column="0" selection-start="12219" selection-end="12219" vertical-scroll-proportion="0.8331617">
+                <state line="303" column="0" selection-start="12366" selection-end="12366" vertical-scroll-proportion="0.8462343">
                   <folding>
-                    <element signature="imports" expanded="true" />
+                    <marker date="1209049082000" expanded="true" signature="1017:1232" placeholder="..." />
                   </folding>
                 </state>
               </provider>
@@ -183,8 +165,10 @@
           <file leaf-file-name="AProfileLevelB.java" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/AProfileLevelB.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="249" column="58" selection-start="9344" selection-end="9344" vertical-scroll-proportion="-0.15690376">
-                  <folding />
+                <state line="247" column="58" selection-start="9279" selection-end="9279" vertical-scroll-proportion="-0.15690376">
+                  <folding>
+                    <marker date="1209049082000" expanded="false" signature="341:1233" placeholder="..." />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -192,9 +176,10 @@
           <file leaf-file-name="PdfProfile.java" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/PdfProfile.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="85" column="45" selection-start="3150" selection-end="3150" vertical-scroll-proportion="0.39958805">
+                <state line="85" column="45" selection-start="3150" selection-end="3150" vertical-scroll-proportion="0.40585774">
                   <folding>
-                    <marker date="1209035085000" expanded="true" signature="340:946" placeholder="..." />
+                    <marker date="1209049082000" expanded="true" signature="340:946" placeholder="..." />
+                    <marker date="1209049082000" expanded="false" signature="340:946" placeholder="..." />
                   </folding>
                 </state>
               </provider>
@@ -212,19 +197,11 @@
           <file leaf-file-name="TaggedProfile.java" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/tagged/TaggedProfile.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="99" column="59" selection-start="4101" selection-end="4101" vertical-scroll-proportion="0.72193617">
+                <state line="99" column="59" selection-start="4101" selection-end="4101" vertical-scroll-proportion="0.7332636">
                   <folding>
-                    <marker date="1209036091000" expanded="false" signature="70:298" placeholder="..." />
+                    <marker date="1209049082000" expanded="false" signature="70:363" placeholder="..." />
+                    <marker date="1209049082000" expanded="false" signature="70:287" placeholder="..." />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="errorcodes.txt" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/errorcodes.txt">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="0" column="64" selection-start="64" selection-end="64" vertical-scroll-proportion="0.0">
-                  <folding />
                 </state>
               </provider>
             </entry>
@@ -243,7 +220,7 @@
           <file leaf-file-name="RepInfo.java" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/RepInfo.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="291" column="0" selection-start="7608" selection-end="7608" vertical-scroll-proportion="0.19052523">
+                <state line="291" column="0" selection-start="7608" selection-end="7608" vertical-scroll-proportion="0.19351465">
                   <folding />
                 </state>
               </provider>
@@ -252,7 +229,7 @@
           <file leaf-file-name="TextHandler.java" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/handler/TextHandler.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="626" column="46" selection-start="21264" selection-end="21264" vertical-scroll-proportion="0.2523172">
+                <state line="626" column="46" selection-start="21264" selection-end="21264" vertical-scroll-proportion="0.25627616">
                   <folding />
                 </state>
               </provider>
@@ -1099,7 +1076,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1600" height="1169" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32893288" order="8" />
@@ -1116,7 +1093,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39974043" order="0" />
       <window_info id="Maven projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="4" />
       <window_info id="Module Dependencies" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="6" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35171968" order="0" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35171968" order="0" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32921812" order="12" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24951644" order="2" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="6" />
@@ -1137,7 +1114,7 @@
     <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
     <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Level A and B pdf/a profiles with some errors in regards to the specs corrected" />
+    <option name="LAST_COMMIT_MESSAGE" value="Errors are now encoded as file properties, and errorcodes are implemented" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
@@ -1153,6 +1130,7 @@
     <MESSAGE value="Level A and B pdf/a profiles" />
     <MESSAGE value="Level A and B pdf/a profiles, now with the changes so that they report errors" />
     <MESSAGE value="Level A and B pdf/a profiles with some errors in regards to the specs corrected" />
+    <MESSAGE value="Errors are now encoded as file properties, and errorcodes are implemented" />
   </component>
   <component name="VssConfiguration">
     <option name="CLIENT_PATH" value="" />
@@ -1248,9 +1226,7 @@
     <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/JhoveBase.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="637" column="0" selection-start="25281" selection-end="25281" vertical-scroll-proportion="0.29353234">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1270,23 +1246,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/classes/Jhove.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="299" column="0" selection-start="12219" selection-end="12219" vertical-scroll-proportion="0.8331617">
+        <state line="303" column="0" selection-start="12366" selection-end="12366" vertical-scroll-proportion="0.8462343">
           <folding>
-            <element signature="imports" expanded="true" />
+            <marker date="1209049082000" expanded="true" signature="1017:1232" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/RepInfo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="291" column="0" selection-start="7608" selection-end="7608" vertical-scroll-proportion="0.19052523">
+        <state line="291" column="0" selection-start="7608" selection-end="7608" vertical-scroll-proportion="0.19351465">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/handler/TextHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="626" column="46" selection-start="21264" selection-end="21264" vertical-scroll-proportion="0.2523172">
+        <state line="626" column="46" selection-start="21264" selection-end="21264" vertical-scroll-proportion="0.25627616">
           <folding />
         </state>
       </provider>
@@ -1300,32 +1276,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/PdfProfile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="85" column="45" selection-start="3150" selection-end="3150" vertical-scroll-proportion="0.39958805">
+        <state line="85" column="45" selection-start="3150" selection-end="3150" vertical-scroll-proportion="0.40585774">
           <folding>
-            <marker date="1209035085000" expanded="true" signature="340:946" placeholder="..." />
+            <marker date="1209049082000" expanded="true" signature="340:946" placeholder="..." />
+            <marker date="1209049082000" expanded="false" signature="340:946" placeholder="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/errorcodes.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="64" selection-start="64" selection-end="64" vertical-scroll-proportion="0.0">
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/AProfileLevelB.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="249" column="58" selection-start="9344" selection-end="9344" vertical-scroll-proportion="-0.15690376">
-          <folding />
+        <state line="247" column="58" selection-start="9279" selection-end="9279" vertical-scroll-proportion="-0.15690376">
+          <folding>
+            <marker date="1209049082000" expanded="false" signature="341:1233" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/tagged/TaggedProfile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="99" column="59" selection-start="4101" selection-end="4101" vertical-scroll-proportion="0.72193617">
+        <state line="99" column="59" selection-start="4101" selection-end="4101" vertical-scroll-proportion="0.7332636">
           <folding>
-            <marker date="1209036091000" expanded="false" signature="70:298" placeholder="..." />
+            <marker date="1209049082000" expanded="false" signature="70:363" placeholder="..." />
+            <marker date="1209049082000" expanded="false" signature="70:287" placeholder="..." />
           </folding>
         </state>
       </provider>
