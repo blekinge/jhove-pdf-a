@@ -8,6 +8,7 @@
       <customJdkName value="1.4" />
       <maximumHeapSize value="128" />
       <properties />
+      <executeOn event="beforeRun" target="dist" runConfigurationType="Application" runConfigurationName="jhove run" />
     </buildFile>
   </component>
   <component name="BuildJarProjectSettings">

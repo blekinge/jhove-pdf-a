@@ -5,28 +5,59 @@
 
 package edu.harvard.hul.ois.jhove;
 
-import edu.harvard.hul.ois.jhove.handler.*;
-import edu.harvard.hul.ois.jhove.module.*;
-import java.io.*;
-import java.net.*;
-import java.util.*;
-import java.util.logging.*;
-import javax.net.ssl.KeyManager;
+import edu.harvard.hul.ois.jhove.handler.AuditHandler;
+import edu.harvard.hul.ois.jhove.handler.TextHandler;
+import edu.harvard.hul.ois.jhove.handler.XmlHandler;
+import edu.harvard.hul.ois.jhove.module.BytestreamModule;
+import org.xml.sax.SAXException;
+import org.xml.sax.XMLReader;
+import org.xml.sax.helpers.XMLReaderFactory;
+
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.KeyManager;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLSession;
 import javax.net.ssl.SSLSocketFactory;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
-import javax.xml.parsers.*;
-import org.xml.sax.*;
-import org.xml.sax.helpers.*;
+import javax.xml.parsers.SAXParserFactory;
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.DataInputStream;
+import java.io.EOFException;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.io.RandomAccessFile;
+import java.io.UnsupportedEncodingException;
+import java.net.URI;
+import java.net.URL;
+import java.net.URLConnection;
+import java.net.UnknownHostException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Properties;
+import java.util.TreeMap;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * The JHOVE engine, providing all base services necessary to build an
  * application.
- * 
+ *
  * More than one JhoveBase may be instantiated and process files in
  * concurrent threads.  Any one instance must not be multithreaded.
  */
@@ -41,7 +72,7 @@ public class JhoveBase
     private static final String _release = "1.2";
     private static final int [] DATE = {2007, 5, 10};
     private static final String _rights =
-	"Copyright 2005-2007 by the President and Fellows of Harvard College";
+            "Copyright 2005-2007 by the President and Fellows of Harvard College";
 
     /** JHOVE buffer size property. */
     private static final String BUFFER_PROPERTY = "edu.harvard.hul.ois." +
@@ -63,7 +94,7 @@ public class JhoveBase
 
     /** JHOVE encoding property. */
     private static final String ENCODING_PROPERTY = "edu.harvard.hul.ois." +
-	                                            "jhove.encoding";
+                                                    "jhove.encoding";
     /** JHOVE home directory */
     private static final String JHOVE_DIR = "jhove";
 
@@ -72,11 +103,11 @@ public class JhoveBase
                                                "saxClass";
     /** JHOVE temporary directory property. */
     private static final String TEMPDIR_PROPERTY = "edu.harvard.hul.ois." +
-	                                           "jhove.tempDirectory";
-    
+                                                   "jhove.tempDirectory";
+
     /** MIX schema version property. */
     private static final String MIXVSN_PROPERTY = "edu.harvard.hul.ois." +
-                                               "jhove.mixvsn";
+                                                  "jhove.mixvsn";
 
     /******************************************************************
      * PRIVATE INSTANCE FIELDS.
@@ -124,7 +155,7 @@ public class JhoveBase
     protected URLConnection _conn;
     /** Thread currently parsing a document. */
     protected Thread _currentThread;
-    
+
     /** Logger for this class. */
     protected Logger _logger;
     /** Logger resource bundle. */
@@ -139,7 +170,7 @@ public class JhoveBase
      * @throws JhoveException If invoked with JVM lower than 1.4
      */
     public JhoveBase ()
-	throws JhoveException
+            throws JhoveException
     {
         _logger = Logger.getLogger ("edu.harvard.hul.ois.jhove");
         _logger.setLevel (Level.SEVERE);
@@ -148,13 +179,13 @@ public class JhoveBase
         if (version.compareTo ("1.4.0") < 0) {
             String bad = "Java 1.4 or higher is required";
             _logger.severe (bad);
-	    throw new JhoveException (bad);
+            throw new JhoveException (bad);
         }
 
-    /* Tell any https connections to be accepted automatically. */
-    HttpsURLConnection.setDefaultHostnameVerifier (new NaiveHostnameVerifier());
-    
-	/* Initialize the engine. */
+        /* Tell any https connections to be accepted automatically. */
+        HttpsURLConnection.setDefaultHostnameVerifier (new NaiveHostnameVerifier());
+
+        /* Initialize the engine. */
 
         Calendar calendar = new GregorianCalendar ();
         calendar.set (DATE[0], DATE[1]-1, DATE[2]);
@@ -166,11 +197,11 @@ public class JhoveBase
         _handlerList = new ArrayList ();
         _handlerMap  = new TreeMap ();
 
-	_abort       = false;
-	_bufferSize  = -1;
-	_checksum    = false;
-	_showRaw     = false;
-	_signature   = false;
+        _abort       = false;
+        _bufferSize  = -1;
+        _checksum    = false;
+        _showRaw     = false;
+        _signature   = false;
         _callback    = null;
     }
 
@@ -183,32 +214,32 @@ public class JhoveBase
      * @param configFile Configuration file pathname
      */
     public void init (String configFile, String saxClass)
-	throws JhoveException
+            throws JhoveException
     {
-	_configFile = configFile;
+        _configFile = configFile;
         _saxClass = saxClass;
 
-	File        config   = null;
+        File        config   = null;
         String err = null;
         // If we get an error, attempt to get through the best we can,
         // then throw a JhoveException with err as its message.
 
-	if (_configFile != null) {
-	    config = new File (_configFile);
-	    if (!config.exists () || !config.isFile ()) {
+        if (_configFile != null) {
+            config = new File (_configFile);
+            if (!config.exists () || !config.isFile ()) {
                 err = "Configuration file not found or " +
                       "not readable; use -c to specify";
                 config = null;
-	    }
+            }
 
             if (config != null) {
                 XMLReader parser = null;
-		try {
+                try {
                     if (saxClass == null) {
                         /* Use Java 1.4 methods to create default parser.
                          */
-                        SAXParserFactory factory = 
-                            SAXParserFactory.newInstance();
+                        SAXParserFactory factory =
+                                SAXParserFactory.newInstance();
                         factory.setNamespaceAware (true);
                         parser = factory.newSAXParser ().getXMLReader ();
                     }
@@ -219,7 +250,7 @@ public class JhoveBase
                 catch (Exception e) {
                     // If we can't get a SAX parser, we're stuck.
                     throw new JhoveException ("SAX parser not found: " +
-					      saxClass);
+                                              saxClass);
                 }
                 _logger.info ("Using SAX parser " + parser.getClass ().getName ());
                 ConfigHandler configHandler = new ConfigHandler ();
@@ -228,13 +259,13 @@ public class JhoveBase
                  * errors.
                  */
                 try {
-                   parser.setFeature("http://xml.org/sax/features/validation",
-				      true);
-                   parser.setProperty ("http://java.sun.com/xml/jaxp/" +
-					"properties/schemaLanguage",
-					"http://www.w3.org/2001/XMLSchema");
+                    parser.setFeature("http://xml.org/sax/features/validation",
+                                      true);
+                    parser.setProperty ("http://java.sun.com/xml/jaxp/" +
+                                        "properties/schemaLanguage",
+                                        "http://www.w3.org/2001/XMLSchema");
                 }
-                catch (SAXException e) 
+                catch (SAXException e)
                 {}
 
                 try {
@@ -245,16 +276,16 @@ public class JhoveBase
                     }
                     fileURL += canonicalPath;
                     parser.parse (fileURL);
-                        }
+                }
                 catch (IOException e) {
-                          throw new
-                          JhoveException ("Cannot read configuration file: " +
-                            configFile);
+                    throw new
+                            JhoveException ("Cannot read configuration file: " +
+                                            configFile);
                 }
                 catch (SAXException s) {
                     throw new
-                    JhoveException ("Error parsing configuration file: " +
-                            s.getMessage ());
+                            JhoveException ("Error parsing configuration file: " +
+                                            s.getMessage ());
                 }
 
                 /* Update the application state to reflect the configuration
@@ -267,7 +298,7 @@ public class JhoveBase
                 if (_encoding == null) {
                     _encoding = getFromProperties (ENCODING_PROPERTY);
                     if (_encoding == null) {
-                    _encoding = DEFAULT_ENCODING;
+                        _encoding = DEFAULT_ENCODING;
                     }
                 }
 
@@ -275,20 +306,20 @@ public class JhoveBase
                 if (_tempDir == null) {
                     _tempDir = getFromProperties (TEMPDIR_PROPERTY);
                     if (_tempDir == null) {
-                	_tempDir = DEFAULT_TEMP;
+                        _tempDir = DEFAULT_TEMP;
                     }
                 }
-                
+
                 // get the MIX version. if not specified, defaults to 0.2. 
                 _mixVsn = configHandler.getMixVsn ();
                 if (_mixVsn == null) {
                     _mixVsn = "0.2";   // default
                 }
-                
+
                 // Get the maximum number of bytes to examine when doing
                 // pseudo-signature checking
                 _sigBytes = configHandler.getSigBytes ();
-                
+
                 // If a log level was specified in the config file,
                 // attempt to set it, unless it was already
                 // explicitly set.
@@ -302,20 +333,20 @@ public class JhoveBase
                     }
                 }
 
-		_bufferSize = configHandler.getBufferSize ();
-		if (_bufferSize < 0) {
-		    String size = getFromProperties (BUFFER_PROPERTY);
-		    if (size != null) {
-			try {
-			    _bufferSize = Integer.parseInt (size);
-			}
-			catch (Exception e) {}
-		    }
-		    if (_bufferSize < 0) {
-			_bufferSize = DEFAULT_BUFFER;
-		    }
+                _bufferSize = configHandler.getBufferSize ();
+                if (_bufferSize < 0) {
+                    String size = getFromProperties (BUFFER_PROPERTY);
+                    if (size != null) {
+                        try {
+                            _bufferSize = Integer.parseInt (size);
+                        }
+                        catch (Exception e) {}
+                    }
+                    if (_bufferSize < 0) {
+                        _bufferSize = DEFAULT_BUFFER;
+                    }
                 }
-                
+
                 /* Retrieve the ordered lists of modules and output handlers */
                 List list = configHandler.getModule ();
                 List params = configHandler.getModuleParams ();
@@ -323,79 +354,79 @@ public class JhoveBase
                 for (int i=0; i<n; i++) {
                     String [] tuple = (String []) list.get (i);
                     List param = (List) params.get (i);
-                try {
+                    try {
                         Class cl = Class.forName (tuple[0]);
                         Module module = (Module) cl.newInstance ();
                         module.init (tuple[1]);
                         module.setDefaultParams (param);
-                    
-			_moduleList.add (module);
-			_moduleMap.put  (module.getName ().toLowerCase (),
-					 module);
+
+                        _moduleList.add (module);
+                        _moduleMap.put  (module.getName ().toLowerCase (),
+                                         module);
                         _logger.info ("Initialized " + module.getName ());
-		    }
-		    catch (Exception e) {
+                    }
+                    catch (Exception e) {
                         if (err == null) {
                             err = "cannot instantiate module: " +
-		                tuple[0];
+                                  tuple[0];
                         }
-		    }
+                    }
                 }
 
                 list = configHandler.getHandler ();
                 params = configHandler.getHandlerParams ();
                 n = list.size ();
                 for (int i=0; i<n; i++) {
-		    String [] tuple = (String []) list.get (i);
+                    String [] tuple = (String []) list.get (i);
                     List param = (List) params.get (i);
-		    try {
-	                Class cl = Class.forName (tuple[0]);
-	                OutputHandler handler =
-			    (OutputHandler) cl.newInstance ();
+                    try {
+                        Class cl = Class.forName (tuple[0]);
+                        OutputHandler handler =
+                                (OutputHandler) cl.newInstance ();
                         handler.init (tuple[1]);
                         handler.setDefaultParams (param);
-			
+
                         _handlerList.add (handler);
                         _handlerMap.put  (handler.getName ().toLowerCase (),
-                        		  handler);
-		    }
-		    catch (Exception e) {
+                                          handler);
+                    }
+                    catch (Exception e) {
                         if (err == null) {
                             err = "cannot instantiate handler: " + tuple[0];
                         }
-		    }
+                    }
                 }
-	    }
+            }
             // If we found any error, the caller needs to deal with it.
             if (err != null) {
                 throw new JhoveException (err);
             }
-	}
+        }
 
-	/****************************************************************
-	 * The Bytestream module and the Text, XML, and Audit output
-	 * handlers are always statically loaded.
-	 ****************************************************************/
+        /****************************************************************
+         * The Bytestream module and the Text, XML, and Audit output
+         * handlers are always statically loaded.
+         ****************************************************************/
 
-	Module module = new BytestreamModule ();
+        Module module = new BytestreamModule ();
         module.setDefaultParams (new ArrayList ());
-	_moduleList.add (module);
-	_moduleMap.put  (module.getName ().toLowerCase (), module);
+        _moduleList.add (module);
+        _moduleMap.put  (module.getName ().toLowerCase (), module);
 
-    OutputHandler handler = new TextHandler ();
-    handler.setDefaultParams (new ArrayList ());
-    _handlerList.add (handler);
-    _handlerMap.put  (handler.getName ().toLowerCase (), handler);
-	
-    handler = new XmlHandler ();
-    handler.setDefaultParams (new ArrayList ());
-    _handlerList.add (handler);
-    _handlerMap.put  (handler.getName ().toLowerCase (), handler);
-	
-    handler = new AuditHandler ();
-    handler.setDefaultParams (new ArrayList ());
-    _handlerList.add (handler);
-    _handlerMap.put  (handler.getName ().toLowerCase (), handler);
+        OutputHandler handler = new TextHandler ();
+        handler.setDefaultParams (new ArrayList ());
+        _handlerList.add (handler);
+        _handlerMap.put  (handler.getName ().toLowerCase (), handler);
+
+        handler = new XmlHandler ();
+        handler.setDefaultParams (new ArrayList ());
+        _handlerList.add (handler);
+        _handlerMap.put  (handler.getName ().toLowerCase (), handler);
+
+        handler = new AuditHandler ();
+        handler.setDefaultParams (new ArrayList ());
+        _handlerList.add (handler);
+        _handlerMap.put  (handler.getName ().toLowerCase (), handler);
     }
 
 
@@ -425,27 +456,27 @@ public class JhoveBase
      *  @param dirFileOrUri One or more file names or URI's to be analyzed
      */
     public void dispatch (App app, Module module, /* String moduleParam, */
-				OutputHandler aboutHandler,
-				OutputHandler handler, /*String handlerParam,*/
-				String outputFile,
-				String [] dirFileOrUri)
-	throws Exception
+                          OutputHandler aboutHandler,
+                          OutputHandler handler, /*String handlerParam,*/
+                          String outputFile,
+                          String [] dirFileOrUri)
+            throws Exception
     {
         _abort = false;
-    	/* If no handler is specified, use the default TEXT handler. */
-    	if (handler == null) {
-    	    handler = (OutputHandler) _handlerMap.get ("text");
-    	}
-    	_outputFile = outputFile;
-    
-    	handler.setApp    (app);
-    	handler.setBase   (this);
-    	handler.setWriter (makeWriter (_outputFile, _encoding));
-    	//handler.param     (handlerParam);
-    
-    	handler.showHeader ();                /* Show handler header info. */
-    
-    	if (dirFileOrUri == null) {
+        /* If no handler is specified, use the default TEXT handler. */
+        if (handler == null) {
+            handler = (OutputHandler) _handlerMap.get ("text");
+        }
+        _outputFile = outputFile;
+
+        handler.setApp    (app);
+        handler.setBase   (this);
+        handler.setWriter (makeWriter (_outputFile, _encoding));
+        //handler.param     (handlerParam);
+
+        handler.showHeader ();                /* Show handler header info. */
+
+        if (dirFileOrUri == null) {
             if (module != null) {             /* Show info about module. */
                 //module.param (moduleParam);
                 module.applyDefaultParams();
@@ -457,24 +488,24 @@ public class JhoveBase
             else {                            /* Show info about application */
                 app.show (handler);
             }
-    	}
-    	else {
+        }
+        else {
             for (int i=0; i<dirFileOrUri.length; i++) {
                 if (!process (app, module, /*moduleParam, */ handler, /*handlerParam,*/
-    			   dirFileOrUri[i])) {
-                        break;
+                              dirFileOrUri[i])) {
+                    break;
                 }
-    	    }
-    	}
-    
-    	handler.showFooter ();                /* Show handler footer info. */
+            }
+        }
+
+        handler.showFooter ();                /* Show handler footer info. */
     }
 
     /* Returns false if processing should be aborted.
      * Calls itself recursively for directories. */
-    public boolean process (App app, Module module, OutputHandler handler, 
-			    String dirFileOrUri)
-    	throws Exception
+    public boolean process (App app, Module module, OutputHandler handler,
+                            String dirFileOrUri)
+            throws Exception
     {
         if (_abort) {
             return false;
@@ -482,7 +513,7 @@ public class JhoveBase
         File file = null;
         boolean isTemp = false;
         long lastModified = -1;
-        
+
         /* First see if we have a URI, if not it is a directory or a file. */
         URI uri = null;
         try {
@@ -501,34 +532,34 @@ public class JhoveBase
             }
             catch (Exception e) {
                 throw new JhoveException ("cannot convert URI to URL: " +
-        				  dirFileOrUri);
+                                          dirFileOrUri);
             }
             URLConnection conn = url.openConnection ();
             _conn = conn;
             if (conn instanceof HttpsURLConnection) {
                 try {
-                        KeyManager[] km = null;
-                        TrustManager[] tm = {new RelaxedX509TrustManager()};
-                        SSLContext sslContext = SSLContext.getInstance("SSL");
-                        sslContext.init(null, tm, new java.security.SecureRandom());
-                        SSLSocketFactory sf = sslContext.getSocketFactory();
-                        ((HttpsURLConnection)conn).setSSLSocketFactory(sf);
-                        int code = ((HttpsURLConnection) conn).getResponseCode ();
-                        if (200 > code || code >= 300) {
-                	        throw new JhoveException ("URL not found: " +
-                				  dirFileOrUri);
-                        }
+                    KeyManager[] km = null;
+                    TrustManager[] tm = {new RelaxedX509TrustManager()};
+                    SSLContext sslContext = SSLContext.getInstance("SSL");
+                    sslContext.init(null, tm, new java.security.SecureRandom());
+                    SSLSocketFactory sf = sslContext.getSocketFactory();
+                    ((HttpsURLConnection)conn).setSSLSocketFactory(sf);
+                    int code = ((HttpsURLConnection) conn).getResponseCode ();
+                    if (200 > code || code >= 300) {
+                        throw new JhoveException ("URL not found: " +
+                                                  dirFileOrUri);
+                    }
                 }
                 catch (Exception e) {
                     throw new JhoveException("URL not found: " + dirFileOrUri);
                 }
             }
             lastModified = conn.getLastModified ();
-            
+
             /* Convert the URI to a temporary file and use
-             * for the input stream.
-             */
-        
+            * for the input stream.
+            */
+
             try {
                 file = connToTempFile (conn, info);
                 if (file == null) {
@@ -553,83 +584,83 @@ public class JhoveBase
         else {
             file = new File (dirFileOrUri);
         }
-    
+
         if (file.isDirectory ()) {
             File [] files = file.listFiles ();
             info = null;        // free up unused RepInfo before recursing
 
-	    /* Sort the files in ascending order by filename. */
-	    Arrays.sort (files);
+            /* Sort the files in ascending order by filename. */
+            Arrays.sort (files);
 
             handler.startDirectory (file.getCanonicalPath ());
             for (int i=0; i<files.length; i++) {
-            	if (!process (app, module, handler,
-        		         files[i].getCanonicalPath ())) {
-                     return false;
+                if (!process (app, module, handler,
+                              files[i].getCanonicalPath ())) {
+                    return false;
                 }
             }
             handler.endDirectory ();
         }
         else {
-        
+
             if (!file.exists ()) {
-        	info.setMessage (new ErrorMessage ("file not found"));
-        	info.setWellFormed (RepInfo.FALSE);
-        	info.show (handler);
+                info.setMessage (new ErrorMessage ("file not found"));
+                info.setWellFormed (RepInfo.FALSE);
+                info.show (handler);
             }
             else if (!file.isFile () || !file.canRead ()) {
-        	info.setMessage (new ErrorMessage ("file cannot be read"));
-        	info.setWellFormed (RepInfo.FALSE);
-        	info.show (handler);
+                info.setMessage (new ErrorMessage ("file cannot be read"));
+                info.setWellFormed (RepInfo.FALSE);
+                info.show (handler);
             }
-	    else if (handler.okToProcess (dirFileOrUri)) {
-		info.setSize (file.length ());
-            	if (lastModified < 0) {
-            	    lastModified = file.lastModified ();
-            	}
-            	info.setLastModified (new Date (lastModified));
-            
-            	if (module != null) {
-            
-            	    /* Invoke the specified module. */
-            
-            	    if (!processFile (app, module, false, file, info)) {
-                                return false;
+            else if (handler.okToProcess (dirFileOrUri)) {
+                info.setSize (file.length ());
+                if (lastModified < 0) {
+                    lastModified = file.lastModified ();
+                }
+                info.setLastModified (new Date (lastModified));
+
+                if (module != null) {
+
+                    /* Invoke the specified module. */
+
+                    if (!processFile (app, module, false, file, info)) {
+                        return false;
                     }
-            	}
-            	else {
-            
-            	    /* Invoke all modules until one returns well-formed.
-                     * If a module doesn't know how to validate, we don't
-                     * want to throw arbitrary files at it, so we'll skip it. */
-            	    Iterator iter = _moduleList.iterator();
-            	    while (iter.hasNext ()) {
-            		Module  mod  = (Module)  iter.next ();
-            		RepInfo infc = (RepInfo) info.clone ();
+                }
+                else {
+
+                    /* Invoke all modules until one returns well-formed.
+        * If a module doesn't know how to validate, we don't
+        * want to throw arbitrary files at it, so we'll skip it. */
+                    Iterator iter = _moduleList.iterator();
+                    while (iter.hasNext ()) {
+                        Module  mod  = (Module)  iter.next ();
+                        RepInfo infc = (RepInfo) info.clone ();
 
                         if (mod.hasFeature ("edu.harvard.hul.ois.jhove.canValidate")) {
                             try {
                                 if (!processFile (app, mod, /*moduleParam,*/ false, file,
-                	                    infc)) {
+                                                  infc)) {
                                     return false;
                                 }
                                 if (infc.getWellFormed () == RepInfo.TRUE) {
                                     info.copy (infc);
                                     break;
-                		}
+                                }
                                 else {
                                     // We want to know what modules matched the
                                     // signature, so we force the sigMatch property
                                     // to be persistent.
                                     info.setSigMatch (infc.getSigMatch ());
-                                }        
+                                }
                             }
                             catch (Exception e) {
-            			/* The assumption is that in trying to analyze
-            			 * the wrong type of file, the module may go
-            			 * off its track and throw an exception, so we
-            			 * just continue on to the next module.
-            			 */
+                                /* The assumption is that in trying to analyze
+                                 * the wrong type of file, the module may go
+                                 * off its track and throw an exception, so we
+                                 * just continue on to the next module.
+                                 */
                                 continue;
                             }
                         }
@@ -644,14 +675,14 @@ public class JhoveBase
         return true;
     }
 
-    /** 
+    /**
      *  Saves a URLConnection's data stream to a temporary file. 
      *  This may be interrupted asynchronously by calling
      *  <code>abort ()</code>, in which case it will delete
      *  the temporary file and return <code>null</code>.
      */
-    public File connToTempFile (URLConnection conn, RepInfo info) 
-        throws IOException
+    public File connToTempFile (URLConnection conn, RepInfo info)
+            throws IOException
     {
         File tempFile;
         try {
@@ -665,20 +696,20 @@ public class JhoveBase
         DataInputStream instrm = null;
         if (_bufferSize > 0) {
             outstrm = new BufferedOutputStream
-                (new FileOutputStream (tempFile), _bufferSize);
+                    (new FileOutputStream (tempFile), _bufferSize);
         }
         else {
             outstrm = new BufferedOutputStream
-                (new FileOutputStream (tempFile));
+                    (new FileOutputStream (tempFile));
         }
         try {
             if (_bufferSize > 0) {
-                instrm = new DataInputStream (new BufferedInputStream 
-                    (conn.getInputStream (), _bufferSize));
+                instrm = new DataInputStream (new BufferedInputStream
+                        (conn.getInputStream (), _bufferSize));
             }
             else {
-                instrm = new DataInputStream (new BufferedInputStream 
-                    (conn.getInputStream ()));
+                instrm = new DataInputStream (new BufferedInputStream
+                        (conn.getInputStream ()));
             }
         }
         catch (UnknownHostException e) {
@@ -699,7 +730,7 @@ public class JhoveBase
 
         Checksummer ckSummer = null;
         if (_checksum) {
-            ckSummer = new Checksummer (); 
+            ckSummer = new Checksummer ();
         }
         _nByte = 0;
 
@@ -748,7 +779,7 @@ public class JhoveBase
         /* Update RepInfo */
         info.setSize (_nByte);
         if (ckSummer != null) {
-            info.setChecksum (new Checksum (ckSummer.getCRC32 (), 
+            info.setChecksum (new Checksum (ckSummer.getCRC32 (),
                                             ChecksumType.CRC32));
             String value = ckSummer.getMD5 ();
             if (value != null) {
@@ -784,10 +815,10 @@ public class JhoveBase
         catch (InterruptedException e) {
         }
         if (conn != null) {
-              // This is a non-deprecated way of bringing the connection
-              // to a screeching halt.  disconnect will (we hope) close
-              // the underlying socket, killing any hanging I/O.
-              conn.disconnect ();
+            // This is a non-deprecated way of bringing the connection
+            // to a screeching halt.  disconnect will (we hope) close
+            // the underlying socket, killing any hanging I/O.
+            conn.disconnect ();
         }
     }
 
@@ -797,8 +828,8 @@ public class JhoveBase
      * module is incapable of validation.  This shouldn't be called
      * if the module doesn't have the validation feature. */
     public boolean processFile (App app, Module module, /*String moduleParam,*/
-				boolean verbose, File file, RepInfo info)
-	throws Exception
+                                boolean verbose, File file, RepInfo info)
+            throws Exception
     {
         if (!module.hasFeature("edu.harvard.hul.ois.jhove.canValidate")) {
             return false;
@@ -809,7 +840,7 @@ public class JhoveBase
         module.setApp  (app);
         module.setBase (this);
         module.setVerbosity (verbose ? Module.MAXIMUM_VERBOSITY :
-			     Module.MINIMUM_VERBOSITY);
+                             Module.MINIMUM_VERBOSITY);
         module.applyDefaultParams ();
         if (module.isRandomAccess ()) {
 
@@ -817,7 +848,7 @@ public class JhoveBase
 
             RandomAccessFile raf = new RandomAccessFile (file, "r");
             if (_signature) {
-               module.checkSignatures (file, raf, info);
+                module.checkSignatures (file, raf, info);
             }
             else {
                 module.parse (raf, info);
@@ -826,32 +857,32 @@ public class JhoveBase
         }
         else {
 
-	    /* Module accepts stream input. */
+            /* Module accepts stream input. */
 
-	    InputStream stream = new FileInputStream (file);
-	    if (_signature) {
-		module.checkSignatures (file, stream, info);
-	    }
-	    else {
-            int parseIndex = module.parse (stream, info, 0);
-            /* If parse returns non-zero, reparse with a fresh stream. */
-            while (parseIndex != 0) {
-                stream.close ();
-                stream = new FileInputStream (file);
-                parseIndex = module.parse (stream, info, parseIndex);
+            InputStream stream = new FileInputStream (file);
+            if (_signature) {
+                module.checkSignatures (file, stream, info);
             }
-	    }
-	    stream.close ();
-	}
+            else {
+                int parseIndex = module.parse (stream, info, 0);
+                /* If parse returns non-zero, reparse with a fresh stream. */
+                while (parseIndex != 0) {
+                    stream.close ();
+                    stream = new FileInputStream (file);
+                    parseIndex = module.parse (stream, info, parseIndex);
+                }
+            }
+            stream.close ();
+        }
         return true;    // Successful processing
     }
-	
+
     /**
      *  Creates a temporary file with a unique name.  
      *  The file will be deleted when the application exits.
      */
     public File tempFile ()
-	throws IOException
+            throws IOException
     {
         File file = null;
 
@@ -873,7 +904,7 @@ public class JhoveBase
     /******************************************************************
      * Accessor methods.
      ******************************************************************/
-    
+
     /**
      *  Returns the abort flag.
      */
@@ -888,7 +919,7 @@ public class JhoveBase
      */
     public int getBufferSize ()
     {
-	return _bufferSize;
+        return _bufferSize;
     }
 
     /**
@@ -896,7 +927,7 @@ public class JhoveBase
      */
     public  String getConfigFile ()
     {
-	return _configFile;
+        return _configFile;
     }
 
     /**
@@ -913,7 +944,7 @@ public class JhoveBase
      */
     public  String getEncoding ()
     {
-	return _encoding;
+        return _encoding;
     }
 
     /**
@@ -921,7 +952,7 @@ public class JhoveBase
      */
     public  Map getExtension ()
     {
-	return _extensions;
+        return _extensions;
     }
 
     /**
@@ -929,7 +960,7 @@ public class JhoveBase
      */
     public  String getExtension (String name)
     {
-	return (String) _extensions.get (name);
+        return (String) _extensions.get (name);
     }
 
     /**
@@ -937,20 +968,20 @@ public class JhoveBase
      */
     public  OutputHandler getHandler (String name)
     {
-	OutputHandler handler = null;
-	if (name != null) {
-	    handler = (OutputHandler) _handlerMap.get (name.toLowerCase ());
-	}
-	return handler;
+        OutputHandler handler = null;
+        if (name != null) {
+            handler = (OutputHandler) _handlerMap.get (name.toLowerCase ());
+        }
+        return handler;
     }
 
 
     /** Returns map of handler names to handlers. */
     public  Map getHandlerMap ()
     {
-	return _handlerMap;
+        return _handlerMap;
     }
-    
+
     /** Returns the list of handlers. */
     public  List getHandlerList ()
     {
@@ -962,7 +993,7 @@ public class JhoveBase
      */
     public String getJhoveHome ()
     {
-	return _jhoveHome;
+        return _jhoveHome;
     }
 
     /**
@@ -970,19 +1001,19 @@ public class JhoveBase
      */
     public  Module getModule (String name)
     {
-	Module module = null;
-	if (name != null) {
-	    module = (Module) _moduleMap.get (name.toLowerCase ());
-	}
-	return module;
+        Module module = null;
+        if (name != null) {
+            module = (Module) _moduleMap.get (name.toLowerCase ());
+        }
+        return module;
     }
 
     /** Returns the Map of module names to modules. */
     public  Map getModuleMap ()
     {
-	return _moduleMap;
+        return _moduleMap;
     }
-    
+
     /** Returns the List of modules. */
     public  List getModuleList ()
     {
@@ -1002,7 +1033,7 @@ public class JhoveBase
      */
     public  String getOuputFile ()
     {
-	return _outputFile;
+        return _outputFile;
     }
 
     /**
@@ -1026,7 +1057,7 @@ public class JhoveBase
      */
     public String getSaxClass ()
     {
-	return _saxClass;
+        return _saxClass;
     }
 
     /**
@@ -1036,7 +1067,7 @@ public class JhoveBase
     {
         return _tempDir;
     }
-    
+
     /** Return the maximum number of bytes to check, for modules that look for
      *  an indefinitely positioned signature or check the first sigBytes bytes
      *  in lieu of a signature
@@ -1055,13 +1086,13 @@ public class JhoveBase
     {
         return _saveDir;
     }
-    
+
     /** Returns <code>true</code> if checksumming is requested. */
     public  boolean getChecksumFlag ()
     {
-	return _checksum;
+        return _checksum;
     }
-    
+
     /** Returns <code>true</code> if raw output is requested.
      *  Raw output means numeric rather than symbolic output;
      *  its exact interpretation is up to the module, but generally
@@ -1069,17 +1100,17 @@ public class JhoveBase
      */
     public  boolean getShowRawFlag ()
     {
-	return _showRaw;
+        return _showRaw;
     }
-    
+
     /** Returns the "check signature only" flag. */
     public  boolean getSignatureFlag ()
     {
         return _signature;
     }
-    
+
     /** Returns the requested MIX schema version. */
-    public String getMixVersion () 
+    public String getMixVersion ()
     {
         return _mixVsn;
     }
@@ -1113,7 +1144,7 @@ public class JhoveBase
     {
         _tempDir = tempDir;
     }
-    
+
     /**
      * Sets the log level.  The value should be the name of
      * a predefined instance of java.util.logging.Level, 
@@ -1190,53 +1221,53 @@ public class JhoveBase
      */
     public static String getConfigFileFromProperties ()
     {
-	String configFile = null;
-	configFile = getFromProperties (CONFIG_PROPERTY);
-	if (configFile == null) {
-	    try {
-		String fs = System.getProperty ("file.separator");
-		configFile = System.getProperty ("user.home") + fs +
-		    JHOVE_DIR + fs + CONFIG_DIR + fs + "jhove.conf";
-	    }
-	    catch (Exception e) {
-	    }
-	}
+        String configFile = null;
+        configFile = getFromProperties (CONFIG_PROPERTY);
+        if (configFile == null) {
+            try {
+                String fs = System.getProperty ("file.separator");
+                configFile = System.getProperty ("user.home") + fs +
+                             JHOVE_DIR + fs + CONFIG_DIR + fs + "jhove.conf";
+            }
+            catch (Exception e) {
+            }
+        }
 
-	return configFile;
+        return configFile;
     }
 
     /** Returns the value of the property 
-        <code>edu.harvard.hul.ois.jhove.saxClass</code>,
-        which should be the name of the main SAX class.
-        Returns <code>null</code> if no such property
-        has been set up. */
+     <code>edu.harvard.hul.ois.jhove.saxClass</code>,
+     which should be the name of the main SAX class.
+     Returns <code>null</code> if no such property
+     has been set up. */
     public static String getSaxClassFromProperties ()
     {
-	String saxClass = getFromProperties (SAX_PROPERTY);
+        String saxClass = getFromProperties (SAX_PROPERTY);
 
-	return saxClass;
+        return saxClass;
     }
 
     /** Returns a named value from the properties file. */
     public static String getFromProperties (String name)
     {
-	String value = null;
+        String value = null;
 
-	try {
-	    String fs = System.getProperty ("file.separator");
-	    Properties props = new Properties ();
-	    String propsFile = System.getProperty ("user.home") + fs +
-		JHOVE_DIR + fs + "jhove.properties";
-	    FileInputStream stream = new FileInputStream (propsFile);
-	    props.load (stream);
-	    stream.close ();
+        try {
+            String fs = System.getProperty ("file.separator");
+            Properties props = new Properties ();
+            String propsFile = System.getProperty ("user.home") + fs +
+                               JHOVE_DIR + fs + "jhove.properties";
+            FileInputStream stream = new FileInputStream (propsFile);
+            props.load (stream);
+            stream.close ();
 
-	    value = props.getProperty (name);
-	}
-	catch (Exception e) {
-	}
+            value = props.getProperty (name);
+        }
+        catch (Exception e) {
+        }
 
-	return value;
+        return value;
     }
 
     /**
@@ -1245,36 +1276,36 @@ public class JhoveBase
      * @param encoding   Character encoding.  Must not be null.
      */
     protected static PrintWriter makeWriter (String outputFile, String encoding)
-	throws JhoveException
+            throws JhoveException
     {
-	PrintWriter output = null;
-	OutputStreamWriter osw = null;
-	if (outputFile != null) {
-	    try {
-		FileOutputStream stream = new FileOutputStream (outputFile);
-		osw = new OutputStreamWriter (stream, encoding);
-		output = new PrintWriter (osw);
-	    }
-	    catch (UnsupportedEncodingException u) {
-		throw new JhoveException ("unsupported character encoding: " +
-					  encoding);
-	    }
-	    catch (FileNotFoundException e) {
-		throw new JhoveException ("cannot open output file: " +
-					  outputFile);
-	    }
-	}
-	if (output == null) {
-	    try {
-		osw = new OutputStreamWriter (System.out, encoding);
-	    }
-	    catch (UnsupportedEncodingException u) {
-		throw new JhoveException ("unsupported character encoding: " +
-					  encoding);
-	    }
-	    output = new PrintWriter (osw);
-	}
-	return output;
+        PrintWriter output = null;
+        OutputStreamWriter osw = null;
+        if (outputFile != null) {
+            try {
+                FileOutputStream stream = new FileOutputStream (outputFile);
+                osw = new OutputStreamWriter (stream, encoding);
+                output = new PrintWriter (osw);
+            }
+            catch (UnsupportedEncodingException u) {
+                throw new JhoveException ("unsupported character encoding: " +
+                                          encoding);
+            }
+            catch (FileNotFoundException e) {
+                throw new JhoveException ("cannot open output file: " +
+                                          outputFile);
+            }
+        }
+        if (output == null) {
+            try {
+                osw = new OutputStreamWriter (System.out, encoding);
+            }
+            catch (UnsupportedEncodingException u) {
+                throw new JhoveException ("unsupported character encoding: " +
+                                          encoding);
+            }
+            output = new PrintWriter (osw);
+        }
+        return output;
     }
 
 
@@ -1283,12 +1314,12 @@ public class JhoveBase
      *  The file will be deleted when the application exits.
      */
     public File newTempFile ()
-	throws IOException
+            throws IOException
     {
-	return tempFile ();
+        return tempFile ();
     }
-    
-    
+
+
     /** A HostnameVerifier for https connections that will never ask for 
      *  certificates.
      */
@@ -1297,30 +1328,30 @@ public class JhoveBase
             return true;
         }
     }
-    
+
     /** A TrustManager which should accept all certificates.
      */
     private class RelaxedX509TrustManager implements X509TrustManager {
-        public boolean isClientTrusted(java.security.cert.X509Certificate[] chain){ 
-            return true; 
+        public boolean isClientTrusted(java.security.cert.X509Certificate[] chain){
+            return true;
         }
-        public boolean isServerTrusted(java.security.cert.X509Certificate[] chain) { 
-            return true; 
+        public boolean isServerTrusted(java.security.cert.X509Certificate[] chain) {
+            return true;
         }
-        public java.security.cert.X509Certificate[] getAcceptedIssuers() { 
-            return null; 
+        public java.security.cert.X509Certificate[] getAcceptedIssuers() {
+            return null;
         }
         public void checkClientTrusted(java.security.cert.X509Certificate[] chain) {
-            
+
         }
         public void checkClientTrusted(java.security.cert.X509Certificate[] chain, String s) {
-            
+
         }
         public void checkServerTrusted(java.security.cert.X509Certificate[] chain) {
-            
+
         }
         public void checkServerTrusted(java.security.cert.X509Certificate[] chain, String s) {
-            
+
         }
     }
 }

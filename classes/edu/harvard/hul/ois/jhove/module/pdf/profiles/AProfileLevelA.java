@@ -48,7 +48,7 @@ public class AProfileLevelA extends PdfProfile {
      */
     public AProfileLevelA(PdfModule module) {
         super (module);
-        _profileText = "ISO PDF/A-1, Level A (Draft Proposal)";
+        _profileText = "ISO PDF/A-1, Level A";
     }
 
     /**
@@ -61,16 +61,23 @@ public class AProfileLevelA extends PdfProfile {
     public boolean satisfiesThisProfile() {
         // Conforming to the TaggedProfile requirements is necessary
         // for Level A
+        _levelA = true;
         if (_taggedProfile != null &&
             !_taggedProfile.isAlreadyOK ()) {
             _levelA = false;
+            reportReasonForNonCompliance(ErrorCodes.pdfa_a.not_a_compliant_tagged_pdf,
+                                         "Not a compliant "
+                                         +_taggedProfile.getText());
 
         }
 
         if (_aProfileLevelB != null &&
             !_aProfileLevelB.isAlreadyOK ()) {
             _levelA = false;
-            // But it may still be Level B
+            reportReasonForNonCompliance(ErrorCodes.pdfa_a.not_a_compliant_pdfa_lvl_b,
+                                         "Not a compliant "
+                                         +_aProfileLevelB.getText());
+
         }
 
 
@@ -83,6 +90,7 @@ public class AProfileLevelA extends PdfProfile {
      *  Calling setAProfile links this AProfile to a TaggedProfile.
      *  This class gets all its information from the linked AProfile,
      *  so calling this is mandatory.
+     * @param tpr the levelB profile to attach this profile to
      */
     public void setAProfile (AProfileLevelB tpr)
     {
@@ -92,6 +100,7 @@ public class AProfileLevelA extends PdfProfile {
     /**
      *  Calling setTaggedProfile links this AProfile to a TaggedProfile.
      *
+     * @param tpr  the TaggedProfile to attach
      */
     public void setTaggedProfile (TaggedProfile tpr)
     {
@@ -114,13 +123,15 @@ public class AProfileLevelA extends PdfProfile {
                 Iterator iter1 = fmap.values ().iterator ();
                 while (iter1.hasNext ()) {
                     PdfDictionary font = (PdfDictionary) iter1.next ();
-                    if (!fontOK (font)) {//TODO: Reports down in the method???
+                    if (!fontOK (font)) {
                         return false;
                     }
                 }
             }
         }
         catch (Exception e) {
+            reportReasonForNonCompliance(
+                    ErrorCodes.pdfa_a.exception_was_thrown, e.getMessage());
             return false;
         }
         return true;
@@ -140,7 +151,7 @@ public class AProfileLevelA extends PdfProfile {
             // The ToUnicode entry is required only for Level A,
             // and there are an assortment of exceptions.
             PdfSimpleObject fType = (PdfSimpleObject) font.get("Subtype");
-            String fTypeStr = fType.getStringValue (); //TODO: What if this is null??? Then this method returns true.
+            String fTypeStr = fType.getStringValue ();
             if ("Type1".equals (fTypeStr)) {
                 // The allowable Type 1 fonts are open ended, so
                 // allow all Type 1 fonts..
@@ -191,13 +202,14 @@ public class AProfileLevelA extends PdfProfile {
              *
              * PdfStream toUni = (PdfStream) font.get ("ToUnicode");
              */
-                PdfObject toUni = (PdfObject) font.get ("ToUnicode");//TODO: Where are the exceptions
+                PdfObject toUni = (PdfObject) font.get ("ToUnicode");//TODO:
                 if (toUni == null) {
-                    //TODO: Move this one to AProfileLevelA, as it is the only place where LevelA and B currently differ
                     _levelA = false;
                 }
             }
         } catch (Exception e) {
+            reportReasonForNonCompliance(ErrorCodes.pdfa_a.exception_was_thrown,
+                                         e.getMessage());
             return false;
         }
         return true;

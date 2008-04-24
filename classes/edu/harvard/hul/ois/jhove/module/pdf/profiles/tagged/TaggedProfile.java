@@ -3,6 +3,7 @@ package edu.harvard.hul.ois.jhove.module.pdf.profiles.tagged;
 import edu.harvard.hul.ois.jhove.module.PdfModule;
 import edu.harvard.hul.ois.jhove.module.pdf.PdfDictionary;
 import edu.harvard.hul.ois.jhove.module.pdf.PdfSimpleObject;
+import edu.harvard.hul.ois.jhove.module.pdf.profiles.ErrorCodes;
 import edu.harvard.hul.ois.jhove.module.pdf.profiles.PdfProfile;
 
 /**
@@ -40,7 +41,8 @@ public final class TaggedProfile extends PdfProfile
         try {
             PdfDictionary docCatDict = _module.getCatalogDict ();
             if (docCatDict == null){
-                reportReasonForNonCompliance("PDF.has.no.catalog.dictionary");
+                reportReasonForNonCompliance(ErrorCodes.tagged.no_catalog_dict,
+                                             "PDF.has.no.catalog.dictionary");
                 return false;
             }
 
@@ -53,11 +55,15 @@ public final class TaggedProfile extends PdfProfile
                  markInfo = (PdfDictionary)
                         _module.resolveIndirectObject (docCatDict.get ("MarkInfo"));
                 if (markInfo == null) {
-                    reportReasonForNonCompliance("PDF.catalog.dictionary.has.no.MarkInfo.entry");
+                    reportReasonForNonCompliance(
+                            ErrorCodes.tagged.catalog_dict_has_no_markinfo,
+                            "PDF.catalog.dictionary.has.no.MarkInfo.entry");
                     return false;
                 }
             } catch (ClassCastException e){
-                reportReasonForNonCompliance("PDF.catalog.dictionary.entry.MarkInfo.is.not.a.dictionary");
+                reportReasonForNonCompliance(ErrorCodes.tagged.markinfo_is_not_a_dict,
+                                             "PDF.catalog.dictionary.entry."
+                                             + "MarkInfo.is.not.a.dictionary");
                 return false;
             }
 
@@ -65,11 +71,17 @@ public final class TaggedProfile extends PdfProfile
                 PdfSimpleObject marked =
                         (PdfSimpleObject) markInfo.get ("Marked");
                 if (!marked.isTrue ()) {
-                    reportReasonForNonCompliance("PDF.catalog.dictionary.entry.MarkInfo.entry.Marked.is.false");
+                    reportReasonForNonCompliance(
+                            ErrorCodes.tagged.markinfo_marked_is_false,
+                            "PDF.catalog.dictionary.entry.MarkInfo.entry."
+                            + "Marked.is.false");
                     return false;
                 }
             } catch (ClassCastException e){
-                reportReasonForNonCompliance("PDF.catalog.dictionary.entry.MarkInfo.entry.Marked.is.not.a.simple.object");
+                reportReasonForNonCompliance(ErrorCodes.tagged.marked_is_not_simple,
+                                             "PDF.catalog.dictionary.entry."
+                                             + "MarkInfo.entry.Marked.is.not.a."
+                                             + "simple.object");
                 return false;
 
             }
@@ -85,7 +97,8 @@ public final class TaggedProfile extends PdfProfile
         catch (Exception e) {
             // An exception thrown anywhere means some assumption
             // has been violated, so it doesn't meet the profile.
-            reportReasonForNonCompliance(e.getMessage());
+            reportReasonForNonCompliance(ErrorCodes.tagged.exception_was_thrown,
+                                         e.getMessage());
             return false;
         }
         return true;    // passed all tests
@@ -95,4 +108,4 @@ public final class TaggedProfile extends PdfProfile
 }
 
 
-}
+

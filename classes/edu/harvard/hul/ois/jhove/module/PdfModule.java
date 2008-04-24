@@ -288,6 +288,8 @@ public class PdfModule
         super (NAME, RELEASE, DATE, FORMAT, COVERAGE, MIMETYPE, WELLFORMED,
                VALIDITY, REPINFO, NOTE, RIGHTS, true);
 
+
+        //TODO: STILL TRUE??
         Agent agent = new Agent ("Harvard University Library",
                                  AgentType.EDUCATIONAL);
         agent.setAddress ("Office for Information Systems, " +
@@ -296,6 +298,10 @@ public class PdfModule
         agent.setTelephone ("+1 (617) 495-3724");
         agent.setEmail("jhove-support@hulmail.harvard.edu");
         _vendor = agent;
+
+
+        //TODO: What about pdf 1.2, 1.3, 1.7 specs??
+
 
         Document doc = new Document ("PDF Reference: Adobe Portable " +
                                      "Document Format, Version 1.4",
@@ -715,12 +721,33 @@ public class PdfModule
         ListIterator pter = _profile.listIterator ();
         if (info.getWellFormed() == RepInfo.TRUE) {
             // Well-formedness is necessary to satisfy any profile.
+                            List profiles = new ArrayList();
+            Property nonComplianceReasons = new Property("Profile NonCompliance Reasons",
+                                                         PropertyType.PROPERTY,
+                                                         PropertyArity.LIST,profiles);
+
             while (pter.hasNext ()) {
+
+
+
                 PdfProfile prof = (PdfProfile) pter.next ();
+
                 if (prof.satisfiesProfile (_raf, _parser)) {
-                    info.setProfile (prof.getText ());//TODO: Add the reasons here
+                    info.setProfile (prof.getText ());
+                } else{//profile is not satisfied, discover why
+                    List reasons = prof.getReasonsForNonCompliance();
+
+                    profiles.add(new Property (prof.getText(),
+                                              PropertyType.PROPERTY,
+                                              PropertyArity.LIST,
+                                              reasons));
+
+
+
                 }
             }
+            info.setProperty(nonComplianceReasons);
+            
         }
     }
 

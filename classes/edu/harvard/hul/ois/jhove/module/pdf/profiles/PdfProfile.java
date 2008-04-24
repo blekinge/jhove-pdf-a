@@ -5,6 +5,8 @@
 
 package edu.harvard.hul.ois.jhove.module.pdf.profiles;
 
+import edu.harvard.hul.ois.jhove.Property;
+import edu.harvard.hul.ois.jhove.PropertyType;
 import edu.harvard.hul.ois.jhove.module.PdfModule;
 import edu.harvard.hul.ois.jhove.module.pdf.Parser;
 import edu.harvard.hul.ois.jhove.module.pdf.PdfArray;
@@ -57,7 +59,6 @@ public abstract class PdfProfile
     public PdfProfile (PdfModule module)
     {
         _module = module;
-        _reasonsForNonCompliance = new ArrayList();
     }
 
 
@@ -65,18 +66,23 @@ public abstract class PdfProfile
 
     /**
      * Use this method to report if the given file does not match this profile
-     * @param reason The reason for non-compliance.
+     * @param errorcode The unique errorcode for exactly what went wrong. Should
+     * identify the exact check that failed. Must be unique
+     * @param explanation A human readable explanation of what went wrong. Should
+     * be understandable by a superuser with some understading of the profile.
+     * Can be inexact, as the gritty details should be identified by the errorcode
      */
-    public void reportReasonForNonCompliance(String reason){
-        _reasonsForNonCompliance.add(reason);
+    protected void reportReasonForNonCompliance(int errorcode, String explanation){
+        _reasonsForNonCompliance.add(new Property("Error "+errorcode,
+                                                  PropertyType.STRING,explanation));
     }
 
     /**
      * Bulk method for adding reasons for non compliance. Mostly used for adding
      * all the reasons for another profiles non-compliance to this profiles reasons
-     * @param reasons a list of Strings, detailing reasons for non-compliance
+     * @param reasons a list of Property, detailing reasons for non-compliance
      */
-    public void reportReasonsForNonCompliance(List reasons){
+    protected void reportReasonsForNonCompliance(List reasons){
         _reasonsForNonCompliance.addAll(reasons);
     }
 
@@ -84,7 +90,7 @@ public abstract class PdfProfile
      * Get a list of the detected reasons for this file to not conform to this
      * profile. Note, you cannot yet rely on the list to be complete, or a special
      * format of the errors
-     * @return a list of strings, detailing the reasons this pdf is not of this
+     * @return a list of Property, detailing the reasons this pdf is not of this
      * profile
      */
     public List getReasonsForNonCompliance(){
@@ -120,6 +126,8 @@ public abstract class PdfProfile
     {
         _raf = raf;
         _parser = parser;
+        _reasonsForNonCompliance = new ArrayList();
+
         boolean sp = satisfiesThisProfile ();
         if (sp) {
             _alreadyOK = true;

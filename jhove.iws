@@ -16,12 +16,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Jhove.iml" afterPath="$PROJECT_DIR$/Jhove.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/ErrorCodes.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/META-INF/MANIFEST.MF" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/errorcodes.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/viewer/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/viewer/META-INF/MANIFEST.MF" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jhove.ipr" afterPath="$PROJECT_DIR$/jhove.ipr" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/JhoveBase.java" afterPath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/JhoveBase.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/PdfProfile.java" afterPath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/PdfProfile.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/META-INF/MANIFEST.MF" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jhove.iws" afterPath="$PROJECT_DIR$/jhove.iws" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/handler/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/handler/META-INF/MANIFEST.MF" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/PdfModule.java" afterPath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/PdfModule.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.xml" afterPath="$PROJECT_DIR$/build.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/tagged/TaggedProfile.java" afterPath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/tagged/TaggedProfile.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/AProfileLevelB.java" afterPath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/AProfileLevelB.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/AProfileLevelA.java" afterPath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/AProfileLevelA.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/RepInfo.java" afterPath="$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/RepInfo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jhove.iws" afterPath="$PROJECT_DIR$/jhove.iws" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Jhove.java" afterPath="$PROJECT_DIR$/classes/Jhove.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/classes/META-INF/MANIFEST.MF" />
     </list>
     <ignored path="jhove.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,6 +56,73 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
+    <line_breakpoints>
+      <breakpoint url="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/JhoveBase.java" line="462" class="edu.harvard.hul.ois.jhove.JhoveBase" package="edu.harvard.hul.ois.jhove">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/JhoveBase.java" line="637" class="edu.harvard.hul.ois.jhove.JhoveBase" package="edu.harvard.hul.ois.jhove">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/AProfileLevelB.java" line="117" class="edu.harvard.hul.ois.jhove.module.pdf.profiles.AProfileLevelB" package="edu.harvard.hul.ois.jhove.module.pdf.profiles">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/handler/TextHandler.java" line="367" class="edu.harvard.hul.ois.jhove.handler.TextHandler" package="edu.harvard.hul.ois.jhove.handler">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/handler/TextHandler.java" line="641" class="edu.harvard.hul.ois.jhove.handler.TextHandler" package="edu.harvard.hul.ois.jhove.handler">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
     <breakpoint_any>
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -88,125 +166,114 @@
     <favorites_list name="jhove" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="PdfModule.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/PdfModule.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="720" column="77" selection-start="30773" selection-end="30773" vertical-scroll-proportion="0.65789473">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RepInfo.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/RepInfo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="87" selection-start="661" selection-end="661" vertical-scroll-proportion="-12.100841">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="build.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/build.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Hexadecimal.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/Hexadecimal.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="14" selection-start="616" selection-end="616" vertical-scroll-proportion="0.29508197">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LinearizedProfile.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/LinearizedProfile.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="19" selection-start="597" selection-end="597" vertical-scroll-proportion="0.17213115">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PdfProfile.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/PdfProfile.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="59" column="42" selection-start="1997" selection-end="1997" vertical-scroll-proportion="0.6605042">
-              <folding>
-                <marker date="1208944925000" expanded="true" signature="340:856" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TaggedProfile.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/tagged/TaggedProfile.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="73" column="0" selection-start="2779" selection-end="2779" vertical-scroll-proportion="0.8504202">
-              <folding>
-                <marker date="1208944925000" expanded="false" signature="70:298" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StructureTree.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/tagged/StructureTree.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="286" column="0" selection-start="8960" selection-end="8960" vertical-scroll-proportion="6.0638657">
-              <folding>
-                <marker date="1208944925000" expanded="true" signature="347:999" placeholder="..." />
-                <marker date="1208944925000" expanded="true" signature="1534:2049" placeholder="/**...*/" />
-                <marker date="1208944925000" expanded="true" signature="2181:3672" placeholder="{...}" />
-                <marker date="1208944925000" expanded="true" signature="3697:3754" placeholder="{...}" />
-                <marker date="1208944925000" expanded="true" signature="3760:3859" placeholder="/**...*/" />
-                <marker date="1208944925000" expanded="true" signature="3896:3928" placeholder="{...}" />
-                <marker date="1208944925000" expanded="true" signature="3934:4161" placeholder="/**...*/" />
-                <marker date="1208944925000" expanded="true" signature="4190:4328" placeholder="{...}" />
-                <marker date="1208944925000" expanded="true" signature="4334:4429" placeholder="/**...*/" />
-                <marker date="1208944925000" expanded="true" signature="4464:4494" placeholder="{...}" />
-                <marker date="1208944925000" expanded="true" signature="4501:4555" placeholder="/**...*/" />
-                <marker date="1208944925000" expanded="true" signature="4594:4625" placeholder="{...}" />
-                <marker date="1208944925000" expanded="true" signature="4632:5127" placeholder="/**...*/" />
-                <marker date="1208944925000" expanded="true" signature="5184:5838" placeholder="{...}" />
-                <element signature="method#validateRoot#0;class#StructureTree#0" expanded="false" />
-                <element signature="method#getRoleMap#0;class#StructureTree#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AProfileLevelB.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/AProfileLevelB.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="701" column="30" selection-start="27414" selection-end="27420" vertical-scroll-proportion="15.763158">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AProfileLevelA.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/AProfileLevelA.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="174" column="83" selection-start="6200" selection-end="6200" vertical-scroll-proportion="4.3109245">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.6340039">
+      <split-first>
+        <leaf>
+          <file leaf-file-name="Jhove.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/classes/Jhove.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="299" column="0" selection-start="12219" selection-end="12219" vertical-scroll-proportion="0.8331617">
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="AProfileLevelB.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/AProfileLevelB.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="249" column="58" selection-start="9344" selection-end="9344" vertical-scroll-proportion="-0.15690376">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="PdfProfile.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/PdfProfile.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="85" column="45" selection-start="3150" selection-end="3150" vertical-scroll-proportion="0.39958805">
+                  <folding>
+                    <marker date="1209035085000" expanded="true" signature="340:946" placeholder="..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="PdfModule.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/PdfModule.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="738" column="0" selection-start="31294" selection-end="31294" vertical-scroll-proportion="0.374477">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="TaggedProfile.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/tagged/TaggedProfile.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="99" column="59" selection-start="4101" selection-end="4101" vertical-scroll-proportion="0.72193617">
+                  <folding>
+                    <marker date="1209036091000" expanded="false" signature="70:298" placeholder="..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="errorcodes.txt" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/errorcodes.txt">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="0" column="64" selection-start="64" selection-end="64" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="AProfileLevelA.java" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/AProfileLevelA.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="164" column="51" selection-start="5557" selection-end="5557" vertical-scroll-proportion="0.40376568">
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="RepInfo.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/RepInfo.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="291" column="0" selection-start="7608" selection-end="7608" vertical-scroll-proportion="0.19052523">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="TextHandler.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/handler/TextHandler.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="626" column="46" selection-start="21264" selection-end="21264" vertical-scroll-proportion="0.2523172">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="ErrorCodes.java" pinned="false" current="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/ErrorCodes.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="42" column="0" selection-start="1306" selection-end="1306" vertical-scroll-proportion="0.64681727">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -851,6 +918,7 @@
   <component name="PropertiesComponent">
     <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="RunManagerConfig.showSettingsBeforeRunnig" value="true" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
@@ -864,14 +932,7 @@
       <recent name="edu.harvard.hul.ois.jhove.module.pdf.profiles.Tagged" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
-    </configuration>
+  <component name="RunManager" selected="Application.jhove run">
     <configuration default="true" type="TestNG" factoryName="TestNG" enabled="false" merge="false">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -897,22 +958,6 @@
       <envs />
       <properties />
       <listeners />
-      <method>
-        <option name="Make" value="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="Application" factoryName="Application" enabled="false" merge="false">
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
       <method>
         <option name="Make" value="true" />
       </method>
@@ -951,7 +996,57 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
     </configuration>
-    <list size="0" />
+    <configuration default="true" type="Application" factoryName="Application" enabled="false" merge="false">
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method>
+        <option name="Make" value="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+    </configuration>
+    <configuration default="false" name="jhove run" type="Application" factoryName="Application" enabled="false" merge="false">
+      <option name="MAIN_CLASS_NAME" value="Jhove" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="-c conf/jhoveconf.xml  -m pdf-hul examples/pdf/imd.pdf" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Jhove" />
+      <envs />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="47149" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method>
+        <option name="Run Ant target" value="false" />
+        <option name="Make" value="true" />
+      </method>
+    </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Application.jhove run" />
+    </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
       <Port>5050</Port>
@@ -1009,24 +1104,24 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32893288" order="8" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="5" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19662556" order="1" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19662556" order="1" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" order="1" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="3" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32941177" order="9" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3278328" order="10" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32941177" order="11" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32941177" order="11" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32893288" order="7" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24939074" order="1" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="0" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39974043" order="0" />
       <window_info id="Maven projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="4" />
       <window_info id="Module Dependencies" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="6" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35171968" order="0" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35171968" order="0" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32921812" order="12" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24951644" order="2" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="6" />
       <window_info id="Duplicates" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="13" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="2" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32941177" order="2" />
       <window_info id="SVN Repositories" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32941177" order="14" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="5" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="0" />
@@ -1042,7 +1137,7 @@
     <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
     <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Level A and B pdf/a profiles, now with the changes so that they report errors" />
+    <option name="LAST_COMMIT_MESSAGE" value="Level A and B pdf/a profiles with some errors in regards to the specs corrected" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
@@ -1057,6 +1152,7 @@
     <MESSAGE value="Preliminary package distribution" />
     <MESSAGE value="Level A and B pdf/a profiles" />
     <MESSAGE value="Level A and B pdf/a profiles, now with the changes so that they report errors" />
+    <MESSAGE value="Level A and B pdf/a profiles with some errors in regards to the specs corrected" />
   </component>
   <component name="VssConfiguration">
     <option name="CLIENT_PATH" value="" />
@@ -1113,87 +1209,9 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/ObjectStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="13" selection-start="909" selection-end="909" vertical-scroll-proportion="0.5155483">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/ArrayEnd.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="13" selection-start="412" selection-end="412" vertical-scroll-proportion="0.17184943">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/Literal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="141" column="19" selection-start="5904" selection-end="5904" vertical-scroll-proportion="0.33221477">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/CrossRefStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="22" selection-start="1559" selection-end="1559" vertical-scroll-proportion="0.33224222">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/PdfDictionary.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="20" selection-start="1399" selection-end="1399" vertical-scroll-proportion="1.01964">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/build.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/Hexadecimal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="14" selection-start="616" selection-end="616" vertical-scroll-proportion="0.29508197">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/LinearizedProfile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="19" selection-start="597" selection-end="597" vertical-scroll-proportion="0.17213115">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/PdfProfile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="42" selection-start="1997" selection-end="1997" vertical-scroll-proportion="0.6605042">
-          <folding>
-            <marker date="1208944925000" expanded="true" signature="340:856" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/tagged/TaggedProfile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="0" selection-start="2779" selection-end="2779" vertical-scroll-proportion="0.8504202">
-          <folding>
-            <marker date="1208944925000" expanded="false" signature="70:298" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/tagged/StructureTree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="286" column="0" selection-start="8960" selection-end="8960" vertical-scroll-proportion="6.0638657">
+        <state line="286" column="0" selection-start="8960" selection-end="8960" vertical-scroll-proportion="1.7060999">
           <folding>
             <marker date="1208944925000" expanded="true" signature="347:999" placeholder="..." />
             <marker date="1208944925000" expanded="true" signature="1534:2049" placeholder="/**...*/" />
@@ -1209,47 +1227,119 @@
             <marker date="1208944925000" expanded="true" signature="4594:4625" placeholder="{...}" />
             <marker date="1208944925000" expanded="true" signature="4632:5127" placeholder="/**...*/" />
             <marker date="1208944925000" expanded="true" signature="5184:5838" placeholder="{...}" />
-            <element signature="method#validateRoot#0;class#StructureTree#0" expanded="false" />
-            <element signature="method#getRoleMap#0;class#StructureTree#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/AProfileLevelA.java">
+    <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/PdfDictionary.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="174" column="83" selection-start="6200" selection-end="6200" vertical-scroll-proportion="4.3109245">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/AProfileLevelB.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="701" column="30" selection-start="27414" selection-end="27420" vertical-scroll-proportion="15.763158">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/Tokenizer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="144" column="0" selection-start="6180" selection-end="6180" vertical-scroll-proportion="0.31478536">
+        <state line="59" column="0" selection-start="1491" selection-end="1491" vertical-scroll-proportion="0.5143885">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/ModuleBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="212" column="0" selection-start="7883" selection-end="7883" vertical-scroll-proportion="0.32374102">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/JhoveBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="637" column="0" selection-start="25281" selection-end="25281" vertical-scroll-proportion="0.29353234">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/EnumerationType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="58" column="0" selection-start="1908" selection-end="1908" vertical-scroll-proportion="1.116242">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/Property.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="211" column="0" selection-start="5967" selection-end="5967" vertical-scroll-proportion="1.3312101">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/Jhove.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="299" column="0" selection-start="12219" selection-end="12219" vertical-scroll-proportion="0.8331617">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/RepInfo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="87" selection-start="661" selection-end="661" vertical-scroll-proportion="-12.100841">
+        <state line="291" column="0" selection-start="7608" selection-end="7608" vertical-scroll-proportion="0.19052523">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/handler/TextHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="626" column="46" selection-start="21264" selection-end="21264" vertical-scroll-proportion="0.2523172">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/PdfModule.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="720" column="77" selection-start="30773" selection-end="30773" vertical-scroll-proportion="0.65789473">
+        <state line="738" column="0" selection-start="31294" selection-end="31294" vertical-scroll-proportion="0.374477">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/PdfProfile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="85" column="45" selection-start="3150" selection-end="3150" vertical-scroll-proportion="0.39958805">
+          <folding>
+            <marker date="1209035085000" expanded="true" signature="340:946" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/errorcodes.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="64" selection-start="64" selection-end="64" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/AProfileLevelB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="249" column="58" selection-start="9344" selection-end="9344" vertical-scroll-proportion="-0.15690376">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/tagged/TaggedProfile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="99" column="59" selection-start="4101" selection-end="4101" vertical-scroll-proportion="0.72193617">
+          <folding>
+            <marker date="1209036091000" expanded="false" signature="70:298" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/ErrorCodes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="0" selection-start="1306" selection-end="1306" vertical-scroll-proportion="0.64681727">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/edu/harvard/hul/ois/jhove/module/pdf/profiles/AProfileLevelA.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="164" column="51" selection-start="5557" selection-end="5557" vertical-scroll-proportion="0.40376568">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

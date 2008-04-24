@@ -23,11 +23,9 @@ import org.xml.sax.XMLReader;
 
 import javax.xml.parsers.SAXParserFactory;
 import java.io.UnsupportedEncodingException;
-import java.text.MessageFormat;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.ResourceBundle;
 import java.util.Vector;
 
 /**
@@ -50,10 +48,6 @@ public final class AProfileLevelB extends PdfProfile
     /******************************************************************
      * PRIVATE CLASS FIELDS.
      ******************************************************************/
-
-    private static final ResourceBundle RB
-                = ResourceBundle.getBundle("messages");
-
 
     //private boolean _levelA;
     private boolean hasDevRGB;
@@ -93,6 +87,7 @@ public final class AProfileLevelB extends PdfProfile
     };
 
 
+    
 
     /**
      *   Constructor.
@@ -104,7 +99,7 @@ public final class AProfileLevelB extends PdfProfile
     public AProfileLevelB(PdfModule module)
     {
         super (module);
-        _profileText = "ISO PDF/A-1, Level B (Draft Proposal)";
+        _profileText = "ISO PDF/A-1, Level B";
     }
 
 
@@ -148,7 +143,8 @@ public final class AProfileLevelB extends PdfProfile
             }
         }
         catch (Exception e) {
-            reportReasonForNonCompliance(e.getMessage());
+            reportReasonForNonCompliance(ErrorCodes.pdfa_b.exception_was_thrown,
+                                         e.getMessage());
             //_levelA = false;
             _return = false;
 
@@ -164,7 +160,8 @@ public final class AProfileLevelB extends PdfProfile
         boolean _return = true;
         PdfDictionary trailerDict = _module.getTrailerDict ();
         if (trailerDict == null) {
-            reportReasonForNonCompliance("10001.PDF.has.no.trailer.dictionary");
+            reportReasonForNonCompliance(ErrorCodes.pdfa_b.no_trailer_dict,
+                                         "PDF.has.no.trailer.dictionary");
             return false; //If this happens, do not continue
                 // really shouldn't happen
         }
@@ -172,12 +169,14 @@ public final class AProfileLevelB extends PdfProfile
         try {
             if (trailerDict.get ("Encrypt") != null/* ||
                   trailerDict.get ("Info") != null*/) { //TODO: WHY???
-                reportReasonForNonCompliance("10002.PDF.trailer.dict.has.a.Encrypt.entry");
+                reportReasonForNonCompliance(
+                        ErrorCodes.pdfa_b.trailer_dict_has_encrypt
+                        ,"PDF.trailer.dict.has.a.Encrypt.entry");
                 _return = false;
 
             }
             if (trailerDict.get ("ID") == null) {
-                reportReasonForNonCompliance("10003.PDF.trailer.dict.has.no.ID.entry");
+                reportReasonForNonCompliance(ErrorCodes.pdfa_b.trailer_has_no_ID,"PDF.trailer.dict.has.no.ID.entry");
                 _return = false;
 
             }
@@ -195,7 +194,7 @@ public final class AProfileLevelB extends PdfProfile
         boolean _return = true;
         PdfDictionary cat = _module.getCatalogDict ();
         if (cat == null) {
-            reportReasonForNonCompliance("10004.PDF.has.no.catalog.Dictionary");
+            reportReasonForNonCompliance(ErrorCodes.pdfa_b.no_catalog_dict,"PDF.has.no.catalog.Dictionary");
             return false; //If this happens, do not continue
         }
         try {
@@ -210,11 +209,11 @@ public final class AProfileLevelB extends PdfProfile
                 if (langstring != null){
                     RFC1766Lang l = new RFC1766Lang (langstring);
                     if (!l.isSyntaxCorrect ()) {
-                        reportReasonForNonCompliance("10005.PDF.catalog.dictionary.has.a.lang.entry.in.a.invalid.syntax");
+                        reportReasonForNonCompliance(ErrorCodes.pdfa_b.invalid_lang,"PDF.catalog.dictionary.has.a.lang.entry.in.a.invalid.syntax");
                         _return = false;
                     }
                 }else{
-                    reportReasonForNonCompliance("10006.PDF.catalog.dictionary.has.a.lang.entry.with.no.lang.string");
+                    reportReasonForNonCompliance(ErrorCodes.pdfa_b.lang_entry_without_string,"PDF.catalog.dictionary.has.a.lang.entry.with.no.lang.string");
                     _return = false;
                 }
             }
@@ -238,18 +237,22 @@ public final class AProfileLevelB extends PdfProfile
 
             // It may not contain an AA entry or an OCProperties entry
             if (cat.get ("AA") != null){
-                reportReasonForNonCompliance("10007.PDF.catalog.dictionary.has.a.AA.entry");
+                reportReasonForNonCompliance(
+                        ErrorCodes.pdfa_b.catalog_dict_has_AA_entry,
+                        "PDF.catalog.dictionary.has.a.AA.entry");
                 _return = false;
             }
 
             if (cat.get ("OCProperties") != null) {
-                reportReasonForNonCompliance("10008.PDF.catalog.dictionary.has.a.OCProperties.entry");
+                reportReasonForNonCompliance(
+                        ErrorCodes.pdfa_b.catalog_dict_has_OCProperties_entry,
+                        "PDF.catalog.dictionary.has.a.OCProperties.entry");
                 _return = false;
             }
         }
         catch (Exception e) {
             //TODO: Beautify this line
-            reportReasonForNonCompliance(MessageFormat.format(RB.getString("PDF.catalog.dictionary.validation.failed.with.error.0"),new Object[]{e.getMessage()}));
+            reportReasonForNonCompliance(20009,"PDF.catalog.dictionary.validation.failed.with.error."+e.getMessage());
             _return = false;
         }
         return _return;
@@ -699,7 +702,7 @@ public final class AProfileLevelB extends PdfProfile
                 // color space, check for an appropriate OutputIntent dict.
                 if (hasUncalCS && !oldHasUncalCS) {
                     if (!checkUncalIntent ()) {//TODO: Follow this method down.
-                        reportReasonForNonCompliance("10009.PDF.has.a.uncalibrated."
+                        reportReasonForNonCompliance(20010,"PDF.has.a.uncalibrated."
                                                      + "colour.space.without.an."
                                                      + "appropriate.OutputInt"
                                                      + "ent.dict");
@@ -707,7 +710,7 @@ public final class AProfileLevelB extends PdfProfile
                     }
                 }
                 if (hasDevRGB && hasDevCMYK) {
-                    reportReasonForNonCompliance("1000A.PDF.has.both.DeviceRGB.and.DeviceCMYK.colourspaces");
+                    reportReasonForNonCompliance(20011,"PDF.has.both.DeviceRGB.and.DeviceCMYK.colourspaces");
                     return false;   // can't have both in same file
                 }
             }

@@ -18,7 +18,7 @@
   <property name="classes" location="classes"/>
   <property name="doc"     location="doc"/>
 
-  <target name="dist" description="Create distribution">
+  <target name="dist" description="Create distribution" depends="cleandist">
     <ant dir="${classes}" inheritAll="false">
       <property name="dbg" value="off"/>
     </ant>
